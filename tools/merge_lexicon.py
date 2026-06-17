@@ -28,6 +28,15 @@ import words_seed as S  # noqa: E402
 NIQQUD = re.compile(r"[֑-ׇ]")
 HEB = re.compile(r"[א-ת]")
 
+# ג׳ /dʒ/, צ׳ /tʃ/, ז׳ /ʒ/ are foreign loanword sounds (not native phonemes) and
+# TTS can't voice them — drop any form carrying a geresh-family mark. build_lexicon.py
+# enforces the same gate on the shipped artifact; this just keeps words.py clean.
+GERESH = {"'", "’", "ʼ", "′", "׳", "״", '"'}
+
+
+def has_geresh(s):
+    return any(c in GERESH for c in s)
+
 
 def strip(s):
     return NIQQUD.sub("", s)
@@ -49,7 +58,7 @@ print(f"loaded {gen and sum(len(v) for v in gen.values())} raw entries from gene
 nouns = {}  # stripped -> [w, g, n]
 for e in gen["nouns"]:
     k = strip(e["w"])
-    if slen(e["w"]) >= 2 and k not in nouns:
+    if slen(e["w"]) >= 2 and not has_geresh(e["w"]) and k not in nouns:
         nouns[k] = [e["w"], e["g"], e["n"]]
 
 discrepancies, seed_only_nouns = [], []
@@ -67,15 +76,17 @@ for (w, g, n) in S.NOUNS:
 adjectives = {}
 for e in gen["adjectives"]:
     k = strip(e["ms"])
-    if slen(e["ms"]) >= 2 and k not in adjectives:
-        adjectives[k] = [e["ms"], e["fs"], e["mp"], e["fp"]]
+    forms = [e["ms"], e["fs"], e["mp"], e["fp"]]
+    if slen(e["ms"]) >= 2 and not any(has_geresh(f) for f in forms) and k not in adjectives:
+        adjectives[k] = forms
 seed_only_adj = [a[0] for a in S.ADJECTIVES if strip(a[0]) not in adjectives]
 
 # ---- verbs ----
 verbs = {}
 for e in gen["verbs"]:
     k = strip(e["ms"])
-    if slen(e["ms"]) >= 2 and k not in verbs:
+    forms = [e["ms"], e["fs"], e["mp"], e["fp"]]
+    if slen(e["ms"]) >= 2 and not any(has_geresh(f) for f in forms) and k not in verbs:
         verbs[k] = [e["ms"], e["fs"], e["mp"], e["fp"], bool(e["trans"])]
 seed_only_verbs = [v[0] for v in S.VERBS if strip(v[0]) not in verbs]
 
@@ -83,11 +94,14 @@ seed_only_verbs = [v[0] for v in S.VERBS if strip(v[0]) not in verbs]
 try:
     import words_extra as X
     for (w, g, n) in X.EXTRA_NOUNS:
-        nouns.setdefault(strip(w), [w, g, n])
+        if not has_geresh(w):
+            nouns.setdefault(strip(w), [w, g, n])
     for forms in X.EXTRA_ADJECTIVES:
-        adjectives.setdefault(strip(forms[0]), list(forms))
+        if not any(has_geresh(f) for f in forms):
+            adjectives.setdefault(strip(forms[0]), list(forms))
     for row in X.EXTRA_VERBS:
-        verbs.setdefault(strip(row[0]), [row[0], row[1], row[2], row[3], bool(row[4])])
+        if not any(has_geresh(f) for f in row[:4]):
+            verbs.setdefault(strip(row[0]), [row[0], row[1], row[2], row[3], bool(row[4])])
 except ImportError:
     pass
 

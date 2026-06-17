@@ -105,6 +105,10 @@
   .rbtn.listen{background:linear-gradient(90deg,var(--mint),var(--blue))}
   .rbtn.said{background:linear-gradient(90deg,var(--coral),var(--mango))}
   .rbtn.said.is-done{background:#CDEBDD;color:#0F8A55;box-shadow:none}
+  .listen-group{flex:1;display:flex;border-radius:13px;overflow:hidden;box-shadow:var(--shadow-sm)}
+  .listen-group .rbtn{border-radius:0;box-shadow:none}
+  .rbtn.slow{flex:0 0 auto;padding:11px 12px;white-space:nowrap;border-inline-start:2px solid rgba(255,255,255,.4);
+    background:linear-gradient(90deg,var(--mint),var(--blue))}
 
   .actionbar{display:flex;flex-direction:column;gap:12px;margin-top:18px}
   .actionbar .cta{margin-top:0}
@@ -335,14 +339,14 @@
   if(ttsAvailable){ loadVoices(); window.speechSynthesis.onvoiceschanged=loadVoices; }
   function ttsWorks(){ ttsConfirmed=true; ttsProvenBad=false; var t=$('#toast'); if(t) t.hidden=true; updateTtsStatus(); }
   function markTtsBad(){ if(ttsConfirmed) return; ttsProvenBad=true; updateTtsStatus(); showTtsHint(); }
-  function speak(text, detect){
+  function speak(text, detect, rate){
     if(!ttsAvailable){ if(detect!==false) showTtsHint(); return; }
     if(!state.ttsOn) return;
     try{
       var ss=window.speechSynthesis;
       ss.cancel();
       var u=new SpeechSynthesisUtterance(text);
-      u.lang='he-IL'; if(heVoice) u.voice=heVoice; u.rate=.9;
+      u.lang='he-IL'; if(heVoice) u.voice=heVoice; u.rate=rate||.9;
       u.onstart=ttsWorks; u.onboundary=ttsWorks; u.onend=ttsWorks;
       u.onerror=function(ev){ if(ev && (ev.error==='interrupted'||ev.error==='canceled')) return; if(detect!==false) markTtsBad(); };
       ss.speak(u);
@@ -452,14 +456,18 @@
       var r=el('div','ribbon'); r.dataset.i=i; r.style.animationDelay=(i*0.05)+'s';
       var sent=el('div','sent'); sent.innerHTML=words.map(renderWord).join(' ');
       var ctrl=el('div','ribbon-ctrl');
+      var lgroup=el('div','listen-group');
       var listen=el('button','rbtn listen'); listen.textContent='🔊 שִׁמְעוּ'; listen.setAttribute('aria-label','השמעת המשפט');
+      var slow=el('button','rbtn slow'); slow.textContent='🐢 לְאַט'; slow.setAttribute('aria-label','הַשְׁמָעָה לְאַט');
       var said=el('button','rbtn said'); said.textContent='✓ אָמַרְתִּי'; said.setAttribute('aria-label','סימון שתרגלנו');
-      if(!ttsAvailable || !state.ttsOn){ listen.style.display='none'; }   // no voice / voice off -> "אמרתי" takes full width
-      ctrl.appendChild(listen); ctrl.appendChild(said);   // RTL: שמעו on the right, אמרתי on the left
+      if(!ttsAvailable || !state.ttsOn){ lgroup.style.display='none'; }   // no voice / voice off -> "אמרתי" takes full width
+      lgroup.appendChild(listen); lgroup.appendChild(slow);   // segmented control: שמעו + 🐢 (slow) as one unit
+      ctrl.appendChild(lgroup); ctrl.appendChild(said);   // RTL: listen-group on the right, אמרתי on the left
       r.appendChild(sent); r.appendChild(ctrl);
 
       var line = words.join(' ');
       listen.addEventListener('click',function(){ speak(line); });
+      slow.addEventListener('click',function(){ speak(line, true, .1); });   // Carmit honors rate non-linearly — nearly all slowdown is below 0.25; ~0.1 ≈ 1.7× (the practical max)
       said.addEventListener('click',function(){ togglePracticed(i); });
       each(sent.querySelectorAll('.word'),function(w){
         w.addEventListener('click',function(){ speak(w.textContent); });
@@ -521,7 +529,7 @@
   swTts.addEventListener('click',function(){ if(!ttsAvailable)return; state.ttsOn=!state.ttsOn;
     swTts.classList.toggle('on',state.ttsOn); swTts.setAttribute('aria-checked',state.ttsOn?'true':'false');
     try{ localStorage.setItem('talkingletters.tts', state.ttsOn?'1':'0'); }catch(e){}
-    each(document.querySelectorAll('.rbtn.listen'),function(b){ b.style.display=state.ttsOn?'':'none'; });  // sync sentences already on screen
+    each(document.querySelectorAll('.listen-group'),function(b){ b.style.display=state.ttsOn?'':'none'; });  // sync sentences already on screen
   });
 
 })();

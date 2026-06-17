@@ -55,6 +55,17 @@ KEY_OF_GN = {v: k for k, v in GN_OF_KEY.items()}
 MIN_LEN = 2
 WARNINGS = []
 
+# A geresh (ג׳ /dʒ/, צ׳ /tʃ/, ז׳ /ʒ/) turns a Hebrew consonant into a FOREIGN
+# loanword sound that is NOT one of the 20 native phonemes — so the gimel/tzadi
+# must not be matched as native /G//TS/, and TTS can't voice it (it reads the
+# mark aloud). Drop any vocalized form carrying a geresh-family mark outright.
+# U+0027 ' · U+2019 ’ · U+02BC ʼ · U+2032 ′ · U+05F3 ׳ geresh · U+05F4 ״ gershayim · U+0022 "
+GERESH = {"'", "’", "ʼ", "′", "׳", "״", '"'}
+
+
+def has_geresh(s):
+    return any(c in GERESH for c in s)
+
 
 def strip_niqqud(s):
     return NIQQUD.sub("", s)
@@ -128,6 +139,8 @@ def build():
     nouns, adjectives, verbs = [], [], []
 
     for (w, g, num) in W.NOUNS:
+        if has_geresh(w):
+            WARNINGS.append(f"NOUN dropped (geresh/foreign sound): {w}"); continue
         if stripped_len(w) < MIN_LEN:
             WARNINGS.append(f"NOUN dropped (len<{MIN_LEN}): {w}"); continue
         if g not in ("m", "f") or num not in ("sg", "pl"):
@@ -137,6 +150,8 @@ def build():
     for forms in W.ADJECTIVES:
         if len(forms) != 4 or any(not f for f in forms):
             WARNINGS.append(f"ADJ needs 4 forms: {forms}"); continue
+        if any(has_geresh(f) for f in forms):
+            WARNINGS.append(f"ADJ dropped (geresh/foreign sound): {forms}"); continue
         if min(stripped_len(f) for f in forms) < MIN_LEN:
             WARNINGS.append(f"ADJ form too short: {forms}"); continue
         adjectives.append({"forms": build_forms(forms)})
@@ -146,6 +161,8 @@ def build():
             WARNINGS.append(f"VERB needs (ms,fs,mp,fp,trans): {row}"); continue
         ms, fs, mp, fp, trans = row
         forms = (ms, fs, mp, fp)
+        if any(has_geresh(f) for f in forms):
+            WARNINGS.append(f"VERB dropped (geresh/foreign sound): {row}"); continue
         if any(not f for f in forms) or min(stripped_len(f) for f in forms) < MIN_LEN:
             WARNINGS.append(f"VERB bad/short: {row}"); continue
         verbs.append({"trans": bool(trans), "forms": build_forms(forms)})
