@@ -86,6 +86,12 @@ def sound_of(base, m, is_first, is_last, prev):
     return None
 
 
+def build_forms(forms):
+    """{ms,fs,mp,fp: {w, idx}} for a 4-tuple of vocalized surface forms."""
+    return {key: {"w": form, "idx": phoneme_index(form)}
+            for key, form in zip(("ms", "fs", "mp", "fp"), forms)}
+
+
 def phoneme_index(w):
     """{phoneme: [positions...]} for a vocalized surface form."""
     ch = list(w)
@@ -133,10 +139,7 @@ def build():
             WARNINGS.append(f"ADJ needs 4 forms: {forms}"); continue
         if min(stripped_len(f) for f in forms) < MIN_LEN:
             WARNINGS.append(f"ADJ form too short: {forms}"); continue
-        entry = {"forms": {}}
-        for key, form in zip(("ms", "fs", "mp", "fp"), forms):
-            entry["forms"][key] = {"w": form, "idx": phoneme_index(form)}
-        adjectives.append(entry)
+        adjectives.append({"forms": build_forms(forms)})
 
     for row in W.VERBS:
         if len(row) != 5:
@@ -145,10 +148,7 @@ def build():
         forms = (ms, fs, mp, fp)
         if any(not f for f in forms) or min(stripped_len(f) for f in forms) < MIN_LEN:
             WARNINGS.append(f"VERB bad/short: {row}"); continue
-        entry = {"trans": bool(trans), "forms": {}}
-        for key, form in zip(("ms", "fs", "mp", "fp"), forms):
-            entry["forms"][key] = {"w": form, "idx": phoneme_index(form)}
-        verbs.append(entry)
+        verbs.append({"trans": bool(trans), "forms": build_forms(forms)})
 
     return {"nouns": nouns, "adjectives": adjectives, "verbs": verbs}
 
@@ -243,8 +243,17 @@ def write_coverage_md(matrix, lex):
 
 def main():
     lex = build()
+    matrix = coverage(lex)
+    # ship the phoneme tables + feasibility matrix the UI needs, so build_lexicon.py
+    # stays the single source of truth (template.html reads these from LEX.meta).
+    meta = {
+        "phonemes": PHONEMES,
+        "sources": SOURCES,
+        "positions": POSITIONS,
+        "feas": {ph: {P: matrix[(ph, P)]["ok"] for P in POSITIONS} for ph in PHONEMES},
+    }
 
-    minified = json.dumps(lex, ensure_ascii=False, separators=(",", ":"))
+    minified = json.dumps({**lex, "meta": meta}, ensure_ascii=False, separators=(",", ":"))
     with open(os.path.join(ROOT, "lexicon.json"), "w", encoding="utf-8") as f:
         f.write(minified)
     size_kb = os.path.getsize(os.path.join(ROOT, "lexicon.json")) / 1024
@@ -259,7 +268,6 @@ def main():
             f.write(tmpl.replace("__LEXICON_JSON__", minified))
         index_kb = os.path.getsize(os.path.join(ROOT, "index.html")) / 1024
 
-    matrix = coverage(lex)
     write_coverage_md(matrix, lex)
     feasible = sum(1 for v in matrix.values() if v["ok"])
 

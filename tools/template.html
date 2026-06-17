@@ -76,7 +76,6 @@
     font-size:19px;padding:13px;border:none;border-radius:18px;cursor:pointer;
     background:linear-gradient(90deg,var(--coral),var(--mango));box-shadow:0 12px 22px rgba(255,122,133,.42)}
   .cta:active{transform:scale(.98)}
-  .cta.ghost{background:#EDE7DC;color:#9a917f;box-shadow:none}
   .cta:disabled{background:#E7E2D8;color:#B3AB9B;box-shadow:none;cursor:not-allowed}
   .cta.mint{background:linear-gradient(90deg,var(--mint),var(--blue));box-shadow:0 12px 22px rgba(102,217,168,.4)}
   .cta.grape{background:linear-gradient(90deg,#B39DDB,#8E6FD0);box-shadow:0 12px 22px rgba(142,111,208,.42)}
@@ -90,11 +89,11 @@
   .pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),var(--blue));transition:width .4s}
   .capnote{text-align:center;font-size:13px;color:var(--mango);font-weight:700;margin:8px 0}
 
-  .ribbon{background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px 14px;margin-top:11px;
-    display:flex;flex-direction:column;gap:11px;box-shadow:var(--shadow-sm);transition:background .3s,border-color .3s}
-  .ribbon.done{background:#F4FBF7;border-color:#CDEBDD}
   @keyframes pop{0%{transform:scale(.8);opacity:0}100%{transform:scale(1);opacity:1}}
-  .ribbon{animation:pop .3s ease both}
+  .ribbon{background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px 14px;margin-top:11px;
+    display:flex;flex-direction:column;gap:11px;box-shadow:var(--shadow-sm);transition:background .3s,border-color .3s;
+    animation:pop .3s ease both}
+  .ribbon.done{background:#F4FBF7;border-color:#CDEBDD}
   .sent{font-weight:700;font-size:clamp(20px,5.5vw,26px);line-height:1.5;text-align:center}
   .word{cursor:pointer;border-radius:6px;padding:0 1px;transition:background .15s}
   .word:active{background:#EAF7FF}
@@ -230,18 +229,14 @@
     '<p style="text-align:center;font-size:18px;margin-top:60px">אופס, לא הצלחנו לטעון את המילים 😕</p>'; return; }
 
   var FOLD = {'ך':'כ','ם':'מ','ן':'נ','ף':'פ','ץ':'צ'};
-  var POS = ['FIRST','MIDDLE','LAST'];
+  var META = LEX.meta, POS = META.positions;
   var POS_SHORT = {FIRST:'תְּחִלָּה', MIDDLE:'אֶמְצַע', LAST:'סוֹף'};
-  var POS_LONG  = {FIRST:'תְּחִלַּת הַמִּלָּה', MIDDLE:'אֶמְצַע הַמִּלָּה', LAST:'סוֹף הַמִּלָּה'};
   var POS_DOTS  = {FIRST:'●○○', MIDDLE:'○●○', LAST:'○○●'};
   var TINTS = ['#CDEBFB','#FFD8DC','#FFE6C7','#CFF2E1','#E6DCF7','#FFEDB0','#D7EFE0','#FBDCEF'];
   var GN = {ms:'m-sg', fs:'f-sg', mp:'m-pl', fp:'f-pl'};
-  var GN_KEY = {'m-sg':'ms','f-sg':'fs','m-pl':'mp','f-pl':'fp'};
 
-  // 20 phonemes (sound tiles) + the letters that feed each
-  var PHON = ['GLOTTAL','B','V','G','D','H','Z','X','T','Y','K','L','M','N','S','P','F','TS','R','SH'];
-  var SOURCES = {GLOTTAL:'א/ע',B:'בּ',V:'ב/ו',G:'ג',D:'ד',H:'ה',Z:'ז',X:'ח/כ',T:'ט/ת',Y:'י',
-                 K:'כּ/ק',L:'ל',M:'מ',N:'נ',S:'ס/שׂ',P:'פּ',F:'פ',TS:'צ',R:'ר',SH:'שׁ'};
+  // 20 phonemes + their glyphs/feasibility come from build_lexicon.py (single source of truth, via LEX.meta)
+  var PHON = META.phonemes, SOURCES = META.sources;
   // spoken letter name(s) per tile — vocalized real words that begin with the target sound.
   // names ending in ת (וֵת/טֵית/חֵת) go LAST in a pair, else the voice clips the final ת before the comma.
   // khaf is written חַף (chet glyph) so it voices /x/ — the word כף would be read as hard "kaf".
@@ -272,23 +267,12 @@
   function el(t,c){var e=document.createElement(t); if(c)e.className=c; return e;}
   function rand(a){return a[Math.floor(Math.random()*a.length)];}
   function shuffle(a){a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;} return a;}
+  function each(c,fn){Array.prototype.forEach.call(c,fn);}
   function matchPos(idx, L, ps){var p=idx[L]; if(!p)return false; for(var i=0;i<ps.length;i++){if(p.indexOf(ps[i])>=0)return true;} return false;}
   function gnOf(n){return n.g+'-'+n.n;}
 
-  // ---------- feasibility matrix (per letter, single position) ----------
-  var FEAS = {};
-  PHON.forEach(function(L){
-    FEAS[L]={};
-    POS.forEach(function(P){
-      var ps=[P], nounGN={}, nTotal=0, adjGN={}, vGN={}, vtGN={};
-      LEX.nouns.forEach(function(e){ if(matchPos(e.idx,L,ps)){ var g=gnOf(e); nounGN[g]=(nounGN[g]||0)+1; nTotal++; }});
-      LEX.adjectives.forEach(function(e){ for(var k in GN){ if(matchPos(e.forms[k].idx,L,ps)) adjGN[GN[k]]=(adjGN[GN[k]]||0)+1; }});
-      LEX.verbs.forEach(function(e){ for(var k in GN){ if(matchPos(e.forms[k].idx,L,ps)){ vGN[GN[k]]=(vGN[GN[k]]||0)+1; if(e.trans) vtGN[GN[k]]=(vtGN[GN[k]]||0)+1; }}});
-      var ok=false;
-      for(var g in nounGN){ if(nounGN[g]&&adjGN[g]&&vGN[g]) ok=true; if(nTotal>=2&&nounGN[g]&&vtGN[g]) ok=true; }
-      FEAS[L][P]=ok;
-    });
-  });
+  // ---------- feasibility matrix (per phoneme × position) — precomputed by build_lexicon.py ----------
+  var FEAS = META.feas;
 
   // ---------- generation engine ----------
   function candidatesFor(L, ps){
@@ -410,11 +394,11 @@
 
   function selectPhon(L){
     state.letter=L;
-    Array.prototype.forEach.call(lgrid.children,function(tile){
+    each(lgrid.children,function(tile){
       var on=tile.dataset.phon===L; tile.classList.toggle('sel',on); tile.setAttribute('aria-checked',on?'true':'false');
     });
     // gate positions by feasibility (per sound); drop now-impossible selections
-    Array.prototype.forEach.call(posRow.children,function(d){
+    each(posRow.children,function(d){
       var P=d.dataset.pos, feasible=FEAS[L][P];
       d.classList.toggle('disabled',!feasible);
       if(!feasible){ d.classList.remove('on'); d.setAttribute('aria-checked','false');
@@ -477,7 +461,7 @@
       var line = words.join(' ');
       listen.addEventListener('click',function(){ speak(line); });
       said.addEventListener('click',function(){ togglePracticed(i); });
-      Array.prototype.forEach.call(sent.querySelectorAll('.word'),function(w){
+      each(sent.querySelectorAll('.word'),function(w){
         w.addEventListener('click',function(){ speak(w.textContent); });
         w.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();speak(w.textContent);} });
       });
@@ -537,7 +521,7 @@
   swTts.addEventListener('click',function(){ if(!ttsAvailable)return; state.ttsOn=!state.ttsOn;
     swTts.classList.toggle('on',state.ttsOn); swTts.setAttribute('aria-checked',state.ttsOn?'true':'false');
     try{ localStorage.setItem('talkingletters.tts', state.ttsOn?'1':'0'); }catch(e){}
-    Array.prototype.forEach.call(document.querySelectorAll('.rbtn.listen'),function(b){ b.style.display=state.ttsOn?'':'none'; });  // sync sentences already on screen
+    each(document.querySelectorAll('.rbtn.listen'),function(b){ b.style.display=state.ttsOn?'':'none'; });  // sync sentences already on screen
   });
 
 })();

@@ -52,7 +52,6 @@ for e in gen["nouns"]:
     if slen(e["w"]) >= 2 and k not in nouns:
         nouns[k] = [e["w"], e["g"], e["n"]]
 
-seed_noun_gender = {strip(w): (g, n) for (w, g, n) in S.NOUNS}
 discrepancies, seed_only_nouns = [], []
 for (w, g, n) in S.NOUNS:
     k = strip(w)
