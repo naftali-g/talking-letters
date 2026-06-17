@@ -239,10 +239,11 @@
   var PHON = ['GLOTTAL','B','V','G','D','H','Z','X','T','Y','K','L','M','N','S','P','F','TS','R','SH'];
   var SOURCES = {GLOTTAL:'א/ע',B:'בּ',V:'ב/ו',G:'ג',D:'ד',H:'ה',Z:'ז',X:'ח/כ',T:'ט/ת',Y:'י',
                  K:'כּ/ק',L:'ל',M:'מ',N:'נ',S:'ס/שׂ',P:'פּ',F:'פ',TS:'צ',R:'ר',SH:'שׁ'};
-  // spoken letter name(s) per tile — vocalized real words that begin with the target sound;
-  // homophone pairs name both letters that make the sound
-  var NAMES = {GLOTTAL:'אָלֶף, עַיִן',B:'בֵּית',V:'וֵית, וָו',G:'גִּימֶל',D:'דָּלֶת',H:'הֵא',Z:'זַיִן',
-               X:'חֵית, כָף',T:'טֵית, תָּו',Y:'יוֹד',K:'כָּף, קוֹף',L:'לָמֶד',M:'מֵם',N:'נוּן',
+  // spoken letter name(s) per tile — vocalized real words that begin with the target sound.
+  // ...ית names (וֵית/טֵית/חֵית) go LAST in a pair, else the voice clips the final ת before the comma.
+  // khaf is written חַף (chet glyph) so it voices /x/ — the word כף would be read as hard "kaf".
+  var NAMES = {GLOTTAL:'אָלֶף, עַיִן',B:'בֵּית',V:'וָו, וֵית',G:'גִּימֶל',D:'דָּלֶת',H:'הֵא',Z:'זַיִן',
+               X:'חַף, חֵית',T:'תָּו, טֵית',Y:'יוֹד',K:'כָּף, קוֹף',L:'לָמֶד',M:'מֵם',N:'נוּן',
                S:'סָמֶךְ, שִׂין',P:'פֵּא',F:'פֵא',TS:'צָדִי',R:'רֵישׁ',SH:'שִׁין'};
   // phoneme of one consonant occurrence (mirror of build_lexicon.py sound_of) — for highlighting
   var DAG='ּ',SHIN='ׁ',SIN='ׂ',HIRIQ='ִ',TSERE='ֵ', NIQ=/[֑-ׇ]/, HEBC=/[א-ת]/;
