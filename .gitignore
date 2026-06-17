@@ -1,0 +1,21 @@
+# Generated / derived — rebuilt by tools/merge_lexicon.py + build_lexicon.py
+/tools/words.py
+/lexicon.json
+/tools/coverage.md
+
+# Python / OS / editor junk
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local tooling config
+.claude/settings.local.json
+
+# Logo working files (logo.png is the tracked master)
+/logo_clean.png
+/logo_original.png
+
+# Root HTML is dev/generated — track only the built index.html
+# (tools/template.html is in a subdir, so it stays tracked)
+/*.html
+!/index.html

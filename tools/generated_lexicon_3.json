@@ -1,0 +1,4339 @@
+{
+ "nouns": [
+  {
+   "w": "לַחְמָנִיָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "bread roll"
+  },
+  {
+   "w": "חַלָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "challah bread"
+  },
+  {
+   "w": "בַּגֶּט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "baguette"
+  },
+  {
+   "w": "פִּיתָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "pita bread"
+  },
+  {
+   "w": "כָּרִיךְ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sandwich"
+  },
+  {
+   "w": "טוֹסְט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "toast / grilled sandwich"
+  },
+  {
+   "w": "קְרָקֶר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "cracker"
+  },
+  {
+   "w": "מַצָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "matzah"
+  },
+  {
+   "w": "בָּצֵק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "dough"
+  },
+  {
+   "w": "בּוּרֶקַס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "burekas (filled pastry)"
+  },
+  {
+   "w": "כַּדּוּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "ball (dough/falafel ball)"
+  },
+  {
+   "w": "קְצִיצָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "meatball / patty"
+  },
+  {
+   "w": "שְׁנִיצֶל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "schnitzel"
+  },
+  {
+   "w": "נַקְנִיק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sausage"
+  },
+  {
+   "w": "נַקְנִיקִיָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "hot dog / frankfurter"
+  },
+  {
+   "w": "חֲבִיתָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "omelette"
+  },
+  {
+   "w": "מָרָק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "soup"
+  },
+  {
+   "w": "אִטְרִיּוֹת",
+   "g": "f",
+   "n": "pl",
+   "gloss": "noodles"
+  },
+  {
+   "w": "אֹרֶז",
+   "g": "m",
+   "n": "sg",
+   "gloss": "rice"
+  },
+  {
+   "w": "פִּירֶה",
+   "g": "m",
+   "n": "sg",
+   "gloss": "mashed potatoes"
+  },
+  {
+   "w": "צִ'יפְּס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "fries / chips"
+  },
+  {
+   "w": "לְבִיבָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "latke / pancake (savory)"
+  },
+  {
+   "w": "פַּנְקֵייק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "pancake"
+  },
+  {
+   "w": "וָפֶל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "waffle"
+  },
+  {
+   "w": "דַּיְסָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "porridge"
+  },
+  {
+   "w": "גְּבִינָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "cheese"
+  },
+  {
+   "w": "קוֹטֶג'",
+   "g": "m",
+   "n": "sg",
+   "gloss": "cottage cheese"
+  },
+  {
+   "w": "מַמְרָח",
+   "g": "m",
+   "n": "sg",
+   "gloss": "spread"
+  },
+  {
+   "w": "רִבָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "jam"
+  },
+  {
+   "w": "דְּבַשׁ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "honey"
+  },
+  {
+   "w": "דְּגָנִים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "cereal / grains"
+  },
+  {
+   "w": "גְּרָנוֹלָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "granola"
+  },
+  {
+   "w": "עוּגָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "cake"
+  },
+  {
+   "w": "עוּגִיָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "cookie"
+  },
+  {
+   "w": "קַפְּקֵייק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "cupcake"
+  },
+  {
+   "w": "מָאפִין",
+   "g": "m",
+   "n": "sg",
+   "gloss": "muffin"
+  },
+  {
+   "w": "קְרֶמְבּוֹ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "krembo (chocolate-coated marshmallow)"
+  },
+  {
+   "w": "סֻפְגָּנִיָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "jelly doughnut"
+  },
+  {
+   "w": "גְּלִידָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "ice cream"
+  },
+  {
+   "w": "מַרְשְׁמֶלוֹ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "marshmallow"
+  },
+  {
+   "w": "סֻכָּרִיָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "candy"
+  },
+  {
+   "w": "שׁוֹקוֹלָד",
+   "g": "m",
+   "n": "sg",
+   "gloss": "chocolate"
+  },
+  {
+   "w": "מַמְתָּק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sweet / treat"
+  },
+  {
+   "w": "קְצֶפֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "whipped cream"
+  },
+  {
+   "w": "מוּס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "mousse"
+  },
+  {
+   "w": "בַּקְלָבָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "baklava"
+  },
+  {
+   "w": "פַּשְׁטִידָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "savory quiche/casserole"
+  },
+  {
+   "w": "קַטָּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "locomotive"
+  },
+  {
+   "w": "קְרוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "train car / wagon"
+  },
+  {
+   "w": "מַעֲבֹרֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "ferry"
+  },
+  {
+   "w": "צוֹלֶלֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "submarine"
+  },
+  {
+   "w": "רַכֶּבֶל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "cable car"
+  },
+  {
+   "w": "גְּרָר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "tow truck"
+  },
+  {
+   "w": "מַשָּׂאִית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "truck / lorry"
+  },
+  {
+   "w": "טְרַקְטוֹר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "tractor"
+  },
+  {
+   "w": "מַחְפֵּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "excavator / digger"
+  },
+  {
+   "w": "אַמְבּוּלַנְס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "ambulance"
+  },
+  {
+   "w": "קוֹרְקִינֵט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "scooter (kick)"
+  },
+  {
+   "w": "גַּלְשָׁן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "surfboard"
+  },
+  {
+   "w": "מִפְרָשִׂית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "sailboat"
+  },
+  {
+   "w": "רַפְסוֹדָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "raft"
+  },
+  {
+   "w": "מָשׁוֹט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "oar / paddle"
+  },
+  {
+   "w": "עֹגֶן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "anchor"
+  },
+  {
+   "w": "מִפְרָשׂ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sail"
+  },
+  {
+   "w": "כִּידוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "handlebar"
+  },
+  {
+   "w": "דַּוְשָׁה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "pedal"
+  },
+  {
+   "w": "הֶגֶה",
+   "g": "m",
+   "n": "sg",
+   "gloss": "steering wheel"
+  },
+  {
+   "w": "בֶּלֶם",
+   "g": "m",
+   "n": "sg",
+   "gloss": "brake"
+  },
+  {
+   "w": "צֶמֶג",
+   "g": "m",
+   "n": "sg",
+   "gloss": "tire"
+  },
+  {
+   "w": "חִשּׁוּק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "hubcap / rim"
+  },
+  {
+   "w": "פַּנָּס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "headlight / lamp"
+  },
+  {
+   "w": "צוֹפָר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "horn (vehicle)"
+  },
+  {
+   "w": "מַגָּב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "windshield wiper"
+  },
+  {
+   "w": "מָנוֹעַ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "engine / motor"
+  },
+  {
+   "w": "מוֹשָׁב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "seat"
+  },
+  {
+   "w": "חֲגוֹרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "seat belt"
+  },
+  {
+   "w": "מַרְאָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "mirror"
+  },
+  {
+   "w": "תָּא",
+   "g": "m",
+   "n": "sg",
+   "gloss": "cabin / cab"
+  },
+  {
+   "w": "מוֹט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "rod / pole"
+  },
+  {
+   "w": "רַמְזוֹר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "traffic light"
+  },
+  {
+   "w": "תַּמְרוּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "road sign"
+  },
+  {
+   "w": "מַחְסוֹם",
+   "g": "m",
+   "n": "sg",
+   "gloss": "barrier / roadblock"
+  },
+  {
+   "w": "מִדְרָכָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "sidewalk"
+  },
+  {
+   "w": "כְּבִישׁ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "road"
+  },
+  {
+   "w": "שְׁבִיל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "path / lane"
+  },
+  {
+   "w": "מִנְהָרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "tunnel"
+  },
+  {
+   "w": "גֶּשֶׁר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "bridge"
+  },
+  {
+   "w": "צֹמֶת",
+   "g": "m",
+   "n": "sg",
+   "gloss": "intersection / junction"
+  },
+  {
+   "w": "מִגְרָשׁ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "parking lot / plot"
+  },
+  {
+   "w": "רָצִיף",
+   "g": "m",
+   "n": "sg",
+   "gloss": "platform (station)"
+  },
+  {
+   "w": "תַּחֲנָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "station / stop"
+  },
+  {
+   "w": "מַסּוֹק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "helicopter"
+  },
+  {
+   "w": "רַחְפָּן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "drone"
+  },
+  {
+   "w": "גַּלְגַּלִּים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "wheels"
+  },
+  {
+   "w": "מַחְשֵׁב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "computer"
+  },
+  {
+   "w": "מָסָךְ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "screen"
+  },
+  {
+   "w": "מְאַוְרֵר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "fan"
+  },
+  {
+   "w": "מִקְרוֹגַל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "microwave"
+  },
+  {
+   "w": "מַדִּיחַ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "dishwasher"
+  },
+  {
+   "w": "מְיַבֵּשׁ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "dryer"
+  },
+  {
+   "w": "מַזְגָן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "air conditioner"
+  },
+  {
+   "w": "תַּנּוּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "oven"
+  },
+  {
+   "w": "כִּירַיִם",
+   "g": "f",
+   "n": "pl",
+   "gloss": "stovetop"
+  },
+  {
+   "w": "מְקָרֵר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "refrigerator"
+  },
+  {
+   "w": "מַקְפִּיא",
+   "g": "m",
+   "n": "sg",
+   "gloss": "freezer"
+  },
+  {
+   "w": "קוּמְקוּם",
+   "g": "m",
+   "n": "sg",
+   "gloss": "electric kettle"
+  },
+  {
+   "w": "מַצְלֵמָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "camera"
+  },
+  {
+   "w": "רַמְקוֹל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "speaker"
+  },
+  {
+   "w": "אָזְנִיּוֹת",
+   "g": "f",
+   "n": "pl",
+   "gloss": "headphones"
+  },
+  {
+   "w": "שֶׁלֶט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "remote control"
+  },
+  {
+   "w": "מַטְעֵן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "charger"
+  },
+  {
+   "w": "סוֹלְלָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "battery"
+  },
+  {
+   "w": "שֶׁקַע",
+   "g": "m",
+   "n": "sg",
+   "gloss": "electric socket"
+  },
+  {
+   "w": "תֶּקַע",
+   "g": "m",
+   "n": "sg",
+   "gloss": "plug"
+  },
+  {
+   "w": "נוֹרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "light bulb"
+  },
+  {
+   "w": "מְנוֹרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "lamp"
+  },
+  {
+   "w": "שָׁעוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "clock"
+  },
+  {
+   "w": "מַגְהֵץ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "iron"
+  },
+  {
+   "w": "מִיקְסֵר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "food mixer"
+  },
+  {
+   "w": "מַחְשְׁבוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "calculator"
+  },
+  {
+   "w": "מִקְלֶדֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "keyboard"
+  },
+  {
+   "w": "עַכְבָּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "computer mouse"
+  },
+  {
+   "w": "מַדְפֶּסֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "printer"
+  },
+  {
+   "w": "טוֹסְטֶר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "toaster"
+  },
+  {
+   "w": "מַדְחֹם",
+   "g": "m",
+   "n": "sg",
+   "gloss": "thermometer"
+  },
+  {
+   "w": "דְּרוֹר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sparrow"
+  },
+  {
+   "w": "סְנוּנִית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "swallow"
+  },
+  {
+   "w": "שַׁחַף",
+   "g": "m",
+   "n": "sg",
+   "gloss": "seagull"
+  },
+  {
+   "w": "חֲסִידָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "stork"
+  },
+  {
+   "w": "עוֹרֵב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "crow"
+  },
+  {
+   "w": "נַקָּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "woodpecker"
+  },
+  {
+   "w": "יַנְשׁוּף",
+   "g": "m",
+   "n": "sg",
+   "gloss": "owl"
+  },
+  {
+   "w": "טַוָּס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "peacock"
+  },
+  {
+   "w": "בַּרְוָז",
+   "g": "m",
+   "n": "sg",
+   "gloss": "duck"
+  },
+  {
+   "w": "אֲוָז",
+   "g": "m",
+   "n": "sg",
+   "gloss": "goose"
+  },
+  {
+   "w": "תֻּכִּי",
+   "g": "m",
+   "n": "sg",
+   "gloss": "parrot"
+  },
+  {
+   "w": "נֵץ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "hawk"
+  },
+  {
+   "w": "בָּז",
+   "g": "m",
+   "n": "sg",
+   "gloss": "falcon"
+  },
+  {
+   "w": "גּוֹזָל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "chick (fledgling)"
+  },
+  {
+   "w": "כָּנָף",
+   "g": "f",
+   "n": "sg",
+   "gloss": "wing"
+  },
+  {
+   "w": "מַקּוֹר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "beak"
+  },
+  {
+   "w": "נוֹצָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "feather"
+  },
+  {
+   "w": "קֵן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "nest"
+  },
+  {
+   "w": "צְרָצַר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "cricket"
+  },
+  {
+   "w": "חֲגָב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "grasshopper"
+  },
+  {
+   "w": "שַׁפִּירִית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "dragonfly"
+  },
+  {
+   "w": "חִפּוּשִׁית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "beetle/ladybug"
+  },
+  {
+   "w": "חֶרֶק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "insect/bug"
+  },
+  {
+   "w": "יַתּוּשׁ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "mosquito"
+  },
+  {
+   "w": "פַּרְעוֹשׁ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "flea"
+  },
+  {
+   "w": "כִּנָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "louse"
+  },
+  {
+   "w": "זְבוּב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "fly"
+  },
+  {
+   "w": "צִרְעָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "wasp"
+  },
+  {
+   "w": "זַחַל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "caterpillar/larva"
+  },
+  {
+   "w": "חִלָּזוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "snail"
+  },
+  {
+   "w": "זְבוּבִים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "flies"
+  },
+  {
+   "w": "נְמָלִים",
+   "g": "f",
+   "n": "pl",
+   "gloss": "ants"
+  },
+  {
+   "w": "צָב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "turtle"
+  },
+  {
+   "w": "לְטָאָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "lizard"
+  },
+  {
+   "w": "זִקִּית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "chameleon"
+  },
+  {
+   "w": "נָחָשׁ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "snake"
+  },
+  {
+   "w": "צֶפַע",
+   "g": "m",
+   "n": "sg",
+   "gloss": "viper"
+  },
+  {
+   "w": "תַּנִּין",
+   "g": "m",
+   "n": "sg",
+   "gloss": "crocodile"
+  },
+  {
+   "w": "צְפַרְדֵּעַ",
+   "g": "f",
+   "n": "sg",
+   "gloss": "frog"
+  },
+  {
+   "w": "רֹאשָׁן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "tadpole"
+  },
+  {
+   "w": "שַׁבְּלוּל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "snail"
+  },
+  {
+   "w": "דָּג",
+   "g": "m",
+   "n": "sg",
+   "gloss": "fish"
+  },
+  {
+   "w": "סַרְטָן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "crab"
+  },
+  {
+   "w": "לִוְיָתָן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "whale"
+  },
+  {
+   "w": "צֶדֶף",
+   "g": "m",
+   "n": "sg",
+   "gloss": "seashell"
+  },
+  {
+   "w": "שִׁפְרִירִית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "dragonfly"
+  },
+  {
+   "w": "בִּצָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "swamp"
+  },
+  {
+   "w": "אֲגַם",
+   "g": "m",
+   "n": "sg",
+   "gloss": "lake"
+  },
+  {
+   "w": "בְּרֵכָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "pond"
+  },
+  {
+   "w": "קַשְׂקֶשֶׂת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "scale (fish/reptile)"
+  },
+  {
+   "w": "בֵּיצָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "egg"
+  },
+  {
+   "w": "לְטָאוֹת",
+   "g": "f",
+   "n": "pl",
+   "gloss": "lizards"
+  },
+  {
+   "w": "צַבִּים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "turtles"
+  },
+  {
+   "w": "צְפַרְדְּעִים",
+   "g": "f",
+   "n": "pl",
+   "gloss": "frogs"
+  },
+  {
+   "w": "חֶמְאָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "butter"
+  },
+  {
+   "w": "שַׁמֶּנֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "sour cream"
+  },
+  {
+   "w": "חָלָב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "milk"
+  },
+  {
+   "w": "יוֹגוּרְט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "yogurt"
+  },
+  {
+   "w": "טְחִינָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "tahini"
+  },
+  {
+   "w": "חוּמּוּס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "hummus"
+  },
+  {
+   "w": "מַיוֹנֶז",
+   "g": "m",
+   "n": "sg",
+   "gloss": "mayonnaise"
+  },
+  {
+   "w": "קֶטְשׁוֹפּ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "ketchup"
+  },
+  {
+   "w": "חַרְדָּל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "mustard"
+  },
+  {
+   "w": "מִיץ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "juice"
+  },
+  {
+   "w": "מַיִם",
+   "g": "m",
+   "n": "pl",
+   "gloss": "water"
+  },
+  {
+   "w": "סוֹדָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "soda water"
+  },
+  {
+   "w": "קָקָאוֹ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "cocoa"
+  },
+  {
+   "w": "שׁוֹקוֹ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "chocolate milk"
+  },
+  {
+   "w": "תֵּה",
+   "g": "m",
+   "n": "sg",
+   "gloss": "tea"
+  },
+  {
+   "w": "לִימוֹנָדָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "lemonade"
+  },
+  {
+   "w": "רֹטֶב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sauce / gravy"
+  },
+  {
+   "w": "שֶׁמֶן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "oil"
+  },
+  {
+   "w": "חֹמֶץ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "vinegar"
+  },
+  {
+   "w": "גְּבִינוֹת",
+   "g": "f",
+   "n": "pl",
+   "gloss": "cheeses"
+  },
+  {
+   "w": "מִיצִים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "juices"
+  },
+  {
+   "w": "דְּלִי",
+   "g": "m",
+   "n": "sg",
+   "gloss": "bucket"
+  },
+  {
+   "w": "צְדָפִים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "seashells"
+  },
+  {
+   "w": "גַּל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "wave"
+  },
+  {
+   "w": "גַּלִּים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "waves"
+  },
+  {
+   "w": "חוֹף",
+   "g": "m",
+   "n": "sg",
+   "gloss": "beach/shore"
+  },
+  {
+   "w": "סִירָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "boat"
+  },
+  {
+   "w": "מִגְדָּל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "lifeguard tower"
+  },
+  {
+   "w": "רֶשֶׁת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "net"
+  },
+  {
+   "w": "סַנְפִּיר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "fin/flipper"
+  },
+  {
+   "w": "מַסֵּכָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "diving mask"
+  },
+  {
+   "w": "אַרְמוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sandcastle (palace)"
+  },
+  {
+   "w": "מְדוּזָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "jellyfish"
+  },
+  {
+   "w": "כּוֹכָב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "starfish (star)"
+  },
+  {
+   "w": "צִפּוֹר",
+   "g": "f",
+   "n": "sg",
+   "gloss": "seabird"
+  },
+  {
+   "w": "סַבּוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "soap (pool/wash)"
+  },
+  {
+   "w": "קַעֲרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "sand mold bowl"
+  },
+  {
+   "w": "תַּבְנִית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "sand mold/shape"
+  },
+  {
+   "w": "מַגְלֵשָׁה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "slide"
+  },
+  {
+   "w": "חַכָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "fishing rod"
+  },
+  {
+   "w": "מִטְרִיָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "beach umbrella"
+  },
+  {
+   "w": "כִּסֵּא",
+   "g": "m",
+   "n": "sg",
+   "gloss": "beach chair"
+  },
+  {
+   "w": "מַגֶּבֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "towel"
+  },
+  {
+   "w": "מַשְׁאֵבָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "pump (for floaties)"
+  },
+  {
+   "w": "מַעְדֵּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "hoe"
+  },
+  {
+   "w": "קַרְדֹּם",
+   "g": "m",
+   "n": "sg",
+   "gloss": "axe/pickaxe"
+  },
+  {
+   "w": "מַגְרֵפָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "rake"
+  },
+  {
+   "w": "מַזְמֵרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "pruning shears"
+  },
+  {
+   "w": "חֶרְמֵשׁ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sickle"
+  },
+  {
+   "w": "מַשְׁפֵּךְ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "funnel"
+  },
+  {
+   "w": "מִזְלֵג",
+   "g": "m",
+   "n": "sg",
+   "gloss": "fork/pitchfork"
+  },
+  {
+   "w": "כַּד",
+   "g": "m",
+   "n": "sg",
+   "gloss": "jug/pitcher"
+  },
+  {
+   "w": "גֶּזַע",
+   "g": "m",
+   "n": "sg",
+   "gloss": "tree trunk"
+  },
+  {
+   "w": "שֹׁרֶשׁ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "root"
+  },
+  {
+   "w": "עָנָף",
+   "g": "m",
+   "n": "sg",
+   "gloss": "branch"
+  },
+  {
+   "w": "נִצָּן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "bud"
+  },
+  {
+   "w": "יְבוּל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "crop/yield"
+  },
+  {
+   "w": "עֲרוּגָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "flower bed"
+  },
+  {
+   "w": "דֶּשֶׁא",
+   "g": "m",
+   "n": "sg",
+   "gloss": "lawn/grass"
+  },
+  {
+   "w": "קַשׁ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "straw"
+  },
+  {
+   "w": "תֶּבֶן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "hay"
+  },
+  {
+   "w": "זֶרַע",
+   "g": "m",
+   "n": "sg",
+   "gloss": "seed"
+  },
+  {
+   "w": "גַּרְעִין",
+   "g": "m",
+   "n": "sg",
+   "gloss": "kernel/pip"
+  },
+  {
+   "w": "שָׁתִיל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "seedling"
+  },
+  {
+   "w": "כַּוֶּרֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "beehive"
+  },
+  {
+   "w": "דְּבוֹרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "bee"
+  },
+  {
+   "w": "רֶפֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "cowshed"
+  },
+  {
+   "w": "לוּל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "chicken coop"
+  },
+  {
+   "w": "גָּדֵר",
+   "g": "f",
+   "n": "sg",
+   "gloss": "fence"
+  },
+  {
+   "w": "שַׁעַר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "gate"
+  },
+  {
+   "w": "דִּיר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sheep pen"
+  },
+  {
+   "w": "מַחְרֵשָׁה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "plow"
+  },
+  {
+   "w": "בְּאֵר",
+   "g": "f",
+   "n": "sg",
+   "gloss": "well"
+  },
+  {
+   "w": "כֶּרֶם",
+   "g": "m",
+   "n": "sg",
+   "gloss": "vineyard"
+  },
+  {
+   "w": "פַּרְדֵּס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "orchard"
+  },
+  {
+   "w": "שִׂיחַ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "bush/shrub"
+  },
+  {
+   "w": "חַקְלַאי",
+   "g": "m",
+   "n": "sg",
+   "gloss": "farmer"
+  },
+  {
+   "w": "דַּיָּג",
+   "g": "m",
+   "n": "sg",
+   "gloss": "fisherman"
+  },
+  {
+   "w": "דַּוָּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "mailman"
+  },
+  {
+   "w": "גַּנָּן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "gardener"
+  },
+  {
+   "w": "נַגָּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "carpenter"
+  },
+  {
+   "w": "צַבָּע",
+   "g": "m",
+   "n": "sg",
+   "gloss": "painter (of walls)"
+  },
+  {
+   "w": "נֶהָג",
+   "g": "m",
+   "n": "sg",
+   "gloss": "driver"
+  },
+  {
+   "w": "טַיָּס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "pilot"
+  },
+  {
+   "w": "מַלָּח",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sailor"
+  },
+  {
+   "w": "שׁוֹטֵר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "policeman"
+  },
+  {
+   "w": "כַּבַּאי",
+   "g": "m",
+   "n": "sg",
+   "gloss": "firefighter"
+  },
+  {
+   "w": "חַיָּל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "soldier"
+  },
+  {
+   "w": "רוֹפֵא",
+   "g": "m",
+   "n": "sg",
+   "gloss": "doctor"
+  },
+  {
+   "w": "אָחוֹת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "nurse"
+  },
+  {
+   "w": "מוֹרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "teacher (female)"
+  },
+  {
+   "w": "גַּנֶּנֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "kindergarten teacher"
+  },
+  {
+   "w": "זַמָּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "singer"
+  },
+  {
+   "w": "נַגָּן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "musician (player)"
+  },
+  {
+   "w": "רַקְדָן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "dancer"
+  },
+  {
+   "w": "צַיָּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "painter (artist)"
+  },
+  {
+   "w": "פַּסָּל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sculptor"
+  },
+  {
+   "w": "לֵיצָן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "clown"
+  },
+  {
+   "w": "קוֹסֵם",
+   "g": "m",
+   "n": "sg",
+   "gloss": "magician"
+  },
+  {
+   "w": "סַפָּר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "barber"
+  },
+  {
+   "w": "חַיָּט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "tailor"
+  },
+  {
+   "w": "אוֹפֶה",
+   "g": "m",
+   "n": "sg",
+   "gloss": "baker"
+  },
+  {
+   "w": "טַבָּח",
+   "g": "m",
+   "n": "sg",
+   "gloss": "cook"
+  },
+  {
+   "w": "קַצָּב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "butcher"
+  },
+  {
+   "w": "שׁוֹמֵר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "guard"
+  },
+  {
+   "w": "רוֹעֶה",
+   "g": "m",
+   "n": "sg",
+   "gloss": "shepherd"
+  },
+  {
+   "w": "בּוֹנֶה",
+   "g": "m",
+   "n": "sg",
+   "gloss": "builder"
+  },
+  {
+   "w": "סַנְדְּלָר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "shoemaker"
+  },
+  {
+   "w": "מְנַקֶּה",
+   "g": "m",
+   "n": "sg",
+   "gloss": "cleaner"
+  },
+  {
+   "w": "שׁוֹפֵט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "judge / referee"
+  },
+  {
+   "w": "מַצִּיל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "lifeguard"
+  },
+  {
+   "w": "חוֹקֵר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "researcher / detective"
+  },
+  {
+   "w": "מוֹכֵר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "seller / vendor"
+  },
+  {
+   "w": "שׁוֹטְרִים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "policemen"
+  },
+  {
+   "w": "חָלִיל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "flute"
+  },
+  {
+   "w": "תֻּפִּים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "drums"
+  },
+  {
+   "w": "מְצִלָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "cymbal"
+  },
+  {
+   "w": "כִּנּוֹר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "violin"
+  },
+  {
+   "w": "חֲצוֹצְרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "trumpet"
+  },
+  {
+   "w": "מַפּוּחִית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "harmonica"
+  },
+  {
+   "w": "שׁוֹפָר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "shofar"
+  },
+  {
+   "w": "פַּעֲמוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "bell"
+  },
+  {
+   "w": "רַעֲשָׁן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "rattle/noisemaker"
+  },
+  {
+   "w": "צְלִיל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sound/tone"
+  },
+  {
+   "w": "מַנְגִּינָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "melody"
+  },
+  {
+   "w": "מַקְהֵלָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "choir"
+  },
+  {
+   "w": "תִּזְמֹרֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "orchestra"
+  },
+  {
+   "w": "חֲלִילִית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "recorder (flute)"
+  },
+  {
+   "w": "מִשְׁרוֹקִית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "whistle"
+  },
+  {
+   "w": "מִכְחוֹל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "paintbrush"
+  },
+  {
+   "w": "גִּיר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "chalk"
+  },
+  {
+   "w": "מַחַט",
+   "g": "f",
+   "n": "sg",
+   "gloss": "needle"
+  },
+  {
+   "w": "חוּט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "thread"
+  },
+  {
+   "w": "מִסְפָּרַיִם",
+   "g": "m",
+   "n": "pl",
+   "gloss": "scissors"
+  },
+  {
+   "w": "דֶּבֶק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "glue"
+  },
+  {
+   "w": "בַּד",
+   "g": "m",
+   "n": "sg",
+   "gloss": "canvas/cloth"
+  },
+  {
+   "w": "חֲרוּזִים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "beads"
+  },
+  {
+   "w": "סֶרֶט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "ribbon"
+  },
+  {
+   "w": "דַּף",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sheet of paper"
+  },
+  {
+   "w": "לוּחַ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "board"
+  },
+  {
+   "w": "חוֹתֶמֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "stamp"
+  },
+  {
+   "w": "מַדְבֵּקָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "sticker"
+  },
+  {
+   "w": "קִשּׁוּט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "decoration"
+  },
+  {
+   "w": "בֻּבָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "doll/puppet"
+  },
+  {
+   "w": "מַחְבֵּט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "racket / bat"
+  },
+  {
+   "w": "נַדְנֵדָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "swing / seesaw"
+  },
+  {
+   "w": "אַרְגָּז",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sandbox / crate"
+  },
+  {
+   "w": "חֶבֶל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "rope (jump rope)"
+  },
+  {
+   "w": "גּוּלָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "marble"
+  },
+  {
+   "w": "גּוּלוֹת",
+   "g": "f",
+   "n": "pl",
+   "gloss": "marbles"
+  },
+  {
+   "w": "קֻבִּיָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "block / die (cube)"
+  },
+  {
+   "w": "קֻבִּיּוֹת",
+   "g": "f",
+   "n": "pl",
+   "gloss": "blocks / dice"
+  },
+  {
+   "w": "סְבִיבוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "spinning top / dreidel"
+  },
+  {
+   "w": "מִשְׂחָק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "game"
+  },
+  {
+   "w": "מַטָּרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "target"
+  },
+  {
+   "w": "מַחְלִיק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "skate"
+  },
+  {
+   "w": "מַחְלִיקַיִם",
+   "g": "m",
+   "n": "pl",
+   "gloss": "skates"
+  },
+  {
+   "w": "קַרְקַס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "circus"
+  },
+  {
+   "w": "בֻּעָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "bubble"
+  },
+  {
+   "w": "בּוּעוֹת",
+   "g": "f",
+   "n": "pl",
+   "gloss": "bubbles"
+  },
+  {
+   "w": "עֲפִיפוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "kite"
+  },
+  {
+   "w": "מַסְלוּל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "track / course"
+  },
+  {
+   "w": "גַּלְגַּל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "wheel / hoop"
+  },
+  {
+   "w": "חֵץ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "arrow / dart"
+  },
+  {
+   "w": "חִצִּים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "arrows / darts"
+  },
+  {
+   "w": "קֶשֶׁת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "bow"
+  },
+  {
+   "w": "כַּף",
+   "g": "f",
+   "n": "sg",
+   "gloss": "paddle / scoop"
+  },
+  {
+   "w": "מַטְקוֹת",
+   "g": "f",
+   "n": "pl",
+   "gloss": "beach paddles"
+  },
+  {
+   "w": "צוּק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "crag / cliff"
+  },
+  {
+   "w": "פִּסְגָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "summit / peak"
+  },
+  {
+   "w": "מִדְרוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "slope"
+  },
+  {
+   "w": "גִּבְעָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "hill"
+  },
+  {
+   "w": "מְעָרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "cave"
+  },
+  {
+   "w": "סֶלַע",
+   "g": "m",
+   "n": "sg",
+   "gloss": "rock / boulder"
+  },
+  {
+   "w": "אֶבֶן",
+   "g": "f",
+   "n": "sg",
+   "gloss": "stone"
+  },
+  {
+   "w": "נַחַל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "stream / wadi"
+  },
+  {
+   "w": "אֲפִיק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "riverbed / channel"
+  },
+  {
+   "w": "גָּדָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "riverbank"
+  },
+  {
+   "w": "מַעְיָן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "spring (water source)"
+  },
+  {
+   "w": "חֻרְשָׁה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "grove / small wood"
+  },
+  {
+   "w": "קְלִפָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "bark / peel"
+  },
+  {
+   "w": "אִצְטְרֻבָּל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "pine cone"
+  },
+  {
+   "w": "טַחַב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "moss"
+  },
+  {
+   "w": "פִּטְרִיָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "mushroom"
+  },
+  {
+   "w": "חוֹל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "sand"
+  },
+  {
+   "w": "קַקְטוּס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "cactus"
+  },
+  {
+   "w": "עָנָן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "cloud"
+  },
+  {
+   "w": "בָּרָק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "lightning"
+  },
+  {
+   "w": "לַוְיָן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "satellite"
+  },
+  {
+   "w": "שָׁבִיט",
+   "g": "m",
+   "n": "sg",
+   "gloss": "comet"
+  },
+  {
+   "w": "מָטוֹס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "airplane"
+  },
+  {
+   "w": "כִּכָּר",
+   "g": "f",
+   "n": "sg",
+   "gloss": "town square"
+  },
+  {
+   "w": "סִפְרִיָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "library"
+  },
+  {
+   "w": "מוּזֵיאוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "museum"
+  },
+  {
+   "w": "מִסְעָדָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "restaurant"
+  },
+  {
+   "w": "מַאֲפִיָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "bakery"
+  },
+  {
+   "w": "מִרְפָּאָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "clinic"
+  },
+  {
+   "w": "דֹּאַר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "post office"
+  },
+  {
+   "w": "מִסְפָּרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "barbershop"
+  },
+  {
+   "w": "מַחְסָן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "warehouse"
+  },
+  {
+   "w": "מַעְבָּדָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "laboratory"
+  },
+  {
+   "w": "אִצְטַדְיוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "stadium"
+  },
+  {
+   "w": "תֵּאַטְרוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "theater"
+  },
+  {
+   "w": "מוּסָךְ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "garage"
+  },
+  {
+   "w": "מַעֲלִית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "elevator"
+  },
+  {
+   "w": "מַדְרֵגוֹת",
+   "g": "f",
+   "n": "pl",
+   "gloss": "stairs"
+  },
+  {
+   "w": "שׁוּק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "market"
+  },
+  {
+   "w": "דּוּכָן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "stall/booth"
+  },
+  {
+   "w": "קִיוֹסְק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "kiosk"
+  },
+  {
+   "w": "חֲמָמָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "greenhouse"
+  },
+  {
+   "w": "מִגְדָּלוֹר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "lighthouse"
+  },
+  {
+   "w": "חֲנֻיּוֹת",
+   "g": "f",
+   "n": "pl",
+   "gloss": "shops"
+  },
+  {
+   "w": "מַתָּנָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "gift"
+  },
+  {
+   "w": "בָּלוֹן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "balloon"
+  },
+  {
+   "w": "נֵר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "candle"
+  },
+  {
+   "w": "נֵרוֹת",
+   "g": "m",
+   "n": "pl",
+   "gloss": "candles"
+  },
+  {
+   "w": "כֶּתֶר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "crown"
+  },
+  {
+   "w": "זִקּוּק",
+   "g": "m",
+   "n": "sg",
+   "gloss": "firework"
+  },
+  {
+   "w": "תַּחְפֹּשֶׂת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "costume"
+  },
+  {
+   "w": "שַׁרְשֶׁרֶת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "paper chain"
+  },
+  {
+   "w": "מַפִּית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "napkin"
+  },
+  {
+   "w": "צַלַּחַת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "plate"
+  },
+  {
+   "w": "הַזְמָנָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "invitation"
+  },
+  {
+   "w": "קְשִׁית",
+   "g": "f",
+   "n": "sg",
+   "gloss": "drinking straw"
+  },
+  {
+   "w": "רִקּוּד",
+   "g": "m",
+   "n": "sg",
+   "gloss": "dance"
+  },
+  {
+   "w": "זֵר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "bouquet/wreath"
+  },
+  {
+   "w": "סֻכָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "sukkah (booth)"
+  },
+  {
+   "w": "חֲנֻכִּיָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "hanukkah menorah"
+  },
+  {
+   "w": "דֶּגֶל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "flag"
+  },
+  {
+   "w": "דְּגָלִים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "flags"
+  },
+  {
+   "w": "אֲבוּקָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "torch"
+  },
+  {
+   "w": "מְדוּרָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "bonfire"
+  },
+  {
+   "w": "חֲגִיגָה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "celebration"
+  },
+  {
+   "w": "פְּרָס",
+   "g": "m",
+   "n": "sg",
+   "gloss": "prize"
+  },
+  {
+   "w": "זָקָן",
+   "g": "m",
+   "n": "sg",
+   "gloss": "beard"
+  },
+  {
+   "w": "זְרוֹעַ",
+   "g": "f",
+   "n": "sg",
+   "gloss": "arm"
+  },
+  {
+   "w": "אֶגְרוֹף",
+   "g": "m",
+   "n": "sg",
+   "gloss": "fist"
+  },
+  {
+   "w": "טַבַּעַת",
+   "g": "f",
+   "n": "sg",
+   "gloss": "ring"
+  },
+  {
+   "w": "טִיפָּה",
+   "g": "f",
+   "n": "sg",
+   "gloss": "drop"
+  },
+  {
+   "w": "שָׁטִיחַ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "rug, carpet"
+  },
+  {
+   "w": "מַטְבֵּעַ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "coin"
+  },
+  {
+   "w": "בֶּטֶן",
+   "g": "f",
+   "n": "sg",
+   "gloss": "belly, tummy"
+  },
+  {
+   "w": "עֵז",
+   "g": "f",
+   "n": "sg",
+   "gloss": "goat"
+  },
+  {
+   "w": "עֵץ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "tree"
+  },
+  {
+   "w": "עֲטַלֵּף",
+   "g": "m",
+   "n": "sg",
+   "gloss": "bat (animal)"
+  },
+  {
+   "w": "צֶמֶר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "wool"
+  },
+  {
+   "w": "צַוָּאר",
+   "g": "m",
+   "n": "sg",
+   "gloss": "neck"
+  },
+  {
+   "w": "קַרְנַף",
+   "g": "m",
+   "n": "sg",
+   "gloss": "rhinoceros"
+  },
+  {
+   "w": "קַרְקַע",
+   "g": "f",
+   "n": "sg",
+   "gloss": "ground"
+  },
+  {
+   "w": "קֶצֶף",
+   "g": "m",
+   "n": "sg",
+   "gloss": "foam"
+  },
+  {
+   "w": "קֶמַח",
+   "g": "m",
+   "n": "sg",
+   "gloss": "flour"
+  },
+  {
+   "w": "מַקֵּל",
+   "g": "m",
+   "n": "sg",
+   "gloss": "stick"
+  },
+  {
+   "w": "מַקְדֵּחַ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "drill"
+  },
+  {
+   "w": "זָנָב",
+   "g": "m",
+   "n": "sg",
+   "gloss": "tail"
+  },
+  {
+   "w": "לֶחֶם",
+   "g": "m",
+   "n": "sg",
+   "gloss": "bread"
+  },
+  {
+   "w": "רוּחַ",
+   "g": "f",
+   "n": "sg",
+   "gloss": "wind"
+  },
+  {
+   "w": "לֶחִי",
+   "g": "f",
+   "n": "sg",
+   "gloss": "cheek"
+  },
+  {
+   "w": "תַּפּוּחַ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "apple"
+  },
+  {
+   "w": "אֶפְרוֹחַ",
+   "g": "m",
+   "n": "sg",
+   "gloss": "chick"
+  },
+  {
+   "w": "רַעַם",
+   "g": "m",
+   "n": "sg",
+   "gloss": "thunder"
+  },
+  {
+   "w": "עֲנָבִים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "grapes"
+  },
+  {
+   "w": "גַּרְבַּיִם",
+   "g": "f",
+   "n": "pl",
+   "gloss": "socks"
+  },
+  {
+   "w": "קְלָפִים",
+   "g": "m",
+   "n": "pl",
+   "gloss": "playing cards"
+  },
+  {
+   "w": "בֵּיצִים",
+   "g": "f",
+   "n": "pl",
+   "gloss": "eggs"
+  }
+ ],
+ "adjectives": [
+  {
+   "ms": "מָלֵא",
+   "fs": "מְלֵאָה",
+   "mp": "מְלֵאִים",
+   "fp": "מְלֵאוֹת",
+   "gloss": "full"
+  },
+  {
+   "ms": "רֵיק",
+   "fs": "רֵיקָה",
+   "mp": "רֵיקִים",
+   "fp": "רֵיקוֹת",
+   "gloss": "empty"
+  },
+  {
+   "ms": "כָּפוּל",
+   "fs": "כְּפוּלָה",
+   "mp": "כְּפוּלִים",
+   "fp": "כְּפוּלוֹת",
+   "gloss": "double"
+  },
+  {
+   "ms": "בּוֹדֵד",
+   "fs": "בּוֹדֶדֶת",
+   "mp": "בּוֹדְדִים",
+   "fp": "בּוֹדְדוֹת",
+   "gloss": "single/lone"
+  },
+  {
+   "ms": "שָׁלֵם",
+   "fs": "שְׁלֵמָה",
+   "mp": "שְׁלֵמִים",
+   "fp": "שְׁלֵמוֹת",
+   "gloss": "whole/complete"
+  },
+  {
+   "ms": "חָסֵר",
+   "fs": "חֲסֵרָה",
+   "mp": "חֲסֵרִים",
+   "fp": "חֲסֵרוֹת",
+   "gloss": "missing/lacking"
+  },
+  {
+   "ms": "יָחִיד",
+   "fs": "יְחִידָה",
+   "mp": "יְחִידִים",
+   "fp": "יְחִידוֹת",
+   "gloss": "only/sole"
+  },
+  {
+   "ms": "נוֹסָף",
+   "fs": "נוֹסֶפֶת",
+   "mp": "נוֹסָפִים",
+   "fp": "נוֹסָפוֹת",
+   "gloss": "additional/extra"
+  },
+  {
+   "ms": "אַחֲרוֹן",
+   "fs": "אַחֲרוֹנָה",
+   "mp": "אַחֲרוֹנִים",
+   "fp": "אַחֲרוֹנוֹת",
+   "gloss": "last"
+  },
+  {
+   "ms": "רִאשׁוֹן",
+   "fs": "רִאשׁוֹנָה",
+   "mp": "רִאשׁוֹנִים",
+   "fp": "רִאשׁוֹנוֹת",
+   "gloss": "first"
+  },
+  {
+   "ms": "אֶמְצָעִי",
+   "fs": "אֶמְצָעִית",
+   "mp": "אֶמְצָעִיִּים",
+   "fp": "אֶמְצָעִיּוֹת",
+   "gloss": "middle"
+  },
+  {
+   "ms": "עֶלְיוֹן",
+   "fs": "עֶלְיוֹנָה",
+   "mp": "עֶלְיוֹנִים",
+   "fp": "עֶלְיוֹנוֹת",
+   "gloss": "upper/top"
+  },
+  {
+   "ms": "תַּחְתּוֹן",
+   "fs": "תַּחְתּוֹנָה",
+   "mp": "תַּחְתּוֹנִים",
+   "fp": "תַּחְתּוֹנוֹת",
+   "gloss": "lower/bottom"
+  },
+  {
+   "ms": "פְּנִימִי",
+   "fs": "פְּנִימִית",
+   "mp": "פְּנִימִיִּים",
+   "fp": "פְּנִימִיּוֹת",
+   "gloss": "inner"
+  },
+  {
+   "ms": "חִיצוֹנִי",
+   "fs": "חִיצוֹנִית",
+   "mp": "חִיצוֹנִיִּים",
+   "fp": "חִיצוֹנִיּוֹת",
+   "gloss": "outer"
+  },
+  {
+   "ms": "קָרוֹב",
+   "fs": "קְרוֹבָה",
+   "mp": "קְרוֹבִים",
+   "fp": "קְרוֹבוֹת",
+   "gloss": "near/close"
+  },
+  {
+   "ms": "רָחוֹק",
+   "fs": "רְחוֹקָה",
+   "mp": "רְחוֹקִים",
+   "fp": "רְחוֹקוֹת",
+   "gloss": "far"
+  },
+  {
+   "ms": "יָשָׁר",
+   "fs": "יְשָׁרָה",
+   "mp": "יְשָׁרִים",
+   "fp": "יְשָׁרוֹת",
+   "gloss": "straight"
+  },
+  {
+   "ms": "עָקֹם",
+   "fs": "עֲקֻמָּה",
+   "mp": "עֲקֻמִּים",
+   "fp": "עֲקֻמּוֹת",
+   "gloss": "crooked/bent"
+  },
+  {
+   "ms": "הָפוּךְ",
+   "fs": "הֲפוּכָה",
+   "mp": "הֲפוּכִים",
+   "fp": "הֲפוּכוֹת",
+   "gloss": "upside-down/reversed"
+  },
+  {
+   "ms": "זָקוּף",
+   "fs": "זְקוּפָה",
+   "mp": "זְקוּפִים",
+   "fp": "זְקוּפוֹת",
+   "gloss": "upright/erect"
+  },
+  {
+   "ms": "שָׁכוּב",
+   "fs": "שְׁכוּבָה",
+   "mp": "שְׁכוּבִים",
+   "fp": "שְׁכוּבוֹת",
+   "gloss": "lying down"
+  },
+  {
+   "ms": "חָבוּי",
+   "fs": "חֲבוּיָה",
+   "mp": "חֲבוּיִים",
+   "fp": "חֲבוּיוֹת",
+   "gloss": "hidden"
+  },
+  {
+   "ms": "גָּלוּי",
+   "fs": "גְּלוּיָה",
+   "mp": "גְּלוּיִים",
+   "fp": "גְּלוּיוֹת",
+   "gloss": "exposed/uncovered"
+  },
+  {
+   "ms": "בָּרִיא",
+   "fs": "בְּרִיאָה",
+   "mp": "בְּרִיאִים",
+   "fp": "בְּרִיאוֹת",
+   "gloss": "healthy"
+  },
+  {
+   "ms": "חוֹלֶה",
+   "fs": "חוֹלָה",
+   "mp": "חוֹלִים",
+   "fp": "חוֹלוֹת",
+   "gloss": "sick"
+  },
+  {
+   "ms": "עָיֵף",
+   "fs": "עֲיֵפָה",
+   "mp": "עֲיֵפִים",
+   "fp": "עֲיֵפוֹת",
+   "gloss": "tired"
+  },
+  {
+   "ms": "עֵר",
+   "fs": "עֵרָה",
+   "mp": "עֵרִים",
+   "fp": "עֵרוֹת",
+   "gloss": "awake"
+  },
+  {
+   "ms": "רָעֵב",
+   "fs": "רְעֵבָה",
+   "mp": "רְעֵבִים",
+   "fp": "רְעֵבוֹת",
+   "gloss": "hungry"
+  },
+  {
+   "ms": "שָׂבֵעַ",
+   "fs": "שְׂבֵעָה",
+   "mp": "שְׂבֵעִים",
+   "fp": "שְׂבֵעוֹת",
+   "gloss": "full/sated"
+  },
+  {
+   "ms": "צָמֵא",
+   "fs": "צְמֵאָה",
+   "mp": "צְמֵאִים",
+   "fp": "צְמֵאוֹת",
+   "gloss": "thirsty"
+  },
+  {
+   "ms": "שָׁבוּר",
+   "fs": "שְׁבוּרָה",
+   "mp": "שְׁבוּרִים",
+   "fp": "שְׁבוּרוֹת",
+   "gloss": "broken"
+  },
+  {
+   "ms": "קָרוּעַ",
+   "fs": "קְרוּעָה",
+   "mp": "קְרוּעִים",
+   "fp": "קְרוּעוֹת",
+   "gloss": "torn"
+  },
+  {
+   "ms": "מְקֻמָּט",
+   "fs": "מְקֻמֶּטֶת",
+   "mp": "מְקֻמָּטִים",
+   "fp": "מְקֻמָּטוֹת",
+   "gloss": "wrinkled/crumpled"
+  },
+  {
+   "ms": "חָלָק",
+   "fs": "חֲלָקָה",
+   "mp": "חֲלָקִים",
+   "fp": "חֲלָקוֹת",
+   "gloss": "smooth"
+  },
+  {
+   "ms": "דָּבִיק",
+   "fs": "דְּבִיקָה",
+   "mp": "דְּבִיקִים",
+   "fp": "דְּבִיקוֹת",
+   "gloss": "sticky"
+  },
+  {
+   "ms": "חַד",
+   "fs": "חַדָּה",
+   "mp": "חַדִּים",
+   "fp": "חַדּוֹת",
+   "gloss": "sharp"
+  },
+  {
+   "ms": "גָּמִישׁ",
+   "fs": "גְּמִישָׁה",
+   "mp": "גְּמִישִׁים",
+   "fp": "גְּמִישׁוֹת",
+   "gloss": "flexible/stretchy"
+  },
+  {
+   "ms": "שָׁקוּף",
+   "fs": "שְׁקוּפָה",
+   "mp": "שְׁקוּפִים",
+   "fp": "שְׁקוּפוֹת",
+   "gloss": "transparent"
+  },
+  {
+   "ms": "כָּבֵד",
+   "fs": "כְּבֵדָה",
+   "mp": "כְּבֵדִים",
+   "fp": "כְּבֵדוֹת",
+   "gloss": "heavy"
+  },
+  {
+   "ms": "רָטֹב",
+   "fs": "רְטֻבָּה",
+   "mp": "רְטֻבִּים",
+   "fp": "רְטֻבּוֹת",
+   "gloss": "wet"
+  },
+  {
+   "ms": "לַח",
+   "fs": "לַחָה",
+   "mp": "לַחִים",
+   "fp": "לַחוֹת",
+   "gloss": "damp/moist"
+  },
+  {
+   "ms": "מְלֻכְלָךְ",
+   "fs": "מְלֻכְלֶכֶת",
+   "mp": "מְלֻכְלָכִים",
+   "fp": "מְלֻכְלָכוֹת",
+   "gloss": "dirty"
+  },
+  {
+   "ms": "נָקִי",
+   "fs": "נְקִיָּה",
+   "mp": "נְקִיִּים",
+   "fp": "נְקִיּוֹת",
+   "gloss": "clean"
+  },
+  {
+   "ms": "חָלוּל",
+   "fs": "חֲלוּלָה",
+   "mp": "חֲלוּלִים",
+   "fp": "חֲלוּלוֹת",
+   "gloss": "hollow"
+  },
+  {
+   "ms": "כָּפוּף",
+   "fs": "כְּפוּפָה",
+   "mp": "כְּפוּפִים",
+   "fp": "כְּפוּפוֹת",
+   "gloss": "bent/stooped"
+  },
+  {
+   "ms": "בַּיְשָׁן",
+   "fs": "בַּיְשָׁנִית",
+   "mp": "בַּיְשָׁנִים",
+   "fp": "בַּיְשָׁנִיּוֹת",
+   "gloss": "shy"
+  },
+  {
+   "ms": "עַקְשָׁן",
+   "fs": "עַקְשָׁנִית",
+   "mp": "עַקְשָׁנִים",
+   "fp": "עַקְשָׁנִיּוֹת",
+   "gloss": "stubborn"
+  },
+  {
+   "ms": "סַקְרָן",
+   "fs": "סַקְרָנִית",
+   "mp": "סַקְרָנִים",
+   "fp": "סַקְרָנִיּוֹת",
+   "gloss": "curious"
+  },
+  {
+   "ms": "רַגְזָן",
+   "fs": "רַגְזָנִית",
+   "mp": "רַגְזָנִים",
+   "fp": "רַגְזָנִיּוֹת",
+   "gloss": "grumpy/quick to anger"
+  },
+  {
+   "ms": "שַׁקְדָן",
+   "fs": "שַׁקְדָנִית",
+   "mp": "שַׁקְדָנִים",
+   "fp": "שַׁקְדָנִיּוֹת",
+   "gloss": "diligent"
+  },
+  {
+   "ms": "בַּטְלָן",
+   "fs": "בַּטְלָנִית",
+   "mp": "בַּטְלָנִים",
+   "fp": "בַּטְלָנִיּוֹת",
+   "gloss": "idler/lazy"
+  },
+  {
+   "ms": "פַּזְרָן",
+   "fs": "פַּזְרָנִית",
+   "mp": "פַּזְרָנִים",
+   "fp": "פַּזְרָנִיּוֹת",
+   "gloss": "spendthrift"
+  },
+  {
+   "ms": "קַמְצָן",
+   "fs": "קַמְצָנִית",
+   "mp": "קַמְצָנִים",
+   "fp": "קַמְצָנִיּוֹת",
+   "gloss": "stingy"
+  },
+  {
+   "ms": "מַצְחִיק",
+   "fs": "מַצְחִיקָה",
+   "mp": "מַצְחִיקִים",
+   "fp": "מַצְחִיקוֹת",
+   "gloss": "funny"
+  },
+  {
+   "ms": "נֶחְמָד",
+   "fs": "נֶחְמָדָה",
+   "mp": "נֶחְמָדִים",
+   "fp": "נֶחְמָדוֹת",
+   "gloss": "nice/pleasant"
+  },
+  {
+   "ms": "אַכְזָר",
+   "fs": "אַכְזָרִית",
+   "mp": "אַכְזָרִים",
+   "fp": "אַכְזָרִיּוֹת",
+   "gloss": "cruel"
+  },
+  {
+   "ms": "נָדִיב",
+   "fs": "נְדִיבָה",
+   "mp": "נְדִיבִים",
+   "fp": "נְדִיבוֹת",
+   "gloss": "generous"
+  },
+  {
+   "ms": "צָנוּעַ",
+   "fs": "צְנוּעָה",
+   "mp": "צְנוּעִים",
+   "fp": "צְנוּעוֹת",
+   "gloss": "modest"
+  },
+  {
+   "ms": "זָהִיר",
+   "fs": "זְהִירָה",
+   "mp": "זְהִירִים",
+   "fp": "זְהִירוֹת",
+   "gloss": "careful"
+  },
+  {
+   "ms": "נָבוֹן",
+   "fs": "נְבוֹנָה",
+   "mp": "נְבוֹנִים",
+   "fp": "נְבוֹנוֹת",
+   "gloss": "wise/sensible"
+  },
+  {
+   "ms": "רָגוּעַ",
+   "fs": "רְגוּעָה",
+   "mp": "רְגוּעִים",
+   "fp": "רְגוּעוֹת",
+   "gloss": "calm/relaxed"
+  },
+  {
+   "ms": "נִרְגָּשׁ",
+   "fs": "נִרְגֶּשֶׁת",
+   "mp": "נִרְגָּשִׁים",
+   "fp": "נִרְגָּשׁוֹת",
+   "gloss": "excited/moved"
+  },
+  {
+   "ms": "מֻדְאָג",
+   "fs": "מֻדְאֶגֶת",
+   "mp": "מֻדְאָגִים",
+   "fp": "מֻדְאָגוֹת",
+   "gloss": "worried"
+  },
+  {
+   "ms": "נֶעֱלָב",
+   "fs": "נֶעֱלֶבֶת",
+   "mp": "נֶעֱלָבִים",
+   "fp": "נֶעֱלָבוֹת",
+   "gloss": "offended/hurt"
+  },
+  {
+   "ms": "מְבֻלְבָּל",
+   "fs": "מְבֻלְבֶּלֶת",
+   "mp": "מְבֻלְבָּלִים",
+   "fp": "מְבֻלְבָּלוֹת",
+   "gloss": "confused"
+  },
+  {
+   "ms": "מְאֻכְזָב",
+   "fs": "מְאֻכְזֶבֶת",
+   "mp": "מְאֻכְזָבִים",
+   "fp": "מְאֻכְזָבוֹת",
+   "gloss": "disappointed"
+  },
+  {
+   "ms": "נְבוֹךְ",
+   "fs": "נְבוֹכָה",
+   "mp": "נְבוֹכִים",
+   "fp": "נְבוֹכוֹת",
+   "gloss": "embarrassed"
+  },
+  {
+   "ms": "גֵּאֶה",
+   "fs": "גֵּאָה",
+   "mp": "גֵּאִים",
+   "fp": "גֵּאוֹת",
+   "gloss": "proud"
+  },
+  {
+   "ms": "מָתוּחַ",
+   "fs": "מְתוּחָה",
+   "mp": "מְתוּחִים",
+   "fp": "מְתוּחוֹת",
+   "gloss": "tense"
+  },
+  {
+   "ms": "מֻפְתָּע",
+   "fs": "מֻפְתַּעַת",
+   "mp": "מֻפְתָּעִים",
+   "fp": "מֻפְתָּעוֹת",
+   "gloss": "surprised"
+  },
+  {
+   "ms": "נִדְהָם",
+   "fs": "נִדְהֶמֶת",
+   "mp": "נִדְהָמִים",
+   "fp": "נִדְהָמוֹת",
+   "gloss": "astonished"
+  },
+  {
+   "ms": "מְשַׁעֲמֵם",
+   "fs": "מְשַׁעֲמֶמֶת",
+   "mp": "מְשַׁעֲמְמִים",
+   "fp": "מְשַׁעֲמְמוֹת",
+   "gloss": "boring"
+  },
+  {
+   "ms": "לָחוּץ",
+   "fs": "לְחוּצָה",
+   "mp": "לְחוּצִים",
+   "fp": "לְחוּצוֹת",
+   "gloss": "stressed"
+  },
+  {
+   "ms": "רוֹעֵשׁ",
+   "fs": "רוֹעֶשֶׁת",
+   "mp": "רוֹעֲשִׁים",
+   "fp": "רוֹעֲשׁוֹת",
+   "gloss": "noisy"
+  },
+  {
+   "ms": "חֲרִישִׁי",
+   "fs": "חֲרִישִׁית",
+   "mp": "חֲרִישִׁיִּים",
+   "fp": "חֲרִישִׁיּוֹת",
+   "gloss": "quiet/hushed"
+  },
+  {
+   "ms": "צָלוּל",
+   "fs": "צְלוּלָה",
+   "mp": "צְלוּלִים",
+   "fp": "צְלוּלוֹת",
+   "gloss": "clear (sound)"
+  },
+  {
+   "ms": "עָמוּם",
+   "fs": "עֲמוּמָה",
+   "mp": "עֲמוּמִים",
+   "fp": "עֲמוּמוֹת",
+   "gloss": "muffled/dim"
+  },
+  {
+   "ms": "עָדִין",
+   "fs": "עֲדִינָה",
+   "mp": "עֲדִינִים",
+   "fp": "עֲדִינוֹת",
+   "gloss": "delicate/gentle"
+  },
+  {
+   "ms": "גַּס",
+   "fs": "גַּסָּה",
+   "mp": "גַּסִּים",
+   "fp": "גַּסּוֹת",
+   "gloss": "coarse/rough"
+  },
+  {
+   "ms": "מַבְרִיק",
+   "fs": "מַבְרִיקָה",
+   "mp": "מַבְרִיקִים",
+   "fp": "מַבְרִיקוֹת",
+   "gloss": "shiny"
+  },
+  {
+   "ms": "זוֹהֵר",
+   "fs": "זוֹהֶרֶת",
+   "mp": "זוֹהֲרִים",
+   "fp": "זוֹהֲרוֹת",
+   "gloss": "glowing/radiant"
+  },
+  {
+   "ms": "מְנֻמָּשׁ",
+   "fs": "מְנֻמֶּשֶׁת",
+   "mp": "מְנֻמָּשִׁים",
+   "fp": "מְנֻמָּשׁוֹת",
+   "gloss": "freckled"
+  },
+  {
+   "ms": "מְקֻרְזָל",
+   "fs": "מְקֻרְזֶלֶת",
+   "mp": "מְקֻרְזָלִים",
+   "fp": "מְקֻרְזָלוֹת",
+   "gloss": "curly"
+  },
+  {
+   "ms": "מְנֻקָּד",
+   "fs": "מְנֻקֶּדֶת",
+   "mp": "מְנֻקָּדִים",
+   "fp": "מְנֻקָּדוֹת",
+   "gloss": "dotted/spotted"
+  },
+  {
+   "ms": "מְפֻסְפָּס",
+   "fs": "מְפֻסְפֶּסֶת",
+   "mp": "מְפֻסְפָּסִים",
+   "fp": "מְפֻסְפָּסוֹת",
+   "gloss": "striped"
+  },
+  {
+   "ms": "מְחֻסְפָּס",
+   "fs": "מְחֻסְפֶּסֶת",
+   "mp": "מְחֻסְפָּסִים",
+   "fp": "מְחֻסְפָּסוֹת",
+   "gloss": "rough/textured"
+  }
+ ],
+ "verbs": [
+  {
+   "ms": "מְעַרְבֵּב",
+   "fs": "מְעַרְבֶּבֶת",
+   "mp": "מְעַרְבְּבִים",
+   "fp": "מְעַרְבְּבוֹת",
+   "trans": true,
+   "gloss": "mixes/stirs"
+  },
+  {
+   "ms": "מְקַלֵּף",
+   "fs": "מְקַלֶּפֶת",
+   "mp": "מְקַלְּפִים",
+   "fp": "מְקַלְּפוֹת",
+   "trans": true,
+   "gloss": "peels"
+  },
+  {
+   "ms": "מְגָרֵד",
+   "fs": "מְגָרֶדֶת",
+   "mp": "מְגָרְדִים",
+   "fp": "מְגָרְדוֹת",
+   "trans": true,
+   "gloss": "grates/scrapes"
+  },
+  {
+   "ms": "קוֹצֵץ",
+   "fs": "קוֹצֶצֶת",
+   "mp": "קוֹצְצִים",
+   "fp": "קוֹצְצוֹת",
+   "trans": true,
+   "gloss": "chops"
+  },
+  {
+   "ms": "פּוֹרֵס",
+   "fs": "פּוֹרֶסֶת",
+   "mp": "פּוֹרְסִים",
+   "fp": "פּוֹרְסוֹת",
+   "trans": true,
+   "gloss": "slices"
+  },
+  {
+   "ms": "מוֹזֵג",
+   "fs": "מוֹזֶגֶת",
+   "mp": "מוֹזְגִים",
+   "fp": "מוֹזְגוֹת",
+   "trans": true,
+   "gloss": "pours"
+  },
+  {
+   "ms": "מְמַלֵּא",
+   "fs": "מְמַלֵּאת",
+   "mp": "מְמַלְּאִים",
+   "fp": "מְמַלְּאוֹת",
+   "trans": true,
+   "gloss": "fills"
+  },
+  {
+   "ms": "מְרַתֵּחַ",
+   "fs": "מְרַתַּחַת",
+   "mp": "מְרַתְּחִים",
+   "fp": "מְרַתְּחוֹת",
+   "trans": true,
+   "gloss": "boils (something)"
+  },
+  {
+   "ms": "רוֹתֵחַ",
+   "fs": "רוֹתַחַת",
+   "mp": "רוֹתְחִים",
+   "fp": "רוֹתְחוֹת",
+   "trans": false,
+   "gloss": "boils (is boiling)"
+  },
+  {
+   "ms": "מְטַגֵּן",
+   "fs": "מְטַגֶּנֶת",
+   "mp": "מְטַגְּנִים",
+   "fp": "מְטַגְּנוֹת",
+   "trans": true,
+   "gloss": "fries"
+  },
+  {
+   "ms": "צוֹלֶה",
+   "fs": "צוֹלָה",
+   "mp": "צוֹלִים",
+   "fp": "צוֹלוֹת",
+   "trans": true,
+   "gloss": "grills/roasts"
+  },
+  {
+   "ms": "מְקַצֵּף",
+   "fs": "מְקַצֶּפֶת",
+   "mp": "מְקַצְּפִים",
+   "fp": "מְקַצְּפוֹת",
+   "trans": true,
+   "gloss": "whips/froths"
+  },
+  {
+   "ms": "לָשׁ",
+   "fs": "לָשָׁה",
+   "mp": "לָשִׁים",
+   "fp": "לָשׁוֹת",
+   "trans": true,
+   "gloss": "kneads"
+  },
+  {
+   "ms": "מְגַלְגֵּל",
+   "fs": "מְגַלְגֶּלֶת",
+   "mp": "מְגַלְגְּלִים",
+   "fp": "מְגַלְגְּלוֹת",
+   "trans": true,
+   "gloss": "rolls"
+  },
+  {
+   "ms": "מְפַזֵּר",
+   "fs": "מְפַזֶּרֶת",
+   "mp": "מְפַזְּרִים",
+   "fp": "מְפַזְּרוֹת",
+   "trans": true,
+   "gloss": "sprinkles/scatters"
+  },
+  {
+   "ms": "סוֹחֵט",
+   "fs": "סוֹחֶטֶת",
+   "mp": "סוֹחֲטִים",
+   "fp": "סוֹחֲטוֹת",
+   "trans": true,
+   "gloss": "squeezes"
+  },
+  {
+   "ms": "טוֹבֵל",
+   "fs": "טוֹבֶלֶת",
+   "mp": "טוֹבְלִים",
+   "fp": "טוֹבְלוֹת",
+   "trans": true,
+   "gloss": "dips"
+  },
+  {
+   "ms": "מְצַפֶּה",
+   "fs": "מְצַפָּה",
+   "mp": "מְצַפִּים",
+   "fp": "מְצַפּוֹת",
+   "trans": true,
+   "gloss": "coats"
+  },
+  {
+   "ms": "בּוֹחֵשׁ",
+   "fs": "בּוֹחֶשֶׁת",
+   "mp": "בּוֹחֲשִׁים",
+   "fp": "בּוֹחֲשׁוֹת",
+   "trans": true,
+   "gloss": "stirs (a pot)"
+  },
+  {
+   "ms": "מְמַעֵךְ",
+   "fs": "מְמַעֶכֶת",
+   "mp": "מְמַעֲכִים",
+   "fp": "מְמַעֲכוֹת",
+   "trans": true,
+   "gloss": "mashes"
+  },
+  {
+   "ms": "מְבַשֵּׁל",
+   "fs": "מְבַשֶּׁלֶת",
+   "mp": "מְבַשְּׁלִים",
+   "fp": "מְבַשְּׁלוֹת",
+   "trans": true,
+   "gloss": "cooks"
+  },
+  {
+   "ms": "אוֹפֶה",
+   "fs": "אוֹפָה",
+   "mp": "אוֹפִים",
+   "fp": "אוֹפוֹת",
+   "trans": true,
+   "gloss": "bakes"
+  },
+  {
+   "ms": "מְשַׁפְשֵׁף",
+   "fs": "מְשַׁפְשֶׁפֶת",
+   "mp": "מְשַׁפְשְׁפִים",
+   "fp": "מְשַׁפְשְׁפוֹת",
+   "trans": true,
+   "gloss": "scrubs/rubs"
+  },
+  {
+   "ms": "מְצַחְצֵחַ",
+   "fs": "מְצַחְצַחַת",
+   "mp": "מְצַחְצְחִים",
+   "fp": "מְצַחְצְחוֹת",
+   "trans": true,
+   "gloss": "brushes/shines"
+  },
+  {
+   "ms": "מְנַגֵּב",
+   "fs": "מְנַגֶּבֶת",
+   "mp": "מְנַגְּבִים",
+   "fp": "מְנַגְּבוֹת",
+   "trans": true,
+   "gloss": "wipes/dries"
+  },
+  {
+   "ms": "שׁוֹטֵף",
+   "fs": "שׁוֹטֶפֶת",
+   "mp": "שׁוֹטְפִים",
+   "fp": "שׁוֹטְפוֹת",
+   "trans": true,
+   "gloss": "rinses/washes"
+  },
+  {
+   "ms": "מְכַבֵּס",
+   "fs": "מְכַבֶּסֶת",
+   "mp": "מְכַבְּסִים",
+   "fp": "מְכַבְּסוֹת",
+   "trans": true,
+   "gloss": "launders"
+  },
+  {
+   "ms": "מְיַבֵּשׁ",
+   "fs": "מְיַבֶּשֶׁת",
+   "mp": "מְיַבְּשִׁים",
+   "fp": "מְיַבְּשׁוֹת",
+   "trans": true,
+   "gloss": "dries"
+  },
+  {
+   "ms": "מְסַנֵּן",
+   "fs": "מְסַנֶּנֶת",
+   "mp": "מְסַנְּנִים",
+   "fp": "מְסַנְּנוֹת",
+   "trans": true,
+   "gloss": "strains/filters"
+  },
+  {
+   "ms": "מְפַנֶּה",
+   "fs": "מְפַנָּה",
+   "mp": "מְפַנִּים",
+   "fp": "מְפַנּוֹת",
+   "trans": true,
+   "gloss": "clears away"
+  },
+  {
+   "ms": "מְסַדֵּר",
+   "fs": "מְסַדֶּרֶת",
+   "mp": "מְסַדְּרִים",
+   "fp": "מְסַדְּרוֹת",
+   "trans": true,
+   "gloss": "tidies/arranges"
+  },
+  {
+   "ms": "מְאַוְרֵר",
+   "fs": "מְאַוְרֶרֶת",
+   "mp": "מְאַוְרְרִים",
+   "fp": "מְאַוְרְרוֹת",
+   "trans": true,
+   "gloss": "airs out"
+  },
+  {
+   "ms": "מַבְרִיק",
+   "fs": "מַבְרִיקָה",
+   "mp": "מַבְרִיקִים",
+   "fp": "מַבְרִיקוֹת",
+   "trans": true,
+   "gloss": "makes shiny/polishes"
+  },
+  {
+   "ms": "שׁוֹאֵב",
+   "fs": "שׁוֹאֶבֶת",
+   "mp": "שׁוֹאֲבִים",
+   "fp": "שׁוֹאֲבוֹת",
+   "trans": true,
+   "gloss": "vacuums"
+  },
+  {
+   "ms": "בּוֹנֶה",
+   "fs": "בּוֹנָה",
+   "mp": "בּוֹנִים",
+   "fp": "בּוֹנוֹת",
+   "trans": true,
+   "gloss": "builds"
+  },
+  {
+   "ms": "מַרְכִּיב",
+   "fs": "מַרְכִּיבָה",
+   "mp": "מַרְכִּיבִים",
+   "fp": "מַרְכִּיבוֹת",
+   "trans": true,
+   "gloss": "assembles"
+  },
+  {
+   "ms": "מְחַבֵּר",
+   "fs": "מְחַבֶּרֶת",
+   "mp": "מְחַבְּרִים",
+   "fp": "מְחַבְּרוֹת",
+   "trans": true,
+   "gloss": "connects/joins"
+  },
+  {
+   "ms": "מְהַדֵּק",
+   "fs": "מְהַדֶּקֶת",
+   "mp": "מְהַדְּקִים",
+   "fp": "מְהַדְּקוֹת",
+   "trans": true,
+   "gloss": "fastens/tightens"
+  },
+  {
+   "ms": "מַדְבִּיק",
+   "fs": "מַדְבִּיקָה",
+   "mp": "מַדְבִּיקִים",
+   "fp": "מַדְבִּיקוֹת",
+   "trans": true,
+   "gloss": "glues/sticks"
+  },
+  {
+   "ms": "מְעַצֵּב",
+   "fs": "מְעַצֶּבֶת",
+   "mp": "מְעַצְּבִים",
+   "fp": "מְעַצְּבוֹת",
+   "trans": true,
+   "gloss": "shapes/designs"
+  },
+  {
+   "ms": "מְפַסֵּל",
+   "fs": "מְפַסֶּלֶת",
+   "mp": "מְפַסְּלִים",
+   "fp": "מְפַסְּלוֹת",
+   "trans": true,
+   "gloss": "sculpts"
+  },
+  {
+   "ms": "קוֹדֵחַ",
+   "fs": "קוֹדַחַת",
+   "mp": "קוֹדְחִים",
+   "fp": "קוֹדְחוֹת",
+   "trans": true,
+   "gloss": "drills"
+  },
+  {
+   "ms": "מַשְׁחִיז",
+   "fs": "מַשְׁחִיזָה",
+   "mp": "מַשְׁחִיזִים",
+   "fp": "מַשְׁחִיזוֹת",
+   "trans": true,
+   "gloss": "sharpens"
+  },
+  {
+   "ms": "קוֹלֵעַ",
+   "fs": "קוֹלַעַת",
+   "mp": "קוֹלְעִים",
+   "fp": "קוֹלְעוֹת",
+   "trans": true,
+   "gloss": "weaves/braids"
+  },
+  {
+   "ms": "מִתְגַּעְגֵּעַ",
+   "fs": "מִתְגַּעְגַּעַת",
+   "mp": "מִתְגַּעְגְּעִים",
+   "fp": "מִתְגַּעְגְּעוֹת",
+   "trans": false,
+   "gloss": "misses (longs for)"
+  },
+  {
+   "ms": "מִתְבַּיֵּשׁ",
+   "fs": "מִתְבַּיֶּשֶׁת",
+   "mp": "מִתְבַּיְּשִׁים",
+   "fp": "מִתְבַּיְּשׁוֹת",
+   "trans": false,
+   "gloss": "is shy / embarrassed"
+  },
+  {
+   "ms": "מִתְלַהֵב",
+   "fs": "מִתְלַהֶבֶת",
+   "mp": "מִתְלַהֲבִים",
+   "fp": "מִתְלַהֲבוֹת",
+   "trans": false,
+   "gloss": "is excited / enthusiastic"
+  },
+  {
+   "ms": "מִתְרַגֵּשׁ",
+   "fs": "מִתְרַגֶּשֶׁת",
+   "mp": "מִתְרַגְּשִׁים",
+   "fp": "מִתְרַגְּשׁוֹת",
+   "trans": false,
+   "gloss": "is excited / moved"
+  },
+  {
+   "ms": "מִתְגָּאֶה",
+   "fs": "מִתְגָּאָה",
+   "mp": "מִתְגָּאִים",
+   "fp": "מִתְגָּאוֹת",
+   "trans": false,
+   "gloss": "is proud"
+  },
+  {
+   "ms": "נֶהֱנֶה",
+   "fs": "נֶהֱנֵית",
+   "mp": "נֶהֱנִים",
+   "fp": "נֶהֱנוֹת",
+   "trans": false,
+   "gloss": "enjoys"
+  },
+  {
+   "ms": "מִתְאַכְזֵב",
+   "fs": "מִתְאַכְזֶבֶת",
+   "mp": "מִתְאַכְזְבִים",
+   "fp": "מִתְאַכְזְבוֹת",
+   "trans": false,
+   "gloss": "is disappointed"
+  },
+  {
+   "ms": "מִתְבַּלְבֵּל",
+   "fs": "מִתְבַּלְבֶּלֶת",
+   "mp": "מִתְבַּלְבְּלִים",
+   "fp": "מִתְבַּלְבְּלוֹת",
+   "trans": false,
+   "gloss": "is confused"
+  },
+  {
+   "ms": "מִתְעַצְבֵּן",
+   "fs": "מִתְעַצְבֶּנֶת",
+   "mp": "מִתְעַצְבְּנִים",
+   "fp": "מִתְעַצְבְּנוֹת",
+   "trans": false,
+   "gloss": "gets annoyed"
+  },
+  {
+   "ms": "דּוֹאֵג",
+   "fs": "דּוֹאֶגֶת",
+   "mp": "דּוֹאֲגִים",
+   "fp": "דּוֹאֲגוֹת",
+   "trans": false,
+   "gloss": "worries"
+  },
+  {
+   "ms": "מְקַנֵּא",
+   "fs": "מְקַנְּאָה",
+   "mp": "מְקַנְּאִים",
+   "fp": "מְקַנְּאוֹת",
+   "trans": false,
+   "gloss": "is jealous / envies"
+  },
+  {
+   "ms": "מִשְׁתַּעֲמֵם",
+   "fs": "מִשְׁתַּעֲמֶמֶת",
+   "mp": "מִשְׁתַּעֲמְמִים",
+   "fp": "מִשְׁתַּעֲמְמוֹת",
+   "trans": false,
+   "gloss": "is bored"
+  },
+  {
+   "ms": "נִרְגָּע",
+   "fs": "נִרְגַּעַת",
+   "mp": "נִרְגָּעִים",
+   "fp": "נִרְגָּעוֹת",
+   "trans": false,
+   "gloss": "calms down"
+  },
+  {
+   "ms": "מְפַחֵד",
+   "fs": "מְפַחֶדֶת",
+   "mp": "מְפַחֲדִים",
+   "fp": "מְפַחֲדוֹת",
+   "trans": false,
+   "gloss": "is afraid"
+  },
+  {
+   "ms": "נִבְהָל",
+   "fs": "נִבְהֶלֶת",
+   "mp": "נִבְהָלִים",
+   "fp": "נִבְהָלוֹת",
+   "trans": false,
+   "gloss": "is startled / frightened"
+  },
+  {
+   "ms": "סוֹלֵחַ",
+   "fs": "סוֹלַחַת",
+   "mp": "סוֹלְחִים",
+   "fp": "סוֹלְחוֹת",
+   "trans": true,
+   "gloss": "forgives"
+  },
+  {
+   "ms": "מַעֲרִיץ",
+   "fs": "מַעֲרִיצָה",
+   "mp": "מַעֲרִיצִים",
+   "fp": "מַעֲרִיצוֹת",
+   "trans": true,
+   "gloss": "admires"
+  },
+  {
+   "ms": "מְנַחֵשׁ",
+   "fs": "מְנַחֶשֶׁת",
+   "mp": "מְנַחֲשִׁים",
+   "fp": "מְנַחֲשׁוֹת",
+   "trans": true,
+   "gloss": "guesses"
+  },
+  {
+   "ms": "מְדַמְיֵן",
+   "fs": "מְדַמְיֶנֶת",
+   "mp": "מְדַמְיְנִים",
+   "fp": "מְדַמְיְנוֹת",
+   "trans": true,
+   "gloss": "imagines"
+  },
+  {
+   "ms": "מַחְלִיט",
+   "fs": "מַחְלִיטָה",
+   "mp": "מַחְלִיטִים",
+   "fp": "מַחְלִיטוֹת",
+   "trans": false,
+   "gloss": "decides"
+  },
+  {
+   "ms": "מִתְלַבֵּט",
+   "fs": "מִתְלַבֶּטֶת",
+   "mp": "מִתְלַבְּטִים",
+   "fp": "מִתְלַבְּטוֹת",
+   "trans": false,
+   "gloss": "is undecided / deliberates"
+  },
+  {
+   "ms": "מְתַכְנֵן",
+   "fs": "מְתַכְנֶנֶת",
+   "mp": "מְתַכְנְנִים",
+   "fp": "מְתַכְנְנוֹת",
+   "trans": true,
+   "gloss": "plans"
+  },
+  {
+   "ms": "מַשְׁוֶה",
+   "fs": "מַשְׁוָה",
+   "mp": "מַשְׁוִים",
+   "fp": "מַשְׁווֹת",
+   "trans": true,
+   "gloss": "compares"
+  },
+  {
+   "ms": "מַבְחִין",
+   "fs": "מַבְחִינָה",
+   "mp": "מַבְחִינִים",
+   "fp": "מַבְחִינוֹת",
+   "trans": false,
+   "gloss": "notices / distinguishes"
+  },
+  {
+   "ms": "מַעֲדִיף",
+   "fs": "מַעֲדִיפָה",
+   "mp": "מַעֲדִיפִים",
+   "fp": "מַעֲדִיפוֹת",
+   "trans": true,
+   "gloss": "prefers"
+  },
+  {
+   "ms": "מַסְכִּים",
+   "fs": "מַסְכִּימָה",
+   "mp": "מַסְכִּימִים",
+   "fp": "מַסְכִּימוֹת",
+   "trans": false,
+   "gloss": "agrees"
+  },
+  {
+   "ms": "מְגַלֶּה",
+   "fs": "מְגַלָּה",
+   "mp": "מְגַלִּים",
+   "fp": "מְגַלּוֹת",
+   "trans": true,
+   "gloss": "discovers"
+  },
+  {
+   "ms": "מִתְכַּוֵּן",
+   "fs": "מִתְכַּוֶּנֶת",
+   "mp": "מִתְכַּוְּנִים",
+   "fp": "מִתְכַּוְּנוֹת",
+   "trans": false,
+   "gloss": "means / intends"
+  },
+  {
+   "ms": "מְבַלְבֵּל",
+   "fs": "מְבַלְבֶּלֶת",
+   "mp": "מְבַלְבְּלִים",
+   "fp": "מְבַלְבְּלוֹת",
+   "trans": true,
+   "gloss": "confuses (someone)"
+  },
+  {
+   "ms": "מַסְבִּיר",
+   "fs": "מַסְבִּירָה",
+   "mp": "מַסְבִּירִים",
+   "fp": "מַסְבִּירוֹת",
+   "trans": true,
+   "gloss": "explains"
+  },
+  {
+   "ms": "לוֹחֵשׁ",
+   "fs": "לוֹחֶשֶׁת",
+   "mp": "לוֹחֲשִׁים",
+   "fp": "לוֹחֲשׁוֹת",
+   "trans": true,
+   "gloss": "whispers"
+  },
+  {
+   "ms": "צוֹעֵק",
+   "fs": "צוֹעֶקֶת",
+   "mp": "צוֹעֲקִים",
+   "fp": "צוֹעֲקוֹת",
+   "trans": false,
+   "gloss": "shouts"
+  },
+  {
+   "ms": "מְמַלְמֵל",
+   "fs": "מְמַלְמֶלֶת",
+   "mp": "מְמַלְמְלִים",
+   "fp": "מְמַלְמְלוֹת",
+   "trans": false,
+   "gloss": "mumbles"
+  },
+  {
+   "ms": "מְפַטְפֵּט",
+   "fs": "מְפַטְפֶּטֶת",
+   "mp": "מְפַטְפְּטִים",
+   "fp": "מְפַטְפְּטוֹת",
+   "trans": false,
+   "gloss": "chatters"
+  },
+  {
+   "ms": "מַזְכִּיר",
+   "fs": "מַזְכִּירָה",
+   "mp": "מַזְכִּירִים",
+   "fp": "מַזְכִּירוֹת",
+   "trans": true,
+   "gloss": "reminds / mentions"
+  },
+  {
+   "ms": "מַבְטִיחַ",
+   "fs": "מַבְטִיחָה",
+   "mp": "מַבְטִיחִים",
+   "fp": "מַבְטִיחוֹת",
+   "trans": true,
+   "gloss": "promises"
+  },
+  {
+   "ms": "מוֹדֶה",
+   "fs": "מוֹדָה",
+   "mp": "מוֹדִים",
+   "fp": "מוֹדוֹת",
+   "trans": false,
+   "gloss": "thanks / admits"
+  },
+  {
+   "ms": "מַזְמִין",
+   "fs": "מַזְמִינָה",
+   "mp": "מַזְמִינִים",
+   "fp": "מַזְמִינוֹת",
+   "trans": true,
+   "gloss": "invites"
+  },
+  {
+   "ms": "מְשַׁכְנֵעַ",
+   "fs": "מְשַׁכְנַעַת",
+   "mp": "מְשַׁכְנְעִים",
+   "fp": "מְשַׁכְנְעוֹת",
+   "trans": true,
+   "gloss": "persuades"
+  },
+  {
+   "ms": "מְתָאֵר",
+   "fs": "מְתָאֶרֶת",
+   "mp": "מְתָאֲרִים",
+   "fp": "מְתָאֲרוֹת",
+   "trans": true,
+   "gloss": "describes"
+  },
+  {
+   "ms": "מְבַקֵּשׁ",
+   "fs": "מְבַקֶּשֶׁת",
+   "mp": "מְבַקְּשִׁים",
+   "fp": "מְבַקְּשׁוֹת",
+   "trans": true,
+   "gloss": "requests / asks for"
+  },
+  {
+   "ms": "מֵרִיחַ",
+   "fs": "מְרִיחָה",
+   "mp": "מְרִיחִים",
+   "fp": "מְרִיחוֹת",
+   "trans": true,
+   "gloss": "smells"
+  },
+  {
+   "ms": "טוֹעֵם",
+   "fs": "טוֹעֶמֶת",
+   "mp": "טוֹעֲמִים",
+   "fp": "טוֹעֲמוֹת",
+   "trans": true,
+   "gloss": "tastes"
+  },
+  {
+   "ms": "מַקְשִׁיב",
+   "fs": "מַקְשִׁיבָה",
+   "mp": "מַקְשִׁיבִים",
+   "fp": "מַקְשִׁיבוֹת",
+   "trans": false,
+   "gloss": "listens attentively"
+  },
+  {
+   "ms": "מַבִּיט",
+   "fs": "מַבִּיטָה",
+   "mp": "מַבִּיטִים",
+   "fp": "מַבִּיטוֹת",
+   "trans": false,
+   "gloss": "gazes / looks"
+  },
+  {
+   "ms": "מְצַיֵּץ",
+   "fs": "מְצַיֶּצֶת",
+   "mp": "מְצַיְּצִים",
+   "fp": "מְצַיְּצוֹת",
+   "trans": false,
+   "gloss": "chirps / peeps"
+  },
+  {
+   "ms": "מַרְגִּישׁ",
+   "fs": "מַרְגִּישָׁה",
+   "mp": "מַרְגִּישִׁים",
+   "fp": "מַרְגִּישׁוֹת",
+   "trans": false,
+   "gloss": "feels"
+  },
+  {
+   "ms": "רוֹחֵץ",
+   "fs": "רוֹחֶצֶת",
+   "mp": "רוֹחֲצִים",
+   "fp": "רוֹחֲצוֹת",
+   "trans": true,
+   "gloss": "washes"
+  },
+  {
+   "ms": "בּוֹטֵחַ",
+   "fs": "בּוֹטַחַת",
+   "mp": "בּוֹטְחִים",
+   "fp": "בּוֹטְחוֹת",
+   "trans": false,
+   "gloss": "trusts"
+  },
+  {
+   "ms": "שׁוֹקֵל",
+   "fs": "שׁוֹקֶלֶת",
+   "mp": "שׁוֹקְלִים",
+   "fp": "שׁוֹקְלוֹת",
+   "trans": true,
+   "gloss": "weighs"
+  },
+  {
+   "ms": "זוֹרֵק",
+   "fs": "זוֹרֶקֶת",
+   "mp": "זוֹרְקִים",
+   "fp": "זוֹרְקוֹת",
+   "trans": true,
+   "gloss": "throws"
+  },
+  {
+   "ms": "בּוֹקֵעַ",
+   "fs": "בּוֹקַעַת",
+   "mp": "בּוֹקְעִים",
+   "fp": "בּוֹקְעוֹת",
+   "trans": false,
+   "gloss": "hatches"
+  },
+  {
+   "ms": "רוֹעֵד",
+   "fs": "רוֹעֶדֶת",
+   "mp": "רוֹעֲדִים",
+   "fp": "רוֹעֲדוֹת",
+   "trans": false,
+   "gloss": "trembles"
+  },
+  {
+   "ms": "נוֹשֵׁךְ",
+   "fs": "נוֹשֶׁכֶת",
+   "mp": "נוֹשְׁכִים",
+   "fp": "נוֹשְׁכוֹת",
+   "trans": true,
+   "gloss": "bites"
+  },
+  {
+   "ms": "מוֹשֵׁךְ",
+   "fs": "מוֹשֶׁכֶת",
+   "mp": "מוֹשְׁכִים",
+   "fp": "מוֹשְׁכוֹת",
+   "trans": true,
+   "gloss": "pulls"
+  },
+  {
+   "ms": "דּוֹחֵף",
+   "fs": "דּוֹחֶפֶת",
+   "mp": "דּוֹחֲפִים",
+   "fp": "דּוֹחֲפוֹת",
+   "trans": true,
+   "gloss": "pushes"
+  },
+  {
+   "ms": "קוֹטֵף",
+   "fs": "קוֹטֶפֶת",
+   "mp": "קוֹטְפִים",
+   "fp": "קוֹטְפוֹת",
+   "trans": true,
+   "gloss": "picks (a flower)"
+  },
+  {
+   "ms": "שׁוֹתֵק",
+   "fs": "שׁוֹתֶקֶת",
+   "mp": "שׁוֹתְקִים",
+   "fp": "שׁוֹתְקוֹת",
+   "trans": false,
+   "gloss": "is silent"
+  },
+  {
+   "ms": "צוֹחֵק",
+   "fs": "צוֹחֶקֶת",
+   "mp": "צוֹחֲקִים",
+   "fp": "צוֹחֲקוֹת",
+   "trans": false,
+   "gloss": "laughs"
+  },
+  {
+   "ms": "בּוֹלֵעַ",
+   "fs": "בּוֹלַעַת",
+   "mp": "בּוֹלְעִים",
+   "fp": "בּוֹלְעוֹת",
+   "trans": true,
+   "gloss": "swallows"
+  },
+  {
+   "ms": "קוֹרֵעַ",
+   "fs": "קוֹרַעַת",
+   "mp": "קוֹרְעִים",
+   "fp": "קוֹרְעוֹת",
+   "trans": true,
+   "gloss": "tears"
+  },
+  {
+   "ms": "נוֹסֵעַ",
+   "fs": "נוֹסַעַת",
+   "mp": "נוֹסְעִים",
+   "fp": "נוֹסְעוֹת",
+   "trans": false,
+   "gloss": "travels"
+  },
+  {
+   "ms": "שׁוֹמֵעַ",
+   "fs": "שׁוֹמַעַת",
+   "mp": "שׁוֹמְעִים",
+   "fp": "שׁוֹמְעוֹת",
+   "trans": true,
+   "gloss": "hears"
+  },
+  {
+   "ms": "נוֹגֵעַ",
+   "fs": "נוֹגַעַת",
+   "mp": "נוֹגְעִים",
+   "fp": "נוֹגְעוֹת",
+   "trans": false,
+   "gloss": "touches"
+  },
+  {
+   "ms": "קוֹפֵץ",
+   "fs": "קוֹפֶצֶת",
+   "mp": "קוֹפְצִים",
+   "fp": "קוֹפְצוֹת",
+   "trans": false,
+   "gloss": "jumps"
+  },
+  {
+   "ms": "לוֹחֵץ",
+   "fs": "לוֹחֶצֶת",
+   "mp": "לוֹחֲצִים",
+   "fp": "לוֹחֲצוֹת",
+   "trans": true,
+   "gloss": "presses"
+  },
+  {
+   "ms": "מוֹחֵק",
+   "fs": "מוֹחֶקֶת",
+   "mp": "מוֹחֲקִים",
+   "fp": "מוֹחֲקוֹת",
+   "trans": true,
+   "gloss": "erases"
+  },
+  {
+   "ms": "זוֹחֵל",
+   "fs": "זוֹחֶלֶת",
+   "mp": "זוֹחֲלִים",
+   "fp": "זוֹחֲלוֹת",
+   "trans": false,
+   "gloss": "crawls"
+  },
+  {
+   "ms": "בּוֹחֵר",
+   "fs": "בּוֹחֶרֶת",
+   "mp": "בּוֹחֲרִים",
+   "fp": "בּוֹחֲרוֹת",
+   "trans": true,
+   "gloss": "chooses"
+  },
+  {
+   "ms": "בּוֹעֵט",
+   "fs": "בּוֹעֶטֶת",
+   "mp": "בּוֹעֲטִים",
+   "fp": "בּוֹעֲטוֹת",
+   "trans": false,
+   "gloss": "kicks"
+  },
+  {
+   "ms": "קוֹשֵׁר",
+   "fs": "קוֹשֶׁרֶת",
+   "mp": "קוֹשְׁרִים",
+   "fp": "קוֹשְׁרוֹת",
+   "trans": true,
+   "gloss": "ties"
+  },
+  {
+   "ms": "שׁוֹרֵק",
+   "fs": "שׁוֹרֶקֶת",
+   "mp": "שׁוֹרְקִים",
+   "fp": "שׁוֹרְקוֹת",
+   "trans": false,
+   "gloss": "whistles"
+  },
+  {
+   "ms": "דּוֹלֵק",
+   "fs": "דּוֹלֶקֶת",
+   "mp": "דּוֹלְקִים",
+   "fp": "דּוֹלְקוֹת",
+   "trans": false,
+   "gloss": "is lit (burns)"
+  },
+  {
+   "ms": "חוֹשֵׁב",
+   "fs": "חוֹשֶׁבֶת",
+   "mp": "חוֹשְׁבִים",
+   "fp": "חוֹשְׁבוֹת",
+   "trans": false,
+   "gloss": "thinks"
+  },
+  {
+   "ms": "חוֹתֵךְ",
+   "fs": "חוֹתֶכֶת",
+   "mp": "חוֹתְכִים",
+   "fp": "חוֹתְכוֹת",
+   "trans": true,
+   "gloss": "cuts"
+  },
+  {
+   "ms": "חוֹפֵר",
+   "fs": "חוֹפֶרֶת",
+   "mp": "חוֹפְרִים",
+   "fp": "חוֹפְרוֹת",
+   "trans": true,
+   "gloss": "digs"
+  },
+  {
+   "ms": "חוֹבֵשׁ",
+   "fs": "חוֹבֶשֶׁת",
+   "mp": "חוֹבְשִׁים",
+   "fp": "חוֹבְשׁוֹת",
+   "trans": true,
+   "gloss": "bandages / wears (a hat)"
+  },
+  {
+   "ms": "זוֹרֵם",
+   "fs": "זוֹרֶמֶת",
+   "mp": "זוֹרְמִים",
+   "fp": "זוֹרְמוֹת",
+   "trans": false,
+   "gloss": "flows"
+  },
+  {
+   "ms": "זוֹרֵחַ",
+   "fs": "זוֹרַחַת",
+   "mp": "זוֹרְחִים",
+   "fp": "זוֹרְחוֹת",
+   "trans": false,
+   "gloss": "shines (sun)"
+  },
+  {
+   "ms": "צוֹמֵחַ",
+   "fs": "צוֹמַחַת",
+   "mp": "צוֹמְחִים",
+   "fp": "צוֹמְחוֹת",
+   "trans": false,
+   "gloss": "grows (plant)"
+  },
+  {
+   "ms": "פּוֹרֵחַ",
+   "fs": "פּוֹרַחַת",
+   "mp": "פּוֹרְחִים",
+   "fp": "פּוֹרְחוֹת",
+   "trans": false,
+   "gloss": "blossoms"
+  },
+  {
+   "ms": "קוֹרֵץ",
+   "fs": "קוֹרֶצֶת",
+   "mp": "קוֹרְצִים",
+   "fp": "קוֹרְצוֹת",
+   "trans": false,
+   "gloss": "winks"
+  },
+  {
+   "ms": "לוֹעֵס",
+   "fs": "לוֹעֶסֶת",
+   "mp": "לוֹעֲסִים",
+   "fp": "לוֹעֲסוֹת",
+   "trans": true,
+   "gloss": "chews"
+  },
+  {
+   "ms": "גּוֹזֵר",
+   "fs": "גּוֹזֶרֶת",
+   "mp": "גּוֹזְרִים",
+   "fp": "גּוֹזְרוֹת",
+   "trans": true,
+   "gloss": "cuts (with scissors)"
+  },
+  {
+   "ms": "רוֹקֵד",
+   "fs": "רוֹקֶדֶת",
+   "mp": "רוֹקְדִים",
+   "fp": "רוֹקְדוֹת",
+   "trans": false,
+   "gloss": "dances"
+  },
+  {
+   "ms": "מוֹצֵץ",
+   "fs": "מוֹצֶצֶת",
+   "mp": "מוֹצְצִים",
+   "fp": "מוֹצְצוֹת",
+   "trans": true,
+   "gloss": "sucks"
+  },
+  {
+   "ms": "שׁוֹאֵף",
+   "fs": "שׁוֹאֶפֶת",
+   "mp": "שׁוֹאֲפִים",
+   "fp": "שׁוֹאֲפוֹת",
+   "trans": false,
+   "gloss": "inhales"
+  },
+  {
+   "ms": "נוֹשֵׁף",
+   "fs": "נוֹשֶׁפֶת",
+   "mp": "נוֹשְׁפִים",
+   "fp": "נוֹשְׁפוֹת",
+   "trans": false,
+   "gloss": "exhales / blows"
+  },
+  {
+   "ms": "קוֹרֵא",
+   "fs": "קוֹרֵאת",
+   "mp": "קוֹרְאִים",
+   "fp": "קוֹרְאוֹת",
+   "trans": true,
+   "gloss": "reads / calls"
+  }
+ ]
+}

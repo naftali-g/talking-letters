@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>אותיות מדברות</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Heebo:wght@400;700;800&family=Varela+Round&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF9F0; --card:#FFFFFF; --blue:#4FC3F7; --yellow:#FFD54F;
+    --coral:#FF7A85; --mango:#FF9F40; --mint:#66D9A8; --grape:#B39DDB;
+    --target:#E5392F; --ink:#2B2B36; --slate:#6B6B7B; --tile:#EDEEF5;
+    --focus:#1565C0; --line:#ECE6DC;
+    --f-body:'Heebo','Arial Hebrew','Noto Sans Hebrew',system-ui,sans-serif;
+    --f-round:'Varela Round','Heebo','Arial Hebrew',sans-serif;
+    --f-display:'Fredoka','Varela Round','Heebo',sans-serif;
+    --shadow:0 10px 26px rgba(43,43,54,.10);
+    --shadow-sm:0 4px 12px rgba(43,43,54,.08);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    font-family:var(--f-body); color:var(--ink); line-height:1.6;
+    background:
+      radial-gradient(900px 480px at 100% -8%, #FFF1E0 0%, transparent 60%),
+      radial-gradient(800px 420px at -8% 6%, #E8F6FF 0%, transparent 55%),
+      var(--cream);
+    -webkit-font-smoothing:antialiased; min-height:100vh;
+  }
+  .app{max-width:520px; margin:0 auto; padding:14px 16px 40px}
+
+  .topbar{position:relative; display:flex; align-items:flex-start; justify-content:center; min-height:44px; margin-bottom:2px}
+  .logo-img{max-width:min(240px,70%); height:auto; display:block}
+  .topbar .icon-btn{position:absolute; inset-inline-start:0; top:0}
+  .icon-btn{width:42px;height:42px;border:1px solid var(--line);background:#fff;border-radius:50%;
+    font-size:20px;display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow-sm)}
+  .icon-btn:active{transform:scale(.94)}
+
+  .mascot{width:120px;height:120px;border-radius:50%;margin:8px auto 2px;display:grid;place-items:center;
+    font-family:var(--f-display);font-weight:700;font-size:66px;border:5px solid #fff;
+    background:var(--tile); color:var(--ink);
+    box-shadow:0 14px 28px rgba(43,43,54,.16); transition:transform .25s, background .25s}
+  .mascot.empty{background:#EDEBF4;color:#C7C2D6;box-shadow:none;font-size:40px}
+  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+  .mascot:not(.empty){animation:breathe 3.2s ease-in-out infinite}
+
+  .seclabel{font-family:var(--f-round);font-weight:700;text-align:center;font-size:19px;margin:18px 0 2px}
+  .hint{text-align:center;font-size:12.5px;color:var(--slate);margin:0 0 10px}
+
+  .lgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:6px}
+  @media(max-width:380px){.lgrid{grid-template-columns:repeat(5,1fr)}}
+  .tile{aspect-ratio:1;border:none;border-radius:14px;font-family:var(--f-round);font-weight:700;
+    font-size:clamp(20px,6vw,26px);color:var(--ink);cursor:pointer;position:relative;
+    box-shadow:var(--shadow-sm);transition:transform .12s}
+  .tile:active{transform:scale(.92)}
+  .tile.sel{transform:scale(1.08);box-shadow:0 0 0 4px var(--mango), 0 8px 16px rgba(43,43,54,.18)}
+  .tile.sel::after{content:"✓";position:absolute;top:-7px;inset-inline-start:-7px;background:var(--mint);
+    color:#fff;width:20px;height:20px;border-radius:50%;font-size:12px;display:grid;place-items:center;border:2px solid #fff}
+  .tile:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  .pos-row{display:flex;gap:10px;margin-top:6px}
+  .pos{flex:1;background:#fff;border:2px solid var(--tile);border-radius:16px;padding:11px 4px;text-align:center;
+    font-family:var(--f-round);font-weight:700;font-size:14px;cursor:pointer;transition:transform .12s}
+  .pos:active{transform:scale(.95)}
+  .pos .dots{font-size:13px;letter-spacing:3px;color:var(--slate);margin-bottom:3px}
+  .pos.on{background:var(--mango);border-color:var(--mango);color:#fff}
+  .pos.on .dots{color:#fff}
+  .pos.disabled{opacity:.38;cursor:not-allowed;background:#F3F1EB}
+  .pos:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  .stepper{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:6px}
+  .stepbtn{width:52px;height:52px;border-radius:50%;background:#fff;border:1px solid var(--line);
+    font-size:28px;font-weight:800;cursor:pointer;box-shadow:var(--shadow-sm);color:var(--ink)}
+  .stepbtn:active{transform:scale(.92)}
+  .stepnum{font-family:var(--f-display);font-size:46px;font-weight:700;min-width:60px;text-align:center}
+  .chips{display:flex;gap:8px;justify-content:center;margin-top:10px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 16px;font-weight:700;
+    cursor:pointer;font-family:var(--f-round)}
+  .chip.on{background:var(--yellow);border-color:var(--yellow)}
+
+  .cta{display:block;width:100%;margin-top:20px;color:#fff;font-family:var(--f-round);font-weight:700;
+    font-size:21px;padding:17px;border:none;border-radius:20px;cursor:pointer;
+    background:linear-gradient(90deg,var(--coral),var(--mango));box-shadow:0 12px 22px rgba(255,122,133,.42)}
+  .cta:active{transform:scale(.98)}
+  .cta.ghost{background:#EDE7DC;color:#9a917f;box-shadow:none}
+  .cta:disabled{background:#E7E2D8;color:#B3AB9B;box-shadow:none;cursor:not-allowed}
+  .cta.mint{background:linear-gradient(90deg,var(--mint),var(--blue));box-shadow:0 12px 22px rgba(102,217,168,.4)}
+
+  /* results */
+  .hchip{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);
+    border-radius:16px;padding:11px 14px;font-family:var(--f-round);font-weight:700;font-size:15px;box-shadow:var(--shadow-sm)}
+  .editbtn{border:none;background:none;font-size:18px;cursor:pointer;color:var(--slate)}
+  .progress{display:flex;align-items:center;gap:10px;justify-content:center;font-size:13px;color:var(--slate);margin:12px 0 4px}
+  .pbar{flex:1;height:9px;border-radius:99px;background:#EBE4D6;overflow:hidden;max-width:200px}
+  .pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),var(--blue));transition:width .4s}
+  .capnote{text-align:center;font-size:13px;color:var(--mango);font-weight:700;margin:8px 0}
+
+  .ribbon{background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px 14px;margin-top:11px;
+    display:flex;flex-direction:column;gap:11px;box-shadow:var(--shadow-sm);transition:background .3s,border-color .3s}
+  .ribbon.done{background:#F4FBF7;border-color:#CDEBDD}
+  @keyframes pop{0%{transform:scale(.8);opacity:0}100%{transform:scale(1);opacity:1}}
+  .ribbon{animation:pop .3s ease both}
+  .sent{font-weight:700;font-size:clamp(20px,5.5vw,26px);line-height:1.5;text-align:center}
+  .word{cursor:pointer;border-radius:6px;padding:0 1px;transition:background .15s}
+  .word:active{background:#EAF7FF}
+  .tg{color:var(--target);background:rgba(255,213,79,.5);border-radius:5px;padding:0 1px;font-weight:800}
+  .ribbon-ctrl{display:flex;gap:10px}
+  .rbtn{flex:1;font-family:var(--f-round);font-weight:700;font-size:16px;color:#fff;border:none;border-radius:13px;
+    padding:11px 6px;cursor:pointer;box-shadow:var(--shadow-sm);transition:transform .12s}
+  .rbtn:active{transform:scale(.96)}
+  .rbtn.listen{background:linear-gradient(90deg,var(--mint),var(--blue))}
+  .rbtn.said{background:linear-gradient(90deg,var(--coral),var(--mango))}
+  .rbtn.said.is-done{background:#CDEBDD;color:#0F8A55;box-shadow:none}
+
+  .actionbar{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+  .actionbar .cta{margin-top:0}
+
+  .note{font-size:12px;color:var(--slate);text-align:center;margin-top:14px}
+
+  /* overlays */
+  .overlay{position:fixed;inset:0;background:rgba(43,43,54,.5);display:grid;place-items:center;z-index:20;padding:20px}
+  .sheet{position:relative; overflow:hidden; background:#fff;border-radius:26px;padding:26px 22px;max-width:380px;width:100%;text-align:center;box-shadow:var(--shadow)}
+  .sheet > *{position:relative; z-index:1}
+  .fireworks{position:absolute; top:0; left:0; right:0; height:280px; z-index:0; pointer-events:none}
+  .fireworks svg{width:100%; height:100%; display:block}
+  .fw{transform-box:fill-box; transform-origin:center; animation:burst 1.8s ease-out infinite}
+  @keyframes burst{0%{transform:scale(.05);opacity:0}16%{opacity:1}66%{transform:scale(1);opacity:.85}100%{transform:scale(1.18);opacity:0}}
+  .win-mascot-img{width:124px;height:124px;object-fit:contain;margin:8px auto 10px;display:block;
+    filter:drop-shadow(0 8px 14px rgba(43,43,54,.16))}
+  .win-title{font-family:var(--f-display);font-weight:700;font-size:30px;margin:4px 0}
+  .settings-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-family:var(--f-round);font-weight:700}
+  .settings-row:last-of-type{border-bottom:none}
+  .switch{width:52px;height:30px;border-radius:99px;background:#DDD6C8;position:relative;cursor:pointer;border:none;transition:background .2s}
+  .switch.on{background:var(--mint)}
+  .switch::after{content:"";position:absolute;top:3px;inset-inline-end:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:inset-inline-end .2s}
+  .switch.on::after{inset-inline-end:25px}
+
+  .toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--ink);color:#fff;
+    padding:13px 18px;border-radius:15px;font-size:13.5px;max-width:92%;width:430px;text-align:center;
+    box-shadow:var(--shadow);z-index:30;line-height:1.55}
+  .toast .link{background:none;border:none;color:var(--yellow);font-weight:700;text-decoration:underline;
+    cursor:pointer;font-size:13.5px;font-family:inherit;padding:0}
+
+  [hidden]{display:none!important}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+  @media print{
+    body{background:#fff}
+    .topbar,.actionbar,.ribbon-ctrl,.icon-btn,.editbtn,.note,.progress{display:none!important}
+    .ribbon{border:1px solid #000;box-shadow:none;break-inside:avoid}
+    .tg{background:none;color:#000;text-decoration:underline;font-weight:800}
+    .sent{color:#000}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ===== SETUP ===== -->
+  <section id="setup">
+    <div class="topbar">
+      <button class="icon-btn" id="btnSettings" aria-label="הגדרות">⚙</button>
+      <img class="logo-img" src="logo.webp" alt="אותיות מדברות">
+    </div>
+    <div class="mascot empty" id="mascot" aria-hidden="true">?</div>
+
+    <div class="seclabel">בַּחֲרוּ אוֹת</div>
+    <div class="hint">סוֹפְרִים אֶת הָאוֹת הַכְּתוּבָה</div>
+    <div class="lgrid" id="lgrid" role="radiogroup" aria-label="בחרו אות"></div>
+
+    <div class="seclabel">אֵיפֹה הָאוֹת בַּמִּלָּה?</div>
+    <div class="hint">אֶפְשָׁר לִבְחֹר כַּמָּה</div>
+    <div class="pos-row" id="posRow" role="group" aria-label="מיקום האות"></div>
+
+    <div class="seclabel">כַּמָּה מִשְׁפָּטִים?</div>
+    <div class="stepper">
+      <button class="stepbtn" id="stepMinus" aria-label="פחות">−</button>
+      <div class="stepnum" id="stepNum">5</div>
+      <button class="stepbtn" id="stepPlus" aria-label="עוד">+</button>
+    </div>
+    <div class="chips" id="chips"></div>
+
+    <button class="cta" id="btnGenerate" disabled>צְרוּ מִשְׁפָּטִים ✨</button>
+  </section>
+
+  <!-- ===== RESULTS ===== -->
+  <section id="results" hidden>
+    <div class="hchip">
+      <span id="resSummary"></span>
+      <button class="editbtn" id="btnEdit" aria-label="חזרה">✎</button>
+    </div>
+    <div class="progress">
+      <span id="progText"></span>
+      <span class="pbar"><i id="progBar"></i></span>
+    </div>
+    <div id="capNote" class="capnote" hidden></div>
+    <div id="sentences" aria-live="polite"></div>
+    <div class="actionbar">
+      <button class="cta mint" id="btnShuffle">עוֹד מִשְׁפָּטִים</button>
+      <button class="cta ghost" id="btnBack">אוֹת חֲדָשָׁה</button>
+    </div>
+    <div class="note">›שִׁמְעוּ‹ לִשְׁמֹעַ אֶת הַמִּשְׁפָּט · ›אָמַרְתִּי‹ אַחֲרֵי שֶׁאֲמַרְתֶּם בְּקוֹל · אֶפְשָׁר גַּם לְהַקִּישׁ עַל מִלָּה</div>
+  </section>
+</div>
+
+<!-- ===== CELEBRATION ===== -->
+<div class="overlay" id="celebrate" hidden>
+  <div class="sheet">
+    <div class="fireworks" id="fireworks"></div>
+    <img class="win-mascot-img" src="mascot.webp" alt="">
+    <div class="win-title">כָּל הַכָּבוֹד!</div>
+    <div id="winText"></div>
+    <button class="cta mint" id="btnMore">עוֹד מִשְׁפָּטִים</button>
+    <button class="cta ghost" id="btnNewLetter">אוֹת חֲדָשָׁה</button>
+  </div>
+</div>
+
+<!-- ===== SETTINGS ===== -->
+<div class="overlay" id="settingsSheet" hidden>
+  <div class="sheet">
+    <div class="win-title" style="font-size:22px">הַגְדָּרוֹת</div>
+    <div class="settings-row"><span>הַקְרָאָה (קוֹל)</span><button class="switch on" id="swTts" role="switch" aria-checked="true"></button></div>
+    <div class="settings-row" id="ttsMissing" hidden><span style="font-size:13px;color:var(--slate);font-weight:400">לֹא נִמְצָא קוֹל בְּעִבְרִית בַּמַּכְשִׁיר הַזֶּה</span></div>
+    <button class="cta ghost" id="btnCloseSettings" style="margin-top:16px">סְגִירָה</button>
+  </div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<!-- lexicon injected by build_lexicon.py -->
+<script type="application/json" id="lexicon">__LEXICON_JSON__</script>
+
+<script>
+(function(){
+  'use strict';
+  var LEX;
+  try { LEX = JSON.parse(document.getElementById('lexicon').textContent); }
+  catch(e){ document.querySelector('.app').innerHTML =
+    '<p style="text-align:center;font-size:18px;margin-top:60px">אופס, לא הצלחנו לטעון את המילים 😕</p>'; return; }
+
+  var LETTERS = 'אבגדהוזחטיכלמנסעפצקרשת'.split('');
+  var FOLD = {'ך':'כ','ם':'מ','ן':'נ','ף':'פ','ץ':'צ'};
+  var POS = ['FIRST','MIDDLE','LAST'];
+  var POS_SHORT = {FIRST:'תְּחִלָּה', MIDDLE:'אֶמְצַע', LAST:'סוֹף'};
+  var POS_LONG  = {FIRST:'תְּחִלַּת הַמִּלָּה', MIDDLE:'אֶמְצַע הַמִּלָּה', LAST:'סוֹף הַמִּלָּה'};
+  var POS_DOTS  = {FIRST:'●○○', MIDDLE:'○●○', LAST:'○○●'};
+  var TINTS = ['#CDEBFB','#FFD8DC','#FFE6C7','#CFF2E1','#E6DCF7','#FFEDB0','#D7EFE0','#FBDCEF'];
+  var GN = {ms:'m-sg', fs:'f-sg', mp:'m-pl', fp:'f-pl'};
+  var GN_KEY = {'m-sg':'ms','f-sg':'fs','m-pl':'mp','f-pl':'fp'};
+
+  var state = { letter:null, positions:[], n:5, sentences:[], practiced:{}, ttsOn:true };
+
+  function $(s){return document.querySelector(s);}
+  function el(t,c){var e=document.createElement(t); if(c)e.className=c; return e;}
+  function rand(a){return a[Math.floor(Math.random()*a.length)];}
+  function shuffle(a){a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;} return a;}
+  function matchPos(idx, L, ps){var p=idx[L]; if(!p)return false; for(var i=0;i<ps.length;i++){if(p.indexOf(ps[i])>=0)return true;} return false;}
+  function gnOf(n){return n.g+'-'+n.n;}
+
+  // ---------- feasibility matrix (per letter, single position) ----------
+  var FEAS = {};
+  LETTERS.forEach(function(L){
+    FEAS[L]={};
+    POS.forEach(function(P){
+      var ps=[P], nounGN={}, nTotal=0, adjGN={}, vGN={}, vtGN={};
+      LEX.nouns.forEach(function(e){ if(matchPos(e.idx,L,ps)){ var g=gnOf(e); nounGN[g]=(nounGN[g]||0)+1; nTotal++; }});
+      LEX.adjectives.forEach(function(e){ for(var k in GN){ if(matchPos(e.forms[k].idx,L,ps)) adjGN[GN[k]]=(adjGN[GN[k]]||0)+1; }});
+      LEX.verbs.forEach(function(e){ for(var k in GN){ if(matchPos(e.forms[k].idx,L,ps)){ vGN[GN[k]]=(vGN[GN[k]]||0)+1; if(e.trans) vtGN[GN[k]]=(vtGN[GN[k]]||0)+1; }}});
+      var ok=false;
+      for(var g in nounGN){ if(nounGN[g]&&adjGN[g]&&vGN[g]) ok=true; if(nTotal>=2&&nounGN[g]&&vtGN[g]) ok=true; }
+      FEAS[L][P]=ok;
+    });
+  });
+
+  // ---------- generation engine ----------
+  function candidatesFor(L, ps){
+    var nouns = LEX.nouns.filter(function(e){return matchPos(e.idx,L,ps);});
+    var adjByGN={}, verbByGN={};
+    LEX.adjectives.forEach(function(e){ for(var k in GN){ var f=e.forms[k]; if(matchPos(f.idx,L,ps)) (adjByGN[GN[k]]=adjByGN[GN[k]]||[]).push(f.w); }});
+    LEX.verbs.forEach(function(e){ for(var k in GN){ var f=e.forms[k]; if(matchPos(f.idx,L,ps)) (verbByGN[GN[k]]=verbByGN[GN[k]]||[]).push({w:f.w,trans:e.trans}); }});
+    return {nouns:nouns, adjByGN:adjByGN, verbByGN:verbByGN};
+  }
+  function tryTemplate(t, c, subj){
+    var gn = gnOf(subj);
+    var adjs = c.adjByGN[gn]||[], verbs = c.verbByGN[gn]||[];
+    var tverbs = verbs.filter(function(v){return v.trans;});
+    var objs = c.nouns.filter(function(o){return o.w!==subj.w;});
+    if(t==='A' && adjs.length && verbs.length) return [subj.w, rand(adjs), rand(verbs).w];
+    if(t==='C' && adjs.length && tverbs.length && objs.length) return [subj.w, rand(adjs), rand(tverbs).w, rand(objs).w];
+    if(t==='B' && tverbs.length && objs.length) return [subj.w, rand(tverbs).w, rand(objs).w];
+    if(t==='D' && tverbs.length && objs.length){
+      var obj = rand(objs), oadj = (c.adjByGN[gnOf(obj)]||[]).filter(function(a){return a!==obj.w;});
+      if(oadj.length) return [subj.w, rand(tverbs).w, obj.w, rand(oadj)];
+    }
+    return null;
+  }
+  function buildSentence(c){
+    // try every subject (random order) x every template, so one unlucky pick
+    // can't abort a feasible cell; randomness still gives variety across calls
+    var nouns = shuffle(c.nouns), tmpls = shuffle(['A','C','B','D']);
+    for(var i=0;i<nouns.length;i++){
+      for(var j=0;j<tmpls.length;j++){ var s=tryTemplate(tmpls[j],c,nouns[i]); if(s) return s; }
+    }
+    return null;
+  }
+  function generate(L, ps, n){
+    var c = candidatesFor(L, ps); if(!c.nouns.length) return [];
+    var out=[], seen={}, attempts=0, CAP=Math.max(800, n*200);
+    while(out.length<n && attempts<CAP){
+      attempts++;
+      var s = buildSentence(c);
+      if(!s) break;                                   // cell genuinely infeasible
+      var distinct={}, dup=false;
+      for(var w=0;w<s.length;w++){ if(distinct[s[w]]){dup=true;break;} distinct[s[w]]=1; }
+      if(dup) continue;
+      var key=s.join(' '); if(seen[key]) continue;
+      seen[key]=1; out.push(s);
+    }
+    return out;
+  }
+
+  // ---------- TTS (Web Speech API — uses the OS's installed voices) ----------
+  var ttsAvailable = ('speechSynthesis' in window), heVoice=null, ttsConfirmed=false, hintShown=false;
+  var isMac = /Mac/i.test((navigator.platform||'') + (navigator.userAgent||''));
+  var HE_VOICE_HELP = isMac
+    ? 'בְּמֶק: הַגְדָּרוֹת הַמַּעֲרֶכֶת ‹ נְגִישׁוּת ‹ תֹּכֶן מְדֻבָּר ‹ קוֹל מַעֲרֶכֶת ‹ נִיהוּל קוֹלוֹת… ‹ עִבְרִית (כַּרְמִית), וְאָז לְהַפְעִיל מֵחָדָשׁ אֶת הַדַּפְדְּפָן.'
+    : 'יֵשׁ לְהַתְקִין קוֹל עִבְרִי בְּמַעֲרֶכֶת הַהַפְעָלָה (הַגְדָּרוֹת שָׂפָה / דִּבּוּר) וְאָז לְרַעֲנֵן אֶת הָעַמּוּד.';
+  function loadVoices(){ if(!ttsAvailable) return;
+    var vs=window.speechSynthesis.getVoices()||[];
+    heVoice = vs.filter(function(v){return v.lang==='he-IL'||v.lang.toLowerCase().indexOf('he')===0;})[0]||null;
+    updateTtsStatus();
+  }
+  if(ttsAvailable){ loadVoices(); window.speechSynthesis.onvoiceschanged=loadVoices; }
+  function speak(text){
+    if(!ttsAvailable){ showTtsHint(); return; }
+    if(!state.ttsOn) return;
+    try{
+      window.speechSynthesis.cancel();
+      var u=new SpeechSynthesisUtterance(text);
+      u.lang='he-IL'; if(heVoice) u.voice=heVoice; u.rate=.9;
+      u.onstart=function(){ ttsConfirmed=true; };
+      u.onerror=function(){ showTtsHint(); };
+      window.speechSynthesis.speak(u);
+      // if nothing ever starts and there's no Hebrew voice, say so instead of going silent
+      setTimeout(function(){ if(!ttsConfirmed && !heVoice) showTtsHint(); }, 700);
+    }catch(e){ showTtsHint(); }
+  }
+  function showTtsHint(){
+    if(hintShown) return; hintShown=true;
+    var t=$('#toast');
+    t.innerHTML='🔇 לֹא נִמְצָא קוֹל בְּעִבְרִית בַּמַּכְשִׁיר — אֶפְשָׁר עֲדַיִן לִקְרֹא וּלְתַרְגֵּל בְּקוֹל! <button class="link" id="howto">אֵיךְ מַפְעִילִים קוֹל עִבְרִי?</button>';
+    t.hidden=false;
+    var h=$('#howto'); if(h) h.addEventListener('click',function(){ alert(HE_VOICE_HELP); });
+    clearTimeout(showTtsHint._t); showTtsHint._t=setTimeout(function(){ t.hidden=true; }, 9000);
+  }
+  function updateTtsStatus(){
+    var miss=$('#ttsMissing'); if(!miss) return; var span=miss.querySelector('span');
+    if(!ttsAvailable){ miss.hidden=false; span.textContent='הַדַּפְדְּפָן לֹא תּוֹמֵךְ בְּהַקְרָאָה'; }
+    else if(!heVoice){ miss.hidden=false; span.textContent='לֹא נִמְצָא קוֹל בְּעִבְרִית בַּמַּכְשִׁיר הַזֶּה'; }
+    else { miss.hidden=true; }
+  }
+
+  // ---------- setup UI ----------
+  var mascot=$('#mascot'), lgrid=$('#lgrid'), posRow=$('#posRow'), chips=$('#chips'),
+      stepNum=$('#stepNum'), btnGen=$('#btnGenerate');
+
+  LETTERS.forEach(function(L,i){
+    var b=el('button','tile'); b.textContent=L; b.style.background=TINTS[i%TINTS.length];
+    b.setAttribute('role','radio'); b.setAttribute('aria-checked','false'); b.dataset.letter=L;
+    b.addEventListener('click',function(){ selectLetter(L); });
+    lgrid.appendChild(b);
+  });
+  POS.forEach(function(P){
+    var d=el('div','pos'); d.dataset.pos=P; d.setAttribute('role','checkbox'); d.setAttribute('aria-checked','false');
+    d.innerHTML='<div class="dots">'+POS_DOTS[P]+'</div>'+POS_SHORT[P];
+    d.addEventListener('click',function(){ togglePos(P,d); });
+    posRow.appendChild(d);
+  });
+  [1,3,5,10].forEach(function(v){
+    var c=el('button','chip'); c.textContent=v; c.dataset.v=v;
+    c.addEventListener('click',function(){ setN(v); });
+    chips.appendChild(c);
+  });
+
+  function selectLetter(L){
+    state.letter=L;
+    Array.prototype.forEach.call(lgrid.children,function(t){
+      var on=t.dataset.letter===L; t.classList.toggle('sel',on); t.setAttribute('aria-checked',on?'true':'false');
+    });
+    mascot.textContent=L; mascot.classList.remove('empty');
+    mascot.style.background=TINTS[LETTERS.indexOf(L)%TINTS.length];  // match the chosen tile's colour
+    // gate positions by feasibility; drop now-impossible selections
+    Array.prototype.forEach.call(posRow.children,function(d){
+      var P=d.dataset.pos, feasible=FEAS[L][P];
+      d.classList.toggle('disabled',!feasible);
+      if(!feasible){ d.classList.remove('on'); d.setAttribute('aria-checked','false');
+        var k=state.positions.indexOf(P); if(k>=0) state.positions.splice(k,1); }
+    });
+    speak(L); refreshGen();
+  }
+  function togglePos(P,d){
+    if(d.classList.contains('disabled')) return;
+    var k=state.positions.indexOf(P);
+    if(k>=0){ state.positions.splice(k,1); d.classList.remove('on'); d.setAttribute('aria-checked','false'); }
+    else { state.positions.push(P); d.classList.add('on'); d.setAttribute('aria-checked','true'); }
+    refreshGen();
+  }
+  function setN(v){ state.n=v; stepNum.textContent=v;
+    Array.prototype.forEach.call(chips.children,function(c){ c.classList.toggle('on',+c.dataset.v===v); }); }
+  $('#stepMinus').addEventListener('click',function(){ setN(Math.max(1,state.n-1)); });
+  $('#stepPlus').addEventListener('click',function(){ setN(Math.min(10,state.n+1)); });
+  function refreshGen(){ btnGen.disabled = !(state.letter && state.positions.length); }
+  setN(5);
+
+  // ---------- results UI ----------
+  function show(id){ $('#setup').hidden=(id!=='setup'); $('#results').hidden=(id!=='results'); }
+  var NIQQUD = /[֑-ׇ]/, HEBC = /[א-ת]/;
+  function renderWord(word){
+    // group each base consonant with its trailing niqqud marks into one unit,
+    // so highlighting a letter keeps its vowel points attached
+    var chars = Array.prototype.slice.call(word), html='', i=0;
+    while(i<chars.length){
+      var ch=chars[i], unit=ch, j=i+1;
+      while(j<chars.length && NIQQUD.test(chars[j])){ unit+=chars[j]; j++; }
+      var base=FOLD[ch]||ch;
+      html += (HEBC.test(base) && base===state.letter) ? '<span class="tg">'+unit+'</span>' : unit;
+      i=j;
+    }
+    return '<bdi class="word" tabindex="0">'+html+'</bdi>';
+  }
+  function doGenerate(){
+    var res = generate(state.letter, state.positions, state.n);
+    state.sentences = res; state.practiced = {};
+    var posTxt = state.positions.map(function(p){return POS_SHORT[p];}).join(' · ');
+    $('#resSummary').textContent = 'הָאוֹת: '+state.letter+' · '+posTxt+' · '+res.length;
+    var cap=$('#capNote');
+    if(res.length < state.n){ cap.hidden=false; cap.textContent='מָצָאנוּ '+res.length+' מִשְׁפָּטִים לַמִּקּוּם הַזֶּה — נַסּוּ עוֹד מִקּוּם לְעוֹד מִשְׁפָּטִים'; }
+    else cap.hidden=true;
+
+    var box=$('#sentences'); box.innerHTML='';
+    res.forEach(function(words,i){
+      var r=el('div','ribbon'); r.dataset.i=i; r.style.animationDelay=(i*0.05)+'s';
+      var sent=el('div','sent'); sent.innerHTML=words.map(renderWord).join(' ');
+      var ctrl=el('div','ribbon-ctrl');
+      var listen=el('button','rbtn listen'); listen.textContent='🔊 שִׁמְעוּ'; listen.setAttribute('aria-label','השמעת המשפט');
+      var said=el('button','rbtn said'); said.textContent='✓ אָמַרְתִּי'; said.setAttribute('aria-label','סימון שתרגלנו');
+      if(!ttsAvailable){ listen.style.display='none'; }   // no Hebrew voice -> said takes full width
+      ctrl.appendChild(listen); ctrl.appendChild(said);   // RTL: שמעו on the right, אמרתי on the left
+      r.appendChild(sent); r.appendChild(ctrl);
+
+      var line = words.join(' ');
+      listen.addEventListener('click',function(){ speak(line); });
+      said.addEventListener('click',function(){ togglePracticed(i); });
+      Array.prototype.forEach.call(sent.querySelectorAll('.word'),function(w){
+        w.addEventListener('click',function(){ speak(w.textContent); });
+        w.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();speak(w.textContent);} });
+      });
+      box.appendChild(r);
+    });
+    updateProgress(); show('results');
+  }
+  function togglePracticed(i){
+    var r=$('#sentences').children[i]; if(!r) return;
+    var said=r.querySelector('.rbtn.said');
+    if(state.practiced[i]){ delete state.practiced[i]; r.classList.remove('done'); said.textContent='✓ אָמַרְתִּי'; said.classList.remove('is-done'); }
+    else { state.practiced[i]=1; r.classList.add('done'); said.textContent='✓ תִּרְגַּלְנוּ'; said.classList.add('is-done'); }
+    updateProgress();
+    if(state.sentences.length && Object.keys(state.practiced).length===state.sentences.length) setTimeout(celebrate,450);
+  }
+  function updateProgress(){
+    var done=Object.keys(state.practiced).length, tot=state.sentences.length;
+    $('#progText').textContent='תִּרְגַּלְתֶּם '+done+' מִתּוֹךְ '+tot;
+    $('#progBar').style.width=(tot?(done/tot*100):0)+'%';
+  }
+  function fireworksSVG(){
+    var pal=['#FF7A85','#FF9F40','#FFD54F','#66D9A8','#4FC3F7','#B39DDB'];
+    var bursts=[[70,72,42,0],[300,96,38,.45],[195,46,50,.9],[330,182,30,1.25],[52,180,30,.3]];
+    var svg='';
+    bursts.forEach(function(b,bi){
+      var cx=b[0],cy=b[1],r=b[2],n=11,sp='';
+      for(var k=0;k<n;k++){ var a=2*Math.PI*k/n, x2=cx+r*Math.cos(a), y2=cy+r*Math.sin(a), col=pal[(k+bi)%pal.length];
+        sp+='<line x1="'+cx+'" y1="'+cy+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'" stroke="'+col+'" stroke-width="3" stroke-linecap="round"/>';
+        sp+='<circle cx="'+x2.toFixed(1)+'" cy="'+y2.toFixed(1)+'" r="3.6" fill="'+col+'"/>'; }
+      svg+='<g class="fw" style="animation-delay:'+b[3]+'s">'+sp+'</g>';
+    });
+    return '<svg viewBox="0 0 380 240" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">'+svg+'</svg>';
+  }
+  function celebrate(){
+    $('#winText').innerHTML='תִּרְגַּלְתֶּם אֶת כָּל '+state.sentences.length+' הַמִּשְׁפָּטִים עִם הָאוֹת <b>'+state.letter+'</b>';
+    $('#fireworks').innerHTML=fireworksSVG();
+    $('#celebrate').hidden=false;
+  }
+
+  $('#btnGenerate').addEventListener('click',doGenerate);
+  $('#btnShuffle').addEventListener('click',doGenerate);
+  $('#btnEdit').addEventListener('click',function(){ show('setup'); });
+  $('#btnBack').addEventListener('click',function(){ show('setup'); });
+  $('#btnMore').addEventListener('click',function(){ $('#celebrate').hidden=true; doGenerate(); });
+  $('#btnNewLetter').addEventListener('click',function(){ $('#celebrate').hidden=true; show('setup'); });
+
+  // ---------- settings ----------
+  $('#btnSettings').addEventListener('click',function(){ $('#settingsSheet').hidden=false; });
+  $('#btnCloseSettings').addEventListener('click',function(){ $('#settingsSheet').hidden=true; });
+  var swTts=$('#swTts');
+  if(!ttsAvailable){ swTts.classList.remove('on'); swTts.setAttribute('aria-checked','false'); state.ttsOn=false; swTts.disabled=true; }
+  updateTtsStatus();
+  swTts.addEventListener('click',function(){ if(!ttsAvailable)return; state.ttsOn=!state.ttsOn;
+    swTts.classList.toggle('on',state.ttsOn); swTts.setAttribute('aria-checked',state.ttsOn?'true':'false'); });
+
+})();
+</script>
+</body>
+</html>
