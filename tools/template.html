@@ -13,7 +13,7 @@
     --cream:#FFF9F0; --card:#FFFFFF; --blue:#4FC3F7; --yellow:#FFD54F;
     --coral:#FF7A85; --mango:#FF9F40; --mint:#66D9A8; --grape:#B39DDB;
     --target:#E5392F; --ink:#2B2B36; --slate:#6B6B7B; --tile:#EDEEF5;
-    --focus:#1565C0; --line:#ECE6DC;
+    --focus:#1565C0; --line:#ECE6DC; --gold:#F6B73C;
     --f-body:'Heebo','Arial Hebrew','Noto Sans Hebrew',system-ui,sans-serif;
     --f-round:'Varela Round','Heebo','Arial Hebrew',sans-serif;
     --f-display:'Fredoka','Varela Round','Heebo',sans-serif;
@@ -37,7 +37,6 @@
   #setup{display:flex; flex-direction:column; min-height:calc(100vh - 32px); min-height:calc(100svh - 32px)}
   .topbar{position:relative; flex:1 1 0; min-height:90px; margin-bottom:0}
   .logo-img{position:absolute; inset:0; margin:auto; max-height:min(100%,320px); max-width:92%; width:auto; height:auto; display:block}
-  .app-gear{position:absolute; top:8px; inset-inline-start:8px; z-index:5}
   .icon-btn{width:42px;height:42px;border:1px solid var(--line);background:#fff;border-radius:50%;
     font-size:20px;display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow-sm)}
   .icon-btn:active{transform:scale(.94)}
@@ -62,14 +61,15 @@
     font-family:var(--f-round);font-weight:700;font-size:14px;color:var(--ink);cursor:pointer;
     box-shadow:var(--shadow-sm);transition:transform .12s}
   .pos:active{transform:scale(.95)}
-  /* concrete preview: the chosen letter sits in its slot (●/middle/end), RTL via flex so FIRST is rightmost */
-  .pos .dots{display:flex;justify-content:center;gap:6px;font-size:15px;font-weight:800;line-height:1;margin-bottom:2px}
-  .pos .dots .pp-o{color:#897C66}
-  .pos .dots .pp-ph{color:var(--slate)}
-  .pos .dots .pp-g{color:var(--target)}
+  /* concrete preview: a tiny word from mini letter-tiles; FIRST is rightmost (RTL), active slot = mango */
+  .pos .dots,.wt{display:flex;justify-content:center;gap:3px}
+  .pos .dots{margin-bottom:5px}
+  .pos .dots b,.wt b{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;font-family:var(--f-round);
+    font-weight:700;font-size:11px;background:#fff;border:1.5px solid #E2DBCB;color:#fff}
+  .pos .dots b.on,.wt b.on{background:var(--mango);border-color:var(--mango)}
   .pos.on{background:var(--mango);border-color:var(--mango);color:#fff}
-  .pos.on .dots .pp-g,.pos.on .dots .pp-ph{color:#fff}
-  .pos.on .dots .pp-o{color:rgba(255,255,255,.6)}   /* empty slots stay subordinate to the white target glyph */
+  .pos.on .dots b{border-color:rgba(255,255,255,.75);background:rgba(255,255,255,.18)}
+  .pos.on .dots b.on{background:#fff;border-color:#fff;color:var(--mango)}   /* mango-on-mango would vanish: invert on the selected pill */
   .pos.disabled{opacity:.38;cursor:not-allowed;background:#F3F1EB}
   .pos:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 
@@ -95,9 +95,7 @@
   .cta.grape{background:linear-gradient(90deg,#B39DDB,#8E6FD0);box-shadow:0 12px 22px rgba(142,111,208,.42)}
 
   /* results */
-  .hchip{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--line);
-    border-radius:16px;padding:11px 14px;margin-inline-start:42px;font-family:var(--f-round);font-weight:700;font-size:15px;box-shadow:var(--shadow-sm)}
-  .editbtn{border:none;background:none;font-size:18px;cursor:pointer;color:var(--slate)}
+  .editbtn{border:none;background:none;font-size:18px;cursor:pointer;color:var(--slate);flex:0 0 auto}
   .progress{display:flex;align-items:center;gap:10px;justify-content:center;font-size:13px;color:var(--slate);margin:12px 0 4px}
   .pbar{flex:1;height:9px;border-radius:99px;background:#EBE4D6;overflow:hidden;max-width:200px}
   .pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),var(--blue));transition:width .4s}
@@ -153,6 +151,77 @@
   .toast .link{background:none;border:none;color:var(--yellow);font-weight:700;text-decoration:underline;
     cursor:pointer;font-size:13.5px;font-family:inherit;padding:0}
 
+  /* ===== progress / usage tracking (streak-free): identity chip, week dots, progress sheet, onboarding ===== */
+  .idchip{display:flex;align-items:center;gap:8px;margin:0 0 4px}
+  .idchip .icon-btn{flex:0 0 auto}
+  /* one shared pill shape for BOTH the setup glance chip and the results header, so the bar (and the gear
+     beside it) keep the same size/position across views and don't "jump" on transition. min-height matches the 42px gear. */
+  .chip-pill{flex:1;display:flex;align-items:center;gap:9px;min-height:42px;background:#fff;border:1px solid var(--line);
+    border-radius:16px;padding:6px 12px;box-shadow:var(--shadow-sm);font-family:var(--f-round);font-weight:700;font-size:14.5px;color:var(--ink)}
+  .chip-pill #resSummary{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .ic-open{cursor:pointer}                 /* setup pill is tappable (opens progress); results pill is not */
+  .ic-open:active{transform:scale(.99)}
+  .ic-who{flex:0 1 auto;min-width:0;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}   /* min-width:0 so long names ellipsize instead of blowing out the chip */
+  .idchip .wkdots{flex:0 0 auto}
+  .ic-chev{flex:0 0 auto;color:var(--slate);font-size:18px;margin-inline-start:auto}
+  .ic-open:focus-visible,.idchip .icon-btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  /* week strip: oldest -> today, right -> left (RTL). a gap is a quiet empty dot — no penalty (the "no streak" choice) */
+  .wkdots{display:flex;gap:6px;align-items:center}
+  .wkd{width:13px;height:13px;border-radius:50%;background:#E3DECF;flex:0 0 auto}
+  .wkd.on{background:linear-gradient(135deg,var(--mint),var(--blue))}
+  .wkd.today{box-shadow:0 0 0 3px rgba(246,183,60,.4)}      /* ring marks "today"; gold fill only once today is practiced */
+  .wkd.today.on{background:var(--gold)}
+  .glance-wk .wkd{width:11px;height:11px}
+
+  /* progress sheet */
+  .sheet-head{font-family:var(--f-display);font-weight:700;font-size:22px;margin:2px 0 14px}
+  .stats3{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:14px}
+  .stat{background:#FAF7F0;border:1px solid var(--line);border-radius:16px;padding:12px 6px}
+  .stat .n{font-family:var(--f-display);font-weight:700;font-size:30px;line-height:1.05}
+  .stat .l{font-family:var(--f-round);font-weight:700;font-size:12px;color:var(--slate);margin-top:3px}
+  .wkrow{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:18px;
+    font-family:var(--f-round);font-weight:700;font-size:13px;color:var(--slate)}
+  .walltitle{font-family:var(--f-round);font-weight:700;font-size:15px;margin:2px 0 8px;text-align:center}
+  /* "sounds I've made talk" — only the sounds actually practiced (auto-grows), each with practice depth */
+  .snds{display:flex;flex-direction:column;gap:10px;text-align:start}
+  .sndrow{display:flex;align-items:center;gap:13px;background:#FAF7F0;border:1px solid var(--line);border-radius:16px;padding:10px 12px}
+  .sndrow .stile{width:50px;height:50px;border-radius:14px;flex:0 0 auto;display:grid;place-items:center;
+    font-family:var(--f-round);font-weight:700;font-size:23px;color:var(--ink);box-shadow:var(--shadow-sm)}
+  .sndrow .stile.multi{font-size:15px;letter-spacing:-.5px}
+  .sndrow .meta .ct{font-family:var(--f-round);font-weight:700;font-size:15px}
+  .sndrow .meta .sub{font-size:11.5px;color:var(--slate);margin-top:1px}
+  .sndrow .wt{margin-inline-start:auto;align-self:center}
+
+  /* empty state — day one: an invitation, never a goose-egg of zeros */
+  .empty-note{font-family:var(--f-round);font-weight:700;font-size:15.5px;color:var(--ink);margin:2px 0 16px}
+  .empty-box{border:2px dashed #E0D8C7;border-radius:16px;padding:20px 14px;background:#FCFAF4;
+    color:var(--slate);font-size:13.5px;font-family:var(--f-round);font-weight:700;line-height:1.5}
+  .empty-box .em{font-size:30px;display:block;margin-bottom:6px}
+
+  .sheet-foot{display:flex;align-items:center;gap:10px;margin-top:16px}
+  .sheet-foot .cta{margin-top:0;flex:1}
+  .linkbtn{background:none;border:none;color:var(--slate);font-family:var(--f-round);font-weight:700;
+    font-size:13px;cursor:pointer;white-space:nowrap;text-decoration:underline}
+  .win-week{display:flex;justify-content:center;margin:10px 0 2px}
+  .milestone{font-family:var(--f-round);font-weight:700;font-size:15px;color:var(--ink);margin:8px 0 2px}
+  .win-mascot-sm{width:84px;height:84px;object-fit:contain;margin:0 auto 8px;display:block;filter:drop-shadow(0 8px 14px rgba(43,43,54,.16))}
+
+  /* onboarding (name + gender — gender lets the personalized copy be grammatically correct) */
+  .ob-q{font-family:var(--f-display);font-weight:700;font-size:24px;margin:6px 0 4px}
+  .ob-sub{font-size:13px;color:var(--slate);margin:0 0 16px}
+  .namefield{width:100%;border:2px solid var(--line);border-radius:16px;padding:13px 14px;font-family:var(--f-round);
+    font-weight:700;font-size:18px;text-align:center;color:var(--ink);background:#FAF7F0}
+  .namefield::placeholder{color:#BDB6A6}
+  .gsel{display:flex;gap:10px;margin-top:12px}
+  .gpill{flex:1;background:#fff;border:2px solid var(--line);border-radius:16px;padding:11px 4px;text-align:center;
+    font-family:var(--f-round);font-weight:700;font-size:15px;color:var(--ink);cursor:pointer;box-shadow:var(--shadow-sm)}
+  .gpill.on{background:var(--grape);border-color:var(--grape);color:#fff}
+
+  /* parent-facing privacy reassurance — "there's no backend" is invisible to parents, so say it plainly */
+  .privacy{margin:14px 2px 0;font-family:var(--f-body);font-weight:400;font-size:11.5px;color:var(--slate);line-height:1.55}
+  .privacy.tight{margin-top:12px;font-size:11px}
+
   [hidden]{display:none!important}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
@@ -167,10 +236,17 @@
 </head>
 <body>
 <div class="app">
-  <button class="icon-btn app-gear" id="btnSettings" aria-label="הגדרות">⚙</button>
 
   <!-- ===== SETUP ===== -->
   <section id="setup">
+    <div class="idchip">
+      <button class="icon-btn" id="btnSettings" aria-label="הגדרות">⚙</button>
+      <button class="chip-pill ic-open" id="glance" aria-label="ההתקדמות שלי">
+        <span class="ic-who" id="glanceWho">שָׁלוֹם!</span>
+        <span class="wkdots glance-wk" id="glanceWeek" aria-hidden="true"></span>
+        <span class="ic-chev">‹</span>
+      </button>
+    </div>
     <div class="topbar">
       <img class="logo-img" src="logo.webp" alt="אותיות מדברות">
     </div>
@@ -193,9 +269,12 @@
 
   <!-- ===== RESULTS ===== -->
   <section id="results" hidden>
-    <div class="hchip">
-      <span id="resSummary"></span>
-      <button class="editbtn" id="btnEdit" aria-label="חזרה">✎</button>
+    <div class="idchip">
+      <button class="icon-btn" id="btnSettings2" aria-label="הגדרות">⚙</button>
+      <div class="chip-pill">
+        <span id="resSummary"></span>
+        <button class="editbtn" id="btnEdit" aria-label="חזרה">✎</button>
+      </div>
     </div>
     <div class="progress">
       <span id="progText"></span>
@@ -213,11 +292,13 @@
 
 <!-- ===== CELEBRATION ===== -->
 <div class="overlay" id="celebrate" hidden>
-  <div class="sheet">
+  <div class="sheet" style="max-height:92vh;overflow-y:auto">
     <div class="fireworks" id="fireworks"></div>
     <img class="win-mascot-img" src="mascot.webp" alt="">
-    <div class="win-title">כָּל הַכָּבוֹד!</div>
+    <div class="win-title" id="winTitle">כָּל הַכָּבוֹד!</div>
     <div id="winText"></div>
+    <div class="win-week" id="winWeekRow"><span class="wkdots" id="winWeek"></span></div>
+    <div class="milestone" id="winMilestone" hidden></div>
     <button class="cta mint" id="btnMore">עוֹד מִשְׁפָּטִים</button>
     <button class="cta grape" id="btnNewLetter">אוֹת חֲדָשָׁה</button>
   </div>
@@ -229,7 +310,51 @@
     <div class="win-title" style="font-size:22px">הַגְדָּרוֹת</div>
     <div class="settings-row"><span>הַקְרָאָה (קוֹל)</span><button class="switch on" id="swTts" role="switch" aria-checked="true"></button></div>
     <div class="settings-row" id="ttsMissing" hidden><span style="font-size:13px;color:var(--slate);font-weight:400">לֹא נִמְצָא קוֹל בְּעִבְרִית בַּמַּכְשִׁיר הַזֶּה</span></div>
+    <p class="privacy" style="text-align:start">🔒 הַשֵּׁם וְהַהֶתְקַדְּמוּת נִשְׁמָרִים רַק כָּאן, בַּמַּכְשִׁיר, וְאֵינָם נִשְׁלָחִים לָרֶשֶׁת.</p>
     <button class="cta mint" id="btnCloseSettings" style="margin-top:16px">סְגִירָה</button>
+  </div>
+</div>
+
+<!-- ===== ONBOARDING (first launch / switch player) ===== -->
+<div class="overlay" id="onboard" hidden>
+  <div class="sheet">
+    <img class="win-mascot-sm" src="mascot.webp" alt="">
+    <div class="ob-q">שָׁלוֹם! 👋</div>
+    <p class="ob-sub">אֵיךְ קוֹרְאִים לָךְ?</p>
+    <input class="namefield" id="obName" maxlength="20" placeholder="הַשֵּׁם שֶׁלִּי…" autocomplete="off" enterkeyhint="done">
+    <div class="gsel" role="group" aria-label="בן או בת">
+      <button class="gpill" id="gpillM" data-g="m">בֵּן</button>
+      <button class="gpill" id="gpillF" data-g="f">בַּת</button>
+    </div>
+    <button class="cta mint" id="obStart" style="margin-top:16px">יֵשׁ! ✨</button>
+    <button class="linkbtn" id="obSkip" style="margin-top:12px">אַחַר כָּךְ</button>
+    <p class="privacy">🔒 הַשֵּׁם וְהַהֶתְקַדְּמוּת נִשְׁמָרִים רַק בַּמַּכְשִׁיר הַזֶּה וְאֵינָם נִשְׁלָחִים לָרֶשֶׁת — בְּלִי חֶשְׁבּוֹן.</p>
+  </div>
+</div>
+
+<!-- ===== PROGRESS ("ההתקדמות שלי") ===== -->
+<div class="overlay" id="progress" hidden>
+  <div class="sheet" style="text-align:center;max-height:88vh;overflow-y:auto">
+    <div class="sheet-head" id="progName">הַהֶתְקַדְּמוּת שֶׁלִּי</div>
+    <div id="progEmpty" hidden>
+      <img class="win-mascot-sm" src="mascot.webp" alt="">
+      <div class="empty-note">עֲדַיִן אֵין תִּרְגּוּלִים — כָּל תִּרְגּוּל נֶחְשָׁב!</div>
+      <div class="empty-box"><span class="em">🎈</span><span id="progEmptyMsg">כָּאן יוֹפִיעוּ הַצְּלִילִים שֶׁתְּתַרְגְּלוּ</span></div>
+    </div>
+    <div id="progBody">
+      <div class="stats3">
+        <div class="stat"><div class="n" id="progDays">0</div><div class="l">יָמִים</div></div>
+        <div class="stat"><div class="n" id="progSent">0</div><div class="l">מִשְׁפָּטִים</div></div>
+      </div>
+      <div class="wkrow">הַשָּׁבוּעַ <span class="wkdots" id="progWeek"></span></div>
+      <div class="walltitle">אוֹתִיּוֹת שֶׁדִּבְּרוּ</div>
+      <div class="snds" id="progSounds"></div>
+    </div>
+    <div class="sheet-foot">
+      <button class="cta mint" id="btnCloseProgress">סְגִירָה</button>
+      <button class="linkbtn" id="progSwitch">⟳ הַחְלָפַת שַׂחְקָן</button>
+    </div>
+    <p class="privacy tight">🔒 הַנְּתוּנִים נִשְׁמָרִים בַּמַּכְשִׁיר וְאֵינָם נִשְׁלָחִים לָרֶשֶׁת.</p>
   </div>
 </div>
 
@@ -278,7 +403,7 @@
     return null;
   }
 
-  var state = { letter:null, positions:[], n:5, sentences:[], practiced:{}, ttsOn:true };
+  var state = { letter:null, positions:[], n:5, sentences:[], practiced:{}, counted:{}, celebrated:false, ttsOn:true };
 
   function $(s){return document.querySelector(s);}
   function el(t,c){var e=document.createElement(t); if(c)e.className=c; return e;}
@@ -400,8 +525,9 @@
   // position preview: the target slot shows the actual chosen letter (red, like the in-sentence highlight),
   // the other two show ○. before a sound is picked, glyph is omitted and a neutral ● placeholder is shown.
   function posPreview(P, glyph){
-    var on={FIRST:0,MIDDLE:1,LAST:2}[P], cls=glyph?'pp-g':'pp-ph', mark=glyph||'●', s='';
-    for(var i=0;i<3;i++) s += (i===on) ? '<span class="'+cls+'">'+mark+'</span>' : '<span class="pp-o">○</span>';
+    // word-tiles: the active slot is a mango mini-tile holding the chosen letter (empty before a sound is picked)
+    var on={FIRST:0,MIDDLE:1,LAST:2}[P], s='';
+    for(var i=0;i<3;i++) s += (i===on) ? '<b class="on">'+(glyph||'')+'</b>' : '<b></b>';
     return s;
   }
   // restart a one-shot attention animation (clears any sibling cue first so transforms can't collide)
@@ -419,9 +545,10 @@
     lgrid.appendChild(b);
   });
   POS.forEach(function(P){
-    var d=el('div','pos'); d.dataset.pos=P; d.setAttribute('role','checkbox'); d.setAttribute('aria-checked','false');
+    var d=el('div','pos'); d.dataset.pos=P; d.setAttribute('role','checkbox'); d.setAttribute('aria-checked','false'); d.tabIndex=0;
     d.innerHTML='<div class="dots">'+posPreview(P)+'</div>'+POS_SHORT[P];
     d.addEventListener('click',function(){ togglePos(P,d); });
+    d.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); togglePos(P,d); } });  // keyboard/switch access (pos is required)
     posRow.appendChild(d);
   });
 
@@ -435,6 +562,7 @@
     each(posRow.children,function(d){
       var P=d.dataset.pos, feasible=FEAS[L][P];
       d.classList.toggle('disabled',!feasible);
+      d.tabIndex = feasible ? 0 : -1;                  // infeasible pills drop out of the tab order
       d.querySelector('.dots').innerHTML=posPreview(P,glyph);
       if(!feasible){ d.classList.remove('on'); d.setAttribute('aria-checked','false');
         var k=state.positions.indexOf(P); if(k>=0) state.positions.splice(k,1); }
@@ -473,8 +601,9 @@
   }
   function doGenerate(){
     var res = generate(state.letter, state.positions, state.n);
-    state.sentences = res; state.practiced = {};
-    var posTxt = state.positions.map(function(p){return POS_SHORT[p];}).join(' · ');
+    state.sentences = res; state.practiced = {}; state.counted = {}; state.celebrated = false;
+    // always display start·middle·end in canonical order (POS), not the order the pills were tapped
+    var posTxt = POS.filter(function(p){return state.positions.indexOf(p)>=0;}).map(function(p){return POS_SHORT[p];}).join(' · ');
     $('#resSummary').textContent = 'הַצְּלִיל: '+SOURCES[state.letter]+' · '+posTxt+' · '+res.length;
     var cap=$('#capNote');
     if(res.length < state.n){ cap.hidden=false; cap.textContent='מָצָאנוּ '+res.length+' מִשְׁפָּטִים לַמִּקּוּם הַזֶּה — נַסּוּ עוֹד מִקּוּם לְעוֹד מִשְׁפָּטִים'; }
@@ -510,13 +639,16 @@
     var r=$('#sentences').children[i]; if(!r) return;
     var said=r.querySelector('.rbtn.said');
     if(state.practiced[i]){ delete state.practiced[i]; r.classList.remove('done'); said.textContent='✓ אָמַרְתִּי'; said.classList.remove('is-done'); }
-    else { state.practiced[i]=1; r.classList.add('done'); said.textContent='✓ תִּרְגַּלְנוּ'; said.classList.add('is-done'); }
+    else { state.practiced[i]=1; r.classList.add('done'); said.textContent='✓ תִּרְגַּלְנוּ'; said.classList.add('is-done');
+      // count each sentence at most once per generated set (toggling off doesn't subtract — it's a motivational tally, not a ledger)
+      if(!state.counted[i]){ state.counted[i]=1; recordPracticed(state.letter, state.positions); } }
     updateProgress();
-    if(state.sentences.length && Object.keys(state.practiced).length===state.sentences.length) setTimeout(celebrate,450);
+    // gate so un-toggling then re-completing a set doesn't replay fireworks/milestone (stats are already counted-guarded)
+    if(!state.celebrated && state.sentences.length && Object.keys(state.practiced).length===state.sentences.length){ state.celebrated=true; setTimeout(celebrate,450); }
   }
   function updateProgress(){
     var done=Object.keys(state.practiced).length, tot=state.sentences.length;
-    $('#progText').textContent='תִּרְגַּלְתֶּם '+done+' מִתּוֹךְ '+tot;
+    $('#progText').textContent='תִּרְגַּלְ'+verbEnd()+' '+done+' מִתּוֹךְ '+tot;
     $('#progBar').style.width=(tot?(done/tot*100):0)+'%';
   }
   function fireworksSVG(){
@@ -533,7 +665,16 @@
     return '<svg viewBox="0 0 380 240" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">'+svg+'</svg>';
   }
   function celebrate(){
-    $('#winText').innerHTML='תִּרְגַּלְתֶּם אֶת כָּל '+state.sentences.length+' הַמִּשְׁפָּטִים עִם הָאוֹת <b>'+SOURCES[state.letter]+'</b>';
+    var name=tracking()?profile.name:'';
+    $('#winTitle').textContent='כָּל הַכָּבוֹד'+(name?(', '+name):'')+'!';
+    $('#winText').innerHTML='תִּרְגַּלְ'+verbEnd()+' אֶת כָּל '+state.sentences.length+' הַמִּשְׁפָּטִים עִם הָאוֹת <b>'+SOURCES[state.letter]+'</b>';
+    if(tracking()){                            // week strip + milestone are tracking artifacts — skip them when not tracking
+      $('#winWeekRow').hidden=false; renderWeek($('#winWeek'));
+      var days=Object.keys(stats.days).length, ms=$('#winMilestone');
+      ms.innerHTML = (days<=1) ? ('הַתִּרְגּוּל הָרִאשׁוֹן '+possYour()+'! 🌟')
+                               : ('זֶה הַיּוֹם הַ־'+days+' '+possYour()+'! 🌟');
+      ms.hidden=false;
+    } else { $('#winWeekRow').hidden=true; $('#winMilestone').hidden=true; }
     $('#fireworks').innerHTML=fireworksSVG();
     $('#celebrate').hidden=false;
   }
@@ -553,6 +694,7 @@
 
   // ---------- settings ----------
   $('#btnSettings').addEventListener('click',function(){ $('#settingsSheet').hidden=false; });
+  $('#btnSettings2').addEventListener('click',function(){ $('#settingsSheet').hidden=false; });   // settings also reachable mid-practice (results screen)
   $('#btnCloseSettings').addEventListener('click',function(){ $('#settingsSheet').hidden=true; });
   $('#settingsSheet').addEventListener('click',function(e){ if(e.target===this) this.hidden=true; });  // tap backdrop to close
   var swTts=$('#swTts');
@@ -565,6 +707,122 @@
     try{ localStorage.setItem('talkingletters.tts', state.ttsOn?'1':'0'); }catch(e){}
     each(document.querySelectorAll('.listen-group'),function(b){ b.style.display=state.ttsOn?'':'none'; });  // sync sentences already on screen
   });
+
+  // ---------- usage tracking (localStorage, per named profile — no backend, nothing leaves the device) ----------
+  // streak-free by design: we store cumulative days/sentences (only ever climb) + a 7-day strip; never a breakable streak.
+  var PKEY='talkingletters.profile', ONBOARDED='talkingletters.onboarded';
+  var profile=null; try{ var _pj=localStorage.getItem(PKEY); if(_pj) profile=JSON.parse(_pj); }catch(e){}
+  function profileId(){ return (profile&&profile.name)?profile.name:'_'; }   // name = lightweight profile key (multi-kid, one device)
+  function statsKey(){ return 'talkingletters.stats.'+profileId()+'.v1'; }
+  function loadStats(){ var s={}; try{ var j=localStorage.getItem(statsKey()); if(j) s=JSON.parse(j)||{}; }catch(e){}
+    if(!s.days||typeof s.days!=='object') s.days={};                          // normalize over defaults — guards partial/old-schema blobs
+    if(!s.sounds||typeof s.sounds!=='object') s.sounds={};
+    if(typeof s.total!=='number') s.total=0;
+    return s; }
+  var stats=loadStats();
+  function saveStats(){ try{ localStorage.setItem(statsKey(), JSON.stringify(stats)); }catch(e){} }
+  function saveProfile(){ try{ if(profile) localStorage.setItem(PKEY, JSON.stringify(profile)); else localStorage.removeItem(PKEY); }catch(e){} }
+  function tracking(){ return !!(profile && profile.name); }   // no name (onboarding skipped) = tracking OFF, nothing persisted
+
+  // gendered personal copy (the reason we ask בן/בת in onboarding); falls back to plural when gender is unknown
+  function pg(){ return tracking() && (profile.gender==='m'||profile.gender==='f') ? profile.gender : null; }
+  function verbEnd(){ var g=pg(); return g==='m'?'תָּ':g==='f'?'תְּ':'תֶּם'; }                 // תִּרְגַּלְ + _
+  function possYour(){ var g=pg(); return g==='m'?'שֶׁלְּךָ':g==='f'?'שֶׁלָּךְ':'שֶׁלָּכֶם'; }
+  function futVerb(){ var g=pg(); return g==='m'?'שֶׁתְּתַרְגֵּל':g==='f'?'שֶׁתְּתַרְגְּלִי':'שֶׁתְּתַרְגְּלוּ'; }
+
+  // local date key — NOT toISOString() (that's UTC and flips "today" at the wrong hour)
+  function dayKey(d){ return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); }
+  function todayKey(){ return dayKey(new Date()); }
+  function offsetKey(k){ var d=new Date(); d.setHours(12,0,0,0); d.setDate(d.getDate()-k); return dayKey(d); }  // midday avoids DST edges
+
+  function recordPracticed(L, positions){
+    if(!L || !tracking()) return;     // no name → save nothing (the user skipped onboarding)
+    var t=todayKey();
+    stats.days[t]=(stats.days[t]||0)+1; stats.total=(stats.total||0)+1;
+    var sd=stats.sounds[L]||(stats.sounds[L]={s:0,d:{},p:{}});
+    sd.s++; sd.d[t]=1;
+    (positions||[]).forEach(function(P){ sd.p[P]=1; });
+    saveStats(); renderGlance();
+  }
+
+  function renderWeek(box){
+    if(!box) return; box.innerHTML='';
+    for(var k=6;k>=0;k--){ var b=el('span','wkd');           // oldest -> today, right -> left (RTL)
+      if(stats.days[offsetKey(k)]) b.classList.add('on');
+      if(k===0) b.classList.add('today');
+      box.appendChild(b); }
+  }
+  function renderGlance(){
+    var who=$('#glanceWho'), wk=$('#glanceWeek'), open=$('#glance');
+    if(tracking()){
+      who.textContent='שָׁלוֹם, '+profile.name;
+      wk.hidden=false; renderWeek(wk);
+      if(open) open.setAttribute('aria-label','הַהֶתְקַדְּמוּת שֶׁלִּי');
+    } else {                                   // skipped → gentle opt-in (tap opens onboarding); no dots, nothing tracked
+      who.textContent='מִי מְשַׂחֵק?';
+      wk.hidden=true; wk.innerHTML='';
+      if(open) open.setAttribute('aria-label','הַזָּנַת שֵׁם לְמַעֲקָב');
+    }
+  }
+  function renderProgress(){
+    $('#progName').textContent=(profile&&profile.name)?('הַהֶתְקַדְּמוּת שֶׁל '+profile.name):'הַהֶתְקַדְּמוּת שֶׁלִּי';
+    var keys=Object.keys(stats.sounds), empty=((stats.total||0)===0 && !keys.length);
+    $('#progEmpty').hidden=!empty; $('#progBody').hidden=empty;
+    if(empty){ $('#progEmptyMsg').textContent='כָּאן יוֹפִיעוּ הַצְּלִילִים '+futVerb(); return; }
+    $('#progDays').textContent=Object.keys(stats.days).length;
+    $('#progSent').textContent=stats.total||0;
+    renderWeek($('#progWeek'));
+    var box=$('#progSounds'); box.innerHTML='';
+    keys.sort(function(a,b){ return stats.sounds[b].s-stats.sounds[a].s; });   // most-practiced first
+    keys.forEach(function(L){
+      var sd=stats.sounds[L], full=SOURCES[L]||L, g1=full.split('/')[0], idx=PHON.indexOf(L);
+      var row=el('div','sndrow');
+      var tile=el('div','stile'+(full.indexOf('/')>=0?' multi':'')); tile.textContent=full;
+      tile.style.background=TINTS[(idx<0?0:idx)%TINTS.length];                 // same tint the letter has in the picker
+      var meta=el('div','meta');
+      var ct=el('div','ct'); ct.textContent=sd.s+' מִשְׁפָּטִים'; meta.appendChild(ct);
+      var sub=el('div','sub'); sub.textContent=Object.keys(sd.d||{}).length+' יָמִים שֶׁל תִּרְגּוּל'; meta.appendChild(sub);
+      var wt=el('div','wt');                                                   // word-tiles: which positions were practiced
+      ['FIRST','MIDDLE','LAST'].forEach(function(P){ var b=document.createElement('b');
+        if(sd.p&&sd.p[P]){ b.className='on'; b.textContent=g1; } wt.appendChild(b); });
+      row.appendChild(tile); row.appendChild(meta); row.appendChild(wt); box.appendChild(row);
+    });
+  }
+
+  // ---- onboarding (name + gender) ----
+  var obGender=null;
+  each(document.querySelectorAll('.gpill'),function(p){
+    p.setAttribute('aria-pressed','false');
+    p.addEventListener('click',function(){ obGender=p.dataset.g;
+      each(document.querySelectorAll('.gpill'),function(x){ var on=x===p; x.classList.toggle('on',on); x.setAttribute('aria-pressed',on?'true':'false'); }); });
+  });
+  function openOnboarding(reset){
+    if(reset){ $('#obName').value=''; obGender=null;
+      each(document.querySelectorAll('.gpill'),function(x){ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); }); }
+    $('#onboard').hidden=false; setTimeout(function(){ try{ $('#obName').focus(); }catch(e){} },60);
+  }
+  function finishOnboarding(name){
+    name=(name||'').trim();
+    profile = name ? {name:name, gender:obGender} : null;                      // skip / empty name = no profile, no tracking
+    saveProfile();
+    try{ localStorage.setItem(ONBOARDED,'1'); }catch(e){}                       // remember the choice so we don't re-prompt (this flag is not stats)
+    stats=loadStats();                                                         // load (or start) this profile's bucket
+    state.sentences=[]; state.practiced={}; state.counted={}; state.celebrated=false;  // drop the old player's in-flight set
+    $('#onboard').hidden=true; show('setup'); renderGlance();                  // leave results so stale ribbons can't write the new profile's stats
+  }
+  $('#obStart').addEventListener('click',function(){ finishOnboarding($('#obName').value.trim()); });
+  $('#obName').addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); finishOnboarding(this.value.trim()); } });
+  $('#obSkip').addEventListener('click',function(){ finishOnboarding(''); });
+
+  // ---- progress sheet open/close/switch ----
+  function openProgress(){ renderProgress(); $('#progress').hidden=false; }
+  $('#glance').addEventListener('click',function(){ if(tracking()) openProgress(); else openOnboarding(true); });
+  $('#btnCloseProgress').addEventListener('click',function(){ $('#progress').hidden=true; });
+  $('#progress').addEventListener('click',function(e){ if(e.target===this) this.hidden=true; });   // tap backdrop
+  $('#progSwitch').addEventListener('click',function(){ $('#progress').hidden=true; openOnboarding(true); });
+
+  renderGlance();
+  (function(){ var done; try{ done=localStorage.getItem(ONBOARDED); }catch(e){} if(!done) openOnboarding(false); })();  // first launch only
 
 })();
 </script>
