@@ -8,6 +8,10 @@
 /tools/niqqud_review.html
 /tools/.niqqud_cache.json
 /tools/niqqud_decisions*.json
+/tools/gender_review.html
+/tools/.gender_cache.json
+/tools/gender_disagreements.json
+/tools/gender_decisions*.json
 
 # Python / OS / editor junk
 __pycache__/
