@@ -83,7 +83,9 @@ for kind in ("adjectives", "verbs"):
 
 
 # ---- engine (mirrors the in-page JS; matches on the stored phoneme idx) ----
-def mpos(idx, ph, ps): return ph in idx and any(x in ps for x in idx[ph])
+# match iff the sound is present AND confined to the selected positions (every
+# occurrence in ps) — a word with the sound also at an unselected slot is rejected.
+def mpos(idx, ph, ps): return ph in idx and all(x in ps for x in idx[ph])
 def gnf(nn): return nn["g"] + "-" + nn["n"]
 
 
@@ -144,13 +146,13 @@ for ph in PHON:
             total += 1
             check(len(words) >= 3, f"<3 words: {' '.join(words)}")
             for w in words:
-                check(P in pidx(w).get(ph, []), f'word "{w}" lacks /{ph}/ at {P}')
+                check(mpos(pidx(w), ph, [P]), f'word "{w}": /{ph}/ not confined to {P}')
 
 # multi-position unions
 for ph, ps in [("SH", ["FIRST", "LAST"]), ("X", ["FIRST", "MIDDLE", "LAST"])]:
     for words in generate(ph, ps, 8):
         for w in words:
-            check(any(p in pidx(w).get(ph, []) for p in ps), f'multi "{w}" not /{ph}/@{ps}')
+            check(mpos(pidx(w), ph, ps), f'multi "{w}": /{ph}/ not confined to {ps}')
 
 
 # ---- (3) DATA-CORRECTNESS HARNESS: niqqud well-formedness + consistency ----

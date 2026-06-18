@@ -174,8 +174,12 @@ def build():
 # coverage (phoneme x position) + demo
 # ---------------------------------------------------------------------------
 def matches(idx, ph, positions):
+    # The word must carry the sound AND only at the selected position(s): a word
+    # whose phoneme also occurs at an UNSELECTED position is rejected. e.g. /L/ at
+    # LAST excludes צְלִיל (L at MIDDLE+LAST) — the kid practices the sound at the
+    # chosen slot, so a stray occurrence elsewhere would be off-target/confusing.
     p = idx.get(ph)
-    return bool(p) and any(x in positions for x in p)
+    return bool(p) and all(x in positions for x in p)
 
 
 def coverage(lex):

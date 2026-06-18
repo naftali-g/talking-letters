@@ -285,7 +285,10 @@
   function rand(a){return a[Math.floor(Math.random()*a.length)];}
   function shuffle(a){a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t;} return a;}
   function each(c,fn){Array.prototype.forEach.call(c,fn);}
-  function matchPos(idx, L, ps){var p=idx[L]; if(!p)return false; for(var i=0;i<ps.length;i++){if(p.indexOf(ps[i])>=0)return true;} return false;}
+  // match iff the sound is present AND confined to the selected positions: every
+  // occurrence must be in ps, so e.g. /L/ at LAST rejects צְלִיל (L at MIDDLE+LAST).
+  // mirrors build_lexicon.py matches() / test_lexicon.py mpos().
+  function matchPos(idx, L, ps){var p=idx[L]; if(!p||!p.length)return false; for(var i=0;i<p.length;i++){if(ps.indexOf(p[i])<0)return false;} return true;}
   function gnOf(n){return n.g+'-'+n.n;}
 
   // ---------- feasibility matrix (per phoneme × position) — precomputed by build_lexicon.py ----------
