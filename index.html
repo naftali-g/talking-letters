@@ -57,14 +57,28 @@
   .tile:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 
   .pos-row{display:flex;gap:10px;margin-top:4px}
-  .pos{flex:1;background:#fff;border:2px solid var(--tile);border-radius:16px;padding:8px 4px;text-align:center;
-    font-family:var(--f-round);font-weight:700;font-size:14px;cursor:pointer;transition:transform .12s}
+  /* tinted + raised so the pills read as required, tappable inputs (not passive labels next to the stepper) */
+  .pos{flex:1;background:#FFF1DF;border:2px solid #FFD9A8;border-radius:16px;padding:8px 4px;text-align:center;
+    font-family:var(--f-round);font-weight:700;font-size:14px;color:var(--ink);cursor:pointer;
+    box-shadow:var(--shadow-sm);transition:transform .12s}
   .pos:active{transform:scale(.95)}
-  .pos .dots{font-size:13px;letter-spacing:3px;color:var(--slate);margin-bottom:1px}
+  /* concrete preview: the chosen letter sits in its slot (●/middle/end), RTL via flex so FIRST is rightmost */
+  .pos .dots{display:flex;justify-content:center;gap:6px;font-size:15px;font-weight:800;line-height:1;margin-bottom:2px}
+  .pos .dots .pp-o{color:#897C66}
+  .pos .dots .pp-ph{color:var(--slate)}
+  .pos .dots .pp-g{color:var(--target)}
   .pos.on{background:var(--mango);border-color:var(--mango);color:#fff}
-  .pos.on .dots{color:#fff}
+  .pos.on .dots .pp-g,.pos.on .dots .pp-ph{color:#fff}
+  .pos.on .dots .pp-o{color:rgba(255,255,255,.6)}   /* empty slots stay subordinate to the white target glyph */
   .pos.disabled{opacity:.38;cursor:not-allowed;background:#F3F1EB}
   .pos:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  /* attention cues for the setup steps. the box-shadow ring survives prefers-reduced-motion (no transition),
+     so the "you skipped this" feedback still shows even when the shake is suppressed */
+  @keyframes askshake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-7px)}40%,60%{transform:translateX(7px)}}
+  .askfor{animation:askshake .5s ease both;border-radius:18px;box-shadow:0 0 0 3px var(--coral),0 10px 22px rgba(255,122,133,.32)}
+  @keyframes posbob{0%,100%{transform:translateY(0)}45%{transform:translateY(-7px)}}
+  .pos-row.bob{animation:posbob .5s ease 2}
 
   .stepper{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:4px}
   .stepbtn{width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);
@@ -164,7 +178,7 @@
     <div class="lgrid" id="lgrid" role="radiogroup" aria-label="בחרו צליל"></div>
 
     <div class="seclabel">אֵיפֹה הָאוֹת בַּמִּלָּה?</div>
-    <div class="hint">אֶפְשָׁר לִבְחֹר כַּמָּה</div>
+    <div class="hint">בַּחֲרוּ לְפָחוֹת מִקּוּם אֶחָד</div>
     <div class="pos-row" id="posRow" role="group" aria-label="מיקום האות"></div>
 
     <div class="seclabel">כַּמָּה מִשְׁפָּטִים?</div>
@@ -174,7 +188,7 @@
       <button class="stepbtn" id="stepPlus" aria-label="עוד">+</button>
     </div>
 
-    <button class="cta" id="btnGenerate" disabled>צְרוּ מִשְׁפָּטִים ✨</button>
+    <button class="cta" id="btnGenerate">צְרוּ מִשְׁפָּטִים ✨</button>
   </section>
 
   <!-- ===== RESULTS ===== -->
@@ -235,7 +249,6 @@
   var FOLD = {'ך':'כ','ם':'מ','ן':'נ','ף':'פ','ץ':'צ'};
   var META = LEX.meta, POS = META.positions;
   var POS_SHORT = {FIRST:'תְּחִלָּה', MIDDLE:'אֶמְצַע', LAST:'סוֹף'};
-  var POS_DOTS  = {FIRST:'●○○', MIDDLE:'○●○', LAST:'○○●'};
   var TINTS = ['#CDEBFB','#FFD8DC','#FFE6C7','#CFF2E1','#E6DCF7','#FFEDB0','#D7EFE0','#FBDCEF'];
   var GN = {ms:'m-sg', fs:'f-sg', mp:'m-pl', fp:'f-pl'};
 
@@ -381,6 +394,19 @@
   var lgrid=$('#lgrid'), posRow=$('#posRow'),
       stepNum=$('#stepNum'), btnGen=$('#btnGenerate');
 
+  // position preview: the target slot shows the actual chosen letter (red, like the in-sentence highlight),
+  // the other two show ○. before a sound is picked, glyph is omitted and a neutral ● placeholder is shown.
+  function posPreview(P, glyph){
+    var on={FIRST:0,MIDDLE:1,LAST:2}[P], cls=glyph?'pp-g':'pp-ph', mark=glyph||'●', s='';
+    for(var i=0;i<3;i++) s += (i===on) ? '<span class="'+cls+'">'+mark+'</span>' : '<span class="pp-o">○</span>';
+    return s;
+  }
+  // restart a one-shot attention animation (clears any sibling cue first so transforms can't collide)
+  function pulse(node, cls){
+    node.classList.remove('bob','askfor'); void node.offsetWidth; node.classList.add(cls);
+    setTimeout(function(){ node.classList.remove(cls); }, 1200);
+  }
+
   PHON.forEach(function(L,i){
     var b=el('button','tile'); b.textContent=SOURCES[L]; b.style.background=TINTS[i%TINTS.length];
     if(SOURCES[L].indexOf('/')>=0) b.classList.add('multi');
@@ -391,37 +417,37 @@
   });
   POS.forEach(function(P){
     var d=el('div','pos'); d.dataset.pos=P; d.setAttribute('role','checkbox'); d.setAttribute('aria-checked','false');
-    d.innerHTML='<div class="dots">'+POS_DOTS[P]+'</div>'+POS_SHORT[P];
+    d.innerHTML='<div class="dots">'+posPreview(P)+'</div>'+POS_SHORT[P];
     d.addEventListener('click',function(){ togglePos(P,d); });
     posRow.appendChild(d);
   });
 
   function selectPhon(L){
     state.letter=L;
+    var glyph=(SOURCES[L]||'').split('/')[0];   // representative glyph for the position preview (keeps dagesh/dot)
     each(lgrid.children,function(tile){
       var on=tile.dataset.phon===L; tile.classList.toggle('sel',on); tile.setAttribute('aria-checked',on?'true':'false');
     });
-    // gate positions by feasibility (per sound); drop now-impossible selections
+    // gate positions by feasibility (per sound); drop now-impossible selections; show the letter in each slot
     each(posRow.children,function(d){
       var P=d.dataset.pos, feasible=FEAS[L][P];
       d.classList.toggle('disabled',!feasible);
+      d.querySelector('.dots').innerHTML=posPreview(P,glyph);
       if(!feasible){ d.classList.remove('on'); d.setAttribute('aria-checked','false');
         var k=state.positions.indexOf(P); if(k>=0) state.positions.splice(k,1); }
     });
     speak(NAMES[L]||SOURCES[L], false);   // say the letter name(s) (skips the no-voice probe — short utterance)
-    refreshGen();
+    if(!state.positions.length) pulse(posRow,'bob');   // sound picked, no position yet → draw the eye to the next step
   }
   function togglePos(P,d){
     if(d.classList.contains('disabled')) return;
     var k=state.positions.indexOf(P);
     if(k>=0){ state.positions.splice(k,1); d.classList.remove('on'); d.setAttribute('aria-checked','false'); }
     else { state.positions.push(P); d.classList.add('on'); d.setAttribute('aria-checked','true'); }
-    refreshGen();
   }
   function setN(v){ state.n=v; stepNum.textContent=v; try{ localStorage.setItem('talkingletters.n', v); }catch(e){} }
   $('#stepMinus').addEventListener('click',function(){ setN(Math.max(1,state.n-1)); });
   $('#stepPlus').addEventListener('click',function(){ setN(Math.min(10,state.n+1)); });
-  function refreshGen(){ btnGen.disabled = !(state.letter && state.positions.length); }
   setN((function(){ try{ var v=parseInt(localStorage.getItem('talkingletters.n'),10); return (v>=1&&v<=10)?v:5; }catch(e){ return 5; } })());  // remember last chosen count
 
   // ---------- results UI ----------
@@ -509,7 +535,12 @@
     $('#celebrate').hidden=false;
   }
 
-  $('#btnGenerate').addEventListener('click',doGenerate);
+  // button stays tappable (not greyed-out & silent) — an early tap points at whatever step is still missing
+  btnGen.addEventListener('click',function(){
+    if(!state.letter){ pulse(lgrid,'askfor'); return; }
+    if(!state.positions.length){ pulse(posRow,'askfor'); return; }
+    doGenerate();
+  });
   $('#btnShuffle').addEventListener('click',doGenerate);
   $('#btnEdit').addEventListener('click',function(){ show('setup'); });
   $('#btnBack').addEventListener('click',function(){ show('setup'); });
