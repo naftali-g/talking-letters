@@ -150,7 +150,7 @@
   .toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--ink);color:#fff;
     padding:13px 18px;border-radius:15px;font-size:13.5px;max-width:92%;width:430px;text-align:center;
     box-shadow:var(--shadow);z-index:30;line-height:1.55}
-  .toast .link{background:none;border:none;color:var(--yellow);font-weight:700;text-decoration:underline;
+  .toast .link{background:none;border:none;color:var(--yellow);font-weight:700;text-decoration:underline;text-underline-offset:.35em;
     cursor:pointer;font-size:13.5px;font-family:inherit;padding:0}
 
   /* ===== progress / usage tracking (streak-free): identity chip, week dots, progress sheet, onboarding ===== */
@@ -204,7 +204,7 @@
   .sheet-foot{display:flex;align-items:center;gap:10px;margin-top:16px}
   .sheet-foot .cta{margin-top:0;flex:1}
   .linkbtn{background:none;border:none;color:var(--slate);font-family:var(--f-round);font-weight:700;
-    font-size:13px;cursor:pointer;white-space:nowrap;text-decoration:underline}
+    font-size:13px;cursor:pointer;white-space:nowrap;text-decoration:underline;text-underline-offset:.35em}  /* offset clears the niqqud */
   .win-week{display:flex;justify-content:center;margin:10px 0 2px}
   .milestone{font-family:var(--f-round);font-weight:700;font-size:15px;color:var(--ink);margin:8px 0 2px}
   .win-mascot-sm{width:84px;height:84px;object-fit:contain;margin:0 auto 8px;display:block;filter:drop-shadow(0 8px 14px rgba(43,43,54,.16))}
@@ -301,6 +301,7 @@
     <div id="winText"></div>
     <div class="win-week" id="winWeekRow"><span class="wkdots" id="winWeek"></span></div>
     <div class="milestone" id="winMilestone" hidden></div>
+    <button class="linkbtn" id="winStats" hidden style="margin-top:8px">הַהִתְקַדְּמוּת שֶׁלִּי ‹</button>
     <button class="cta mint" id="btnMore">עוֹד מִשְׁפָּטִים</button>
     <button class="cta grape" id="btnNewLetter">אוֹת חֲדָשָׁה</button>
   </div>
@@ -312,7 +313,7 @@
     <div class="win-title" style="font-size:22px">הַגְדָּרוֹת</div>
     <div class="settings-row"><span>הַקְרָאָה (קוֹל)</span><button class="switch on" id="swTts" role="switch" aria-checked="true"></button></div>
     <div class="settings-row" id="ttsMissing" hidden><span style="font-size:13px;color:var(--slate);font-weight:400">לֹא נִמְצָא קוֹל בְּעִבְרִית בַּמַּכְשִׁיר הַזֶּה</span></div>
-    <p class="privacy" style="text-align:start">🔒 הַשֵּׁם וְהַהֶתְקַדְּמוּת נִשְׁמָרִים רַק כָּאן, בַּמַּכְשִׁיר, וְאֵינָם נִשְׁלָחִים לָרֶשֶׁת.</p>
+    <p class="privacy" style="text-align:start">🔒 הַשֵּׁם וְהַהִתְקַדְּמוּת נִשְׁמָרִים רַק כָּאן, בַּמַּכְשִׁיר, וְאֵינָם נִשְׁלָחִים לָרֶשֶׁת.</p>
     <button class="cta mint" id="btnCloseSettings" style="margin-top:16px">סְגִירָה</button>
   </div>
 </div>
@@ -330,14 +331,14 @@
     </div>
     <button class="cta mint" id="obStart" style="margin-top:16px">יֵשׁ! ✨</button>
     <button class="linkbtn" id="obSkip" style="margin-top:12px">אַחַר כָּךְ</button>
-    <p class="privacy">🔒 הַשֵּׁם וְהַהֶתְקַדְּמוּת נִשְׁמָרִים רַק בַּמַּכְשִׁיר הַזֶּה וְאֵינָם נִשְׁלָחִים לָרֶשֶׁת.</p>
+    <p class="privacy">🔒 הַשֵּׁם וְהַהִתְקַדְּמוּת נִשְׁמָרִים רַק בַּמַּכְשִׁיר הַזֶּה וְאֵינָם נִשְׁלָחִים לָרֶשֶׁת.</p>
   </div>
 </div>
 
 <!-- ===== PROGRESS ("ההתקדמות שלי") ===== -->
 <div class="overlay" id="progress" hidden>
   <div class="sheet" style="text-align:center;max-height:88vh;overflow-y:auto">
-    <div class="sheet-head" id="progName">הַהֶתְקַדְּמוּת שֶׁלִּי</div>
+    <div class="sheet-head" id="progName">הַהִתְקַדְּמוּת שֶׁלִּי</div>
     <div id="progEmpty" hidden>
       <img class="win-mascot-sm" src="mascot.webp" alt="">
       <div class="empty-note">עֲדַיִן אֵין תִּרְגּוּלִים — כָּל תִּרְגּוּל נֶחְשָׁב!</div>
@@ -686,6 +687,7 @@
       else { ms.hidden=true; }                 // repeat session the same day → no milestone
       if(last!==today){ stats.lastCelebratedDay=today; saveStats(); }
     } else { $('#winWeekRow').hidden=true; $('#winMilestone').hidden=true; }
+    $('#winStats').hidden=!tracking();         // offer "see all my progress" only when there's tracking data
     $('#fireworks').innerHTML=fireworksSVG();
     var wm=$('#winMascot'); if(!wm.getAttribute('src')) wm.setAttribute('src',wm.getAttribute('data-src'));  // point the <img> at the (idle-prewarmed) animation when the win screen first shows
     $('#celebrate').hidden=false;
@@ -769,7 +771,7 @@
     if(tracking()){
       who.textContent='שָׁלוֹם, '+profile.name;
       wk.hidden=false; renderWeek(wk);
-      if(open) open.setAttribute('aria-label','הַהֶתְקַדְּמוּת שֶׁלִּי');
+      if(open) open.setAttribute('aria-label','הַהִתְקַדְּמוּת שֶׁלִּי');
     } else {                                   // skipped → gentle opt-in (tap opens onboarding); no dots, nothing tracked
       who.textContent='מִי מְשַׂחֵק?';
       wk.hidden=true; wk.innerHTML='';
@@ -777,7 +779,7 @@
     }
   }
   function renderProgress(){
-    $('#progName').textContent=(profile&&profile.name)?('הַהֶתְקַדְּמוּת שֶׁל '+profile.name):'הַהֶתְקַדְּמוּת שֶׁלִּי';
+    $('#progName').textContent=(profile&&profile.name)?('הַהִתְקַדְּמוּת שֶׁל '+profile.name):'הַהִתְקַדְּמוּת שֶׁלִּי';
     var keys=Object.keys(stats.sounds), empty=((stats.total||0)===0 && !keys.length);
     $('#progEmpty').hidden=!empty; $('#progBody').hidden=empty;
     if(empty){ $('#progEmptyMsg').textContent='כָּאן יוֹפִיעוּ הַצְּלִילִים '+futVerb(); return; }
@@ -829,6 +831,7 @@
   // ---- progress sheet open/close/switch ----
   function openProgress(){ renderProgress(); $('#progress').hidden=false; }
   $('#glance').addEventListener('click',function(){ if(tracking()) openProgress(); else openOnboarding(true); });
+  $('#winStats').addEventListener('click',function(){ $('#celebrate').hidden=true; openProgress(); });   // jump to full stats from the success view
   $('#btnCloseProgress').addEventListener('click',function(){ $('#progress').hidden=true; });
   $('#progress').addEventListener('click',function(e){ if(e.target===this) this.hidden=true; });   // tap backdrop
   $('#progSwitch').addEventListener('click',function(){ $('#progress').hidden=true; openOnboarding(true); });
