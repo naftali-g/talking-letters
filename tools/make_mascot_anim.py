@@ -24,7 +24,7 @@ ROOT = os.path.dirname(HERE)
 SRC = os.path.join(ROOT, "jumping_logo.mp4")
 OUT = os.path.join(ROOT, "mascot_anim.webp")
 
-STRIDE = 2       # keep every Nth frame — ~12fps, a big lever on file size
+STRIDE = 1       # keep every Nth frame — 1 = full ~24fps (smoothest); 2 ≈ 12fps & ~half the size
 MAXDIM = 200     # display is 124px; this is comfortably retina-crisp
 QUALITY = 76
 PAD = 12         # transparent breathing room around the bubble's travel
