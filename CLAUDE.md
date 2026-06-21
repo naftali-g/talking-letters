@@ -15,8 +15,8 @@ and to put the focus on the **sound** rather than the letter. The mascot changed
 old smiling **alef** became an orange **speech-bubble** creature (a sound, not a letter), and
 the win screen plays an animated jumping version (`mascot_anim.webp`).
 
-Deploys to **GitHub Pages** (`origin` = `naftali-g/talking-letters` — the repo slug still
-reflects the old name; only the product branding was renamed) as a static folder:
+Deploys to **GitHub Pages** (`origin` = `naftali-g/tslilon`, renamed from `talking-letters`;
+public site at `naftali-g.github.io/tslilon/`) as a static folder:
 `index.html` + `lexicon.json` + the image assets at the repo root. Multi-file is fine —
 single-file is *not* a requirement.
 
