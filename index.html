@@ -354,7 +354,7 @@
         <div class="stat"><div class="n" id="progSent">0</div><div class="l">מִשְׁפָּטִים</div></div>
       </div>
       <div class="wkrow">הַשָּׁבוּעַ <span class="wkdots" id="progWeek"></span></div>
-      <div class="walltitle">אוֹתִיּוֹת שֶׁדִּבְּרוּ</div>
+      <div class="walltitle">הַצְּלִילִים שֶׁלִּי</div>
       <div class="snds" id="progSounds"></div>
     </div>
     <div class="sheet-foot">
@@ -759,7 +759,7 @@
     var t=todayKey();
     stats.days[t]=(stats.days[t]||0)+1; stats.total=(stats.total||0)+1;
     var sd=stats.sounds[L]||(stats.sounds[L]={s:0,d:{},p:{}});
-    sd.s++; sd.d[t]=1;
+    sd.s++; sd.d[t]=1; sd.last=Date.now();   // recency stamp → "most recently practiced" ordering in the progress list
     (positions||[]).forEach(function(P){ sd.p[P]=1; });
     saveStats(); renderGlance();
   }
@@ -794,7 +794,7 @@
     $('#progSent').textContent=stats.total||0;
     renderWeek($('#progWeek'));
     var box=$('#progSounds'); box.innerHTML='';
-    keys.sort(function(a,b){ return stats.sounds[b].s-stats.sounds[a].s; });   // most-practiced first
+    keys.sort(function(a,b){ return (stats.sounds[b].last||0)-(stats.sounds[a].last||0); });   // most recently practiced on top
     keys.forEach(function(L){
       var sd=stats.sounds[L], full=SOURCES[L]||L, g1=full.split('/')[0], idx=PHON.indexOf(L);
       var row=el('div','sndrow');
