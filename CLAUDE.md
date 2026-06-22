@@ -92,10 +92,11 @@ conjugation. Gender/number agreement is enforced.
 
 - **SEO/social fields are plain (un-niqqud) Hebrew.** The game UI stays fully niqqud, but every
   machine-readable field — `<title>`, meta description, Open Graph/Twitter, the JSON-LD `@graph`
-  (`WebApplication` + `WebSite` + `FAQPage`), the `sr-only` `<h1>`, and the visible
-  `<footer class="about">` explainer — is un-vocalized, because Google tokenizes niqqud
-  differently from how people actually type. The FAQ Q/A in the footer must stay **byte-identical**
-  to the `FAQPage` JSON-LD (mismatched FAQ schema is flagged as spam). `sitemap.xml` + `og-image.png`
+  (`WebApplication` + `WebSite` + `FAQPage`), the `sr-only` `<h1>`, and the collapsible
+  `<details class="about">` explainer/FAQ — is un-vocalized, because Google tokenizes niqqud
+  differently from how people actually type. The FAQ Q/A in that `<details>` must stay **byte-identical**
+  to the `FAQPage` JSON-LD (mismatched FAQ schema is flagged as spam); it's hidden during the
+  results/celebration flow via `body:has(#setup[hidden]) .about`. `sitemap.xml` + `og-image.png`
   ship at the repo root. **robots.txt can't live in this repo:** as a Pages *project* site
   (`/tslilon/`), crawlers only read robots.txt from the domain root, so it needs a separate
   `naftali-g.github.io` repo or a custom domain — otherwise default-allow applies (which is fine).

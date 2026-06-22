@@ -349,7 +349,7 @@
   body:has(#setup[hidden]) .about{display:none}
 </style>
 <!-- Structured data (plain Hebrew). The FAQ Q/A below MUST stay byte-identical to the
-     visible <footer class="about"> FAQ in the body — mismatched FAQ schema is flagged as spam. -->
+     visible <details class="about"> FAQ in the body — mismatched FAQ schema is flagged as spam. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -463,10 +463,11 @@
   </section>
 </div>
 
-<!-- Plain-Hebrew (no-niqqud) about + FAQ. The kids' game above is fully niqqud, which Google
-     tokenizes differently from typed queries, so this genuinely-visible explainer (for parents
-     and קלינאיות) is the page's main crawlable surface. The FAQ Q/A MUST stay byte-identical to
-     the FAQPage JSON-LD in <head>. -->
+<!-- Plain-Hebrew (no-niqqud) about + FAQ, a collapsed (user-expandable) accordion on the home
+     screen. The kids' game above is fully niqqud, which Google tokenizes differently from typed
+     queries, so this explainer (for parents and קלינאיות) is the page's main crawlable surface
+     (Google indexes <details> content). The FAQ Q/A MUST stay byte-identical to the FAQPage
+     JSON-LD in <head>. Hidden during results/celebration via body:has(#setup[hidden]) .about. -->
 <details class="about" id="about" lang="he" dir="rtl">
   <summary>מידע ושאלות נפוצות</summary>
   <div class="about-body">
