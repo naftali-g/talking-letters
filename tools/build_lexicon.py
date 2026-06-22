@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-build_lexicon.py — OFFLINE build tool for אותיות מדברות (NOT shipped in the game).
+build_lexicon.py — OFFLINE build tool for צלילון (NOT shipped in the game).
 
 PHONEME model: each consonant's SOUND is derived from the niqqud (dagesh /
 shin-sin dot), homophones are merged, and matres-lectionis (silent/vowel ו/י/ה)

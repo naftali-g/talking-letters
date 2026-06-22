@@ -2,9 +2,32 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>צלילון</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>צלילון – משחק תרגול היגוי וצלילים בעברית לילדים | חינם</title>
+<!-- SEO/social meta. PLAIN Hebrew (no niqqud) on purpose: Google and AI engines tokenize
+     niqqud text differently from how people actually type, so every machine-readable field
+     here is un-vocalized even though the kids' game UI below stays fully niqqud. -->
+<meta name="description" content="צלילון – משחק חינמי לתרגול הגיית צלילים בעברית. בוחרים צליל ומיקום במילה ומקבלים משפטים מנוקדים שכל המילים בהם מבטאות אותו צליל. לקלינאיות תקשורת, הורים וילדים.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#FFF9F0">
+<link rel="canonical" href="https://naftali-g.github.io/tslilon/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="צלילון">
+<meta property="og:locale" content="he_IL">
+<meta property="og:url" content="https://naftali-g.github.io/tslilon/">
+<meta property="og:title" content="צלילון – משחק תרגול היגוי וצלילים בעברית לילדים">
+<meta property="og:description" content="משחק חינמי לתרגול הגיית צלילים בעברית: בוחרים צליל ומיקום במילה ומקבלים משפטים מנוקדים שכל המילים בהם מבטאות אותו צליל. לקלינאיות תקשורת, הורים וילדים.">
+<meta property="og:image" content="https://naftali-g.github.io/tslilon/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="צלילון – משחק לתרגול הגיית צלילים בעברית">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="צלילון – משחק תרגול היגוי וצלילים בעברית לילדים">
+<meta name="twitter:description" content="משחק חינמי לתרגול הגיית צלילים בעברית: בוחרים צליל ומיקום במילה ומקבלים משפטים מנוקדים שכל המילים בהם מבטאות אותו צליל.">
+<meta name="twitter:image" content="https://naftali-g.github.io/tslilon/og-image.png">
+<meta name="twitter:image:alt" content="צלילון – משחק לתרגול הגיית צלילים בעברית">
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Heebo:wght@400;700;800&family=Varela+Round&display=swap" rel="stylesheet">
@@ -285,10 +308,67 @@
     .tg{background:none;color:#000;text-decoration:underline;font-weight:800}
     .sent{color:#000}
   }
+
+  /* visually-hidden but real page <h1> (the visible "heading" is the logo image) */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+    clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  /* plain-Hebrew about/FAQ explainer below the game: the page's main crawlable surface
+     (the game UI itself is fully niqqud). Muted/compact so it reads as an adult footer. */
+  .about{max-width:520px;margin:26px auto 12px;padding:18px 16px 8px;border-top:1px solid var(--line);
+    font-family:var(--f-body);color:var(--slate);font-size:13px;line-height:1.7}
+  .about h2{font-family:var(--f-round);font-size:17px;color:var(--ink);margin:18px 0 6px}
+  .about h3{font-size:14px;color:var(--ink);margin:13px 0 2px;font-weight:700}
+  .about p{margin:0 0 9px}
 </style>
+<!-- Structured data (plain Hebrew). The FAQ Q/A below MUST stay byte-identical to the
+     visible <footer class="about"> FAQ in the body — mismatched FAQ schema is flagged as spam. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://naftali-g.github.io/tslilon/#app",
+      "name": "צלילון",
+      "url": "https://naftali-g.github.io/tslilon/",
+      "description": "משחק חינמי לתרגול הגיית צלילים בעברית. בוחרים צליל ומיקום במילה (תחילה, אמצע או סוף) ומקבלים משפטים מנוקדים שבהם כל המילים מבטאות את אותו הצליל, עם הקראה קולית. כלי לקלינאיות תקשורת, הורים וילדים.",
+      "applicationCategory": "EducationalApplication",
+      "applicationSubCategory": "Game",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "he",
+      "isAccessibleForFree": true,
+      "image": "https://naftali-g.github.io/tslilon/og-image.png",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "ILS" },
+      "isPartOf": { "@id": "https://naftali-g.github.io/tslilon/#website" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://naftali-g.github.io/tslilon/#website",
+      "name": "צלילון",
+      "url": "https://naftali-g.github.io/tslilon/",
+      "inLanguage": "he"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://naftali-g.github.io/tslilon/#faq",
+      "isPartOf": { "@id": "https://naftali-g.github.io/tslilon/#website" },
+      "mainEntity": [
+        { "@type": "Question", "name": "מה זה צלילון?", "acceptedAnswer": { "@type": "Answer", "text": "צלילון הוא משחק חינמי באינטרנט לתרגול הגיית צלילים בעברית לילדים. בוחרים צליל ומיקום במילה (תחילת המילה, אמצע המילה או סוף המילה) והמשחק יוצר משפטים קצרים שבהם כל המילים מבטאות את אותו הצליל." } },
+        { "@type": "Question", "name": "למי המשחק מתאים?", "acceptedAnswer": { "@type": "Answer", "text": "המשחק מתאים לקלינאיות תקשורת ולוגופדיות לעבודה טיפולית, להורים של ילדים בטיפול בדיבור ושפה (ריפוי בדיבור), ולילדים עצמם. הוא עוזר לתרגל הגייה והפקת צלילים בצורה משחקית." } },
+        { "@type": "Question", "name": "איך משתמשים במשחק?", "acceptedAnswer": { "@type": "Answer", "text": "בוחרים צליל אחד מתוך עשרים הצלילים בעברית, מסמנים את מיקום הצליל במילה (בתחילה, באמצע או בסוף), ובוחרים כמה משפטים רוצים. צלילון יוצר משפטים תקינים דקדוקית בני שלוש עד ארבע מילים, שבהם כל מילה מכילה את הצליל הנבחר במיקום שבחרתם." } },
+        { "@type": "Question", "name": "האם צלילון בחינם?", "acceptedAnswer": { "@type": "Answer", "text": "כן. צלילון חינמי לחלוטין, ללא פרסומות וללא צורך בהרשמה או בהתקנה. הוא פועל ישירות בדפדפן בטלפון, בטאבלט ובמחשב." } },
+        { "@type": "Question", "name": "אילו צלילים אפשר לתרגל?", "acceptedAnswer": { "@type": "Answer", "text": "אפשר לתרגל את עשרים הצלילים של העברית, כולל צלילים נפוצים בטיפול כמו ר, ל, ש, ס, צ ועוד. הצלילים מבוססים על ההגייה ולא רק על האות, כך שאותו צליל מודגש בכל המילים במשפט. צלילים לועזיים (גרש) אינם נכללים." } },
+        { "@type": "Question", "name": "האם המשחק כולל ניקוד והקראה קולית?", "acceptedAnswer": { "@type": "Answer", "text": "כן. כל המשפטים מוצגים בעברית מנוקדת מלאה כדי לעזור לקריאה נכונה, ויש גם הקראה קולית של המשפטים והמילים בעזרת קול עברי המותקן במכשיר, כך שאפשר לשמוע את ההגייה הנכונה ולתרגל אחריה." } }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div class="app">
+  <h1 class="sr-only">צלילון – משחק לתרגול הגיית צלילים בעברית לילדים</h1>
 
   <!-- ===== SETUP ===== -->
   <section id="setup">
@@ -348,6 +428,30 @@
     <div class="note">›שִׁמְעוּ‹ לִשְׁמֹעַ אֶת הַמִּשְׁפָּט · ›אָמַרְתִּי‹ אַחֲרֵי שֶׁאֲמַרְתֶּם בְּקוֹל · אֶפְשָׁר גַּם לְהַקִּישׁ עַל מִלָּה</div>
   </section>
 </div>
+
+<!-- Plain-Hebrew (no-niqqud) about + FAQ. The kids' game above is fully niqqud, which Google
+     tokenizes differently from typed queries, so this genuinely-visible explainer (for parents
+     and קלינאיות) is the page's main crawlable surface. The FAQ Q/A MUST stay byte-identical to
+     the FAQPage JSON-LD in <head>. -->
+<footer class="about" id="about" lang="he" dir="rtl">
+  <h2>על צלילון</h2>
+  <p>צלילון הוא משחק חינמי לתרגול הגיית צלילים בעברית, לקלינאיות תקשורת (ריפוי בדיבור), להורים ולילדים. בוחרים צליל ומיקום במילה ומקבלים משפטים מנוקדים שבהם כל המילים מבטאות את אותו הצליל, עם הקראה קולית. המשחק עובד ישירות בדפדפן, בלי הורדה ובלי הרשמה.</p>
+  <h2>איך זה עובד</h2>
+  <p>בוחרים צליל מתוך עשרים הצלילים של העברית, בוחרים את מיקום הצליל במילה (בתחילת המילה, באמצע המילה או בסוף המילה) ואת מספר המשפטים. צלילון יוצר משפטים תקינים דקדוקית בני שלוש עד ארבע מילים, שבהם כל מילה מכילה את הצליל שבחרתם במיקום שבחרתם, מנוקדים במלואם ועם אפשרות הקראה קולית.</p>
+  <h2>שאלות נפוצות</h2>
+  <h3>מה זה צלילון?</h3>
+  <p>צלילון הוא משחק חינמי באינטרנט לתרגול הגיית צלילים בעברית לילדים. בוחרים צליל ומיקום במילה (תחילת המילה, אמצע המילה או סוף המילה) והמשחק יוצר משפטים קצרים שבהם כל המילים מבטאות את אותו הצליל.</p>
+  <h3>למי המשחק מתאים?</h3>
+  <p>המשחק מתאים לקלינאיות תקשורת ולוגופדיות לעבודה טיפולית, להורים של ילדים בטיפול בדיבור ושפה (ריפוי בדיבור), ולילדים עצמם. הוא עוזר לתרגל הגייה והפקת צלילים בצורה משחקית.</p>
+  <h3>איך משתמשים במשחק?</h3>
+  <p>בוחרים צליל אחד מתוך עשרים הצלילים בעברית, מסמנים את מיקום הצליל במילה (בתחילה, באמצע או בסוף), ובוחרים כמה משפטים רוצים. צלילון יוצר משפטים תקינים דקדוקית בני שלוש עד ארבע מילים, שבהם כל מילה מכילה את הצליל הנבחר במיקום שבחרתם.</p>
+  <h3>האם צלילון בחינם?</h3>
+  <p>כן. צלילון חינמי לחלוטין, ללא פרסומות וללא צורך בהרשמה או בהתקנה. הוא פועל ישירות בדפדפן בטלפון, בטאבלט ובמחשב.</p>
+  <h3>אילו צלילים אפשר לתרגל?</h3>
+  <p>אפשר לתרגל את עשרים הצלילים של העברית, כולל צלילים נפוצים בטיפול כמו ר, ל, ש, ס, צ ועוד. הצלילים מבוססים על ההגייה ולא רק על האות, כך שאותו צליל מודגש בכל המילים במשפט. צלילים לועזיים (גרש) אינם נכללים.</p>
+  <h3>האם המשחק כולל ניקוד והקראה קולית?</h3>
+  <p>כן. כל המשפטים מוצגים בעברית מנוקדת מלאה כדי לעזור לקריאה נכונה, ויש גם הקראה קולית של המשפטים והמילים בעזרת קול עברי המותקן במכשיר, כך שאפשר לשמוע את ההגייה הנכונה ולתרגל אחריה.</p>
+</footer>
 
 <!-- ===== CELEBRATION ===== -->
 <div class="overlay" id="celebrate" hidden>
@@ -426,6 +530,19 @@
 <script>
 (function(){
   'use strict';
+  // one-time migration of legacy localStorage keys (talkingletters.* -> tslilon.*) after the
+  // rename, so existing saved progress is never lost. Self-cleaning: removes the old keys, so it
+  // naturally no-ops on every load thereafter. Covers the dynamic per-profile stats keys too.
+  try {
+    for (var _mi = localStorage.length - 1; _mi >= 0; _mi--) {
+      var _ok = localStorage.key(_mi);
+      if (_ok && _ok.indexOf('talkingletters.') === 0) {
+        var _nk = 'tslilon.' + _ok.slice(15);              // 'talkingletters.'.length === 15
+        if (localStorage.getItem(_nk) === null) localStorage.setItem(_nk, localStorage.getItem(_ok));
+        localStorage.removeItem(_ok);
+      }
+    }
+  } catch(e){}
   var LEX;
   try { LEX = JSON.parse(document.getElementById('lexicon').textContent); }
   catch(e){ document.querySelector('.app').innerHTML =
@@ -647,10 +764,10 @@
     if(k>=0){ state.positions.splice(k,1); d.classList.remove('on'); d.setAttribute('aria-checked','false'); }
     else { state.positions.push(P); d.classList.add('on'); d.setAttribute('aria-checked','true'); }
   }
-  function setN(v){ state.n=v; stepNum.textContent=v; try{ localStorage.setItem('talkingletters.n', v); }catch(e){} }
+  function setN(v){ state.n=v; stepNum.textContent=v; try{ localStorage.setItem('tslilon.n', v); }catch(e){} }
   $('#stepMinus').addEventListener('click',function(){ setN(Math.max(1,state.n-1)); });
   $('#stepPlus').addEventListener('click',function(){ setN(Math.min(10,state.n+1)); });
-  setN((function(){ try{ var v=parseInt(localStorage.getItem('talkingletters.n'),10); return (v>=1&&v<=10)?v:5; }catch(e){ return 5; } })());  // remember last chosen count
+  setN((function(){ try{ var v=parseInt(localStorage.getItem('tslilon.n'),10); return (v>=1&&v<=10)?v:5; }catch(e){ return 5; } })());  // remember last chosen count
 
   // ---------- results UI ----------
   function show(id){ $('#setup').hidden=(id!=='setup'); $('#results').hidden=(id!=='results'); }
@@ -774,22 +891,22 @@
   $('#btnCloseSettings').addEventListener('click',function(){ $('#settingsSheet').hidden=true; });
   dismissOnBackdrop('#settingsSheet');
   var swTts=$('#swTts');
-  try{ var savedTts=localStorage.getItem('talkingletters.tts'); if(savedTts!==null) state.ttsOn=(savedTts==='1'); }catch(e){}  // remember voice on/off
+  try{ var savedTts=localStorage.getItem('tslilon.tts'); if(savedTts!==null) state.ttsOn=(savedTts==='1'); }catch(e){}  // remember voice on/off
   if(!ttsAvailable){ state.ttsOn=false; swTts.disabled=true; }
   swTts.classList.toggle('on',state.ttsOn); swTts.setAttribute('aria-checked',state.ttsOn?'true':'false');
   updateTtsStatus();
   swTts.addEventListener('click',function(){ if(!ttsAvailable)return; state.ttsOn=!state.ttsOn;
     swTts.classList.toggle('on',state.ttsOn); swTts.setAttribute('aria-checked',state.ttsOn?'true':'false');
-    try{ localStorage.setItem('talkingletters.tts', state.ttsOn?'1':'0'); }catch(e){}
+    try{ localStorage.setItem('tslilon.tts', state.ttsOn?'1':'0'); }catch(e){}
     each(document.querySelectorAll('.listen-group'),function(b){ b.style.display=state.ttsOn?'':'none'; });  // sync sentences already on screen
   });
 
   // ---------- usage tracking (localStorage, per named profile — no backend, nothing leaves the device) ----------
   // streak-free by design: we store cumulative days/sentences (only ever climb) + a 7-day strip; never a breakable streak.
-  var PKEY='talkingletters.profile', ONBOARDED='talkingletters.onboarded';
+  var PKEY='tslilon.profile', ONBOARDED='tslilon.onboarded';
   var profile=null; try{ var _pj=localStorage.getItem(PKEY); if(_pj) profile=JSON.parse(_pj); }catch(e){}
   function profileId(){ return (profile&&profile.name)?profile.name:'_'; }   // name = lightweight profile key (multi-kid, one device)
-  function statsKey(){ return 'talkingletters.stats.'+profileId()+'.v1'; }
+  function statsKey(){ return 'tslilon.stats.'+profileId()+'.v1'; }
   function loadStats(){ var s={}; try{ var j=localStorage.getItem(statsKey()); if(j) s=JSON.parse(j)||{}; }catch(e){}
     if(!s.days||typeof s.days!=='object') s.days={};                          // normalize over defaults — guards partial/old-schema blobs
     if(!s.sounds||typeof s.sounds!=='object') s.sounds={};
