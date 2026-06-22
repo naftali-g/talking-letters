@@ -58,7 +58,10 @@
   /* setup fills the viewport so the generate button lands at the bottom; the logo fills the slack (min/max bounded).
      logo is absolutely positioned so it takes the REAL leftover height (no flex %-height circular sizing) and never overflows */
   #setup{display:flex; flex-direction:column; min-height:calc(100vh - 32px); min-height:calc(100svh - 32px)}
-  .setup-body{flex:1 1 0; min-height:0; display:flex; flex-direction:column}
+  /* flex:1 fills the viewport on tall screens (logo takes the slack); min-height defaults to auto
+     so on SHORT screens the body grows to its content instead of overflowing (which used to spill
+     the controls past .app and collide with the .about footer below). */
+  .setup-body{flex:1 1 0; display:flex; flex-direction:column}
   .setup-controls{display:flex; flex-direction:column}
   .topbar{position:relative; flex:1 1 0; min-height:90px; margin-bottom:0}
   .logo-img{position:absolute; inset:0; margin:auto; max-height:min(100%,320px); max-width:92%; width:auto; height:auto; display:block}
@@ -330,11 +333,20 @@
     clip:rect(0 0 0 0);white-space:nowrap;border:0}
   /* plain-Hebrew about/FAQ explainer below the game: the page's main crawlable surface
      (the game UI itself is fully niqqud). Muted/compact so it reads as an adult footer. */
-  .about{max-width:520px;margin:26px auto 12px;padding:18px 16px 8px;border-top:1px solid var(--line);
+  .about{max-width:520px;margin:20px auto 14px;padding:0 16px;border-top:1px solid var(--line);
     font-family:var(--f-body);color:var(--slate);font-size:13px;line-height:1.7}
-  .about h2{font-family:var(--f-round);font-size:17px;color:var(--ink);margin:18px 0 6px}
-  .about h3{font-size:14px;color:var(--ink);margin:13px 0 2px;font-weight:700}
+  .about > summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;
+    gap:8px;padding:13px 2px;font-family:var(--f-round);font-weight:700;font-size:14px;color:var(--ink)}
+  .about > summary::-webkit-details-marker{display:none}
+  .about > summary::after{content:"▾";color:var(--slate);font-size:12px;transition:transform .2s}
+  .about[open] > summary::after{transform:rotate(180deg)}
+  .about-body{padding:2px 0 10px}
+  .about h2{font-family:var(--f-round);font-size:16px;color:var(--ink);margin:14px 0 6px}
+  .about h3{font-size:14px;color:var(--ink);margin:12px 0 2px;font-weight:700}
   .about p{margin:0 0 9px}
+  /* crawlable landing-screen footer, collapsed by default. Hidden during the results/celebration
+     flow (show() sets #setup[hidden]) so it never sits under the action buttons. */
+  body:has(#setup[hidden]) .about{display:none}
 </style>
 <!-- Structured data (plain Hebrew). The FAQ Q/A below MUST stay byte-identical to the
      visible <footer class="about"> FAQ in the body — mismatched FAQ schema is flagged as spam. -->
@@ -455,7 +467,9 @@
      tokenizes differently from typed queries, so this genuinely-visible explainer (for parents
      and קלינאיות) is the page's main crawlable surface. The FAQ Q/A MUST stay byte-identical to
      the FAQPage JSON-LD in <head>. -->
-<footer class="about" id="about" lang="he" dir="rtl">
+<details class="about" id="about" lang="he" dir="rtl">
+  <summary>מידע ושאלות נפוצות</summary>
+  <div class="about-body">
   <h2>על צלילון</h2>
   <p>צלילון הוא משחק חינמי לתרגול הגיית צלילים בעברית, לקלינאיות תקשורת (ריפוי בדיבור), להורים ולילדים. בוחרים צליל ומיקום במילה ומקבלים משפטים מנוקדים שבהם כל המילים מבטאות את אותו הצליל, עם הקראה קולית. המשחק עובד ישירות בדפדפן, בלי הורדה ובלי הרשמה.</p>
   <h2>איך זה עובד</h2>
@@ -473,7 +487,8 @@
   <p>אפשר לתרגל את עשרים הצלילים של העברית, כולל צלילים נפוצים בטיפול כמו ר, ל, ש, ס, צ ועוד. הצלילים מבוססים על ההגייה ולא רק על האות, כך שאותו צליל מודגש בכל המילים במשפט. צלילים לועזיים (גרש) אינם נכללים.</p>
   <h3>האם המשחק כולל ניקוד והקראה קולית?</h3>
   <p>כן. כל המשפטים מוצגים בעברית מנוקדת מלאה כדי לעזור לקריאה נכונה, ויש גם הקראה קולית של המשפטים והמילים בעזרת קול עברי המותקן במכשיר, כך שאפשר לשמוע את ההגייה הנכונה ולתרגל אחריה.</p>
-</footer>
+  </div>
+</details>
 
 <!-- ===== CELEBRATION ===== -->
 <div class="overlay" id="celebrate" hidden>
