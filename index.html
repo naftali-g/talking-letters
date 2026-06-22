@@ -530,19 +530,6 @@
 <script>
 (function(){
   'use strict';
-  // one-time migration of legacy localStorage keys (talkingletters.* -> tslilon.*) after the
-  // rename, so existing saved progress is never lost. Self-cleaning: removes the old keys, so it
-  // naturally no-ops on every load thereafter. Covers the dynamic per-profile stats keys too.
-  try {
-    for (var _mi = localStorage.length - 1; _mi >= 0; _mi--) {
-      var _ok = localStorage.key(_mi);
-      if (_ok && _ok.indexOf('talkingletters.') === 0) {
-        var _nk = 'tslilon.' + _ok.slice(15);              // 'talkingletters.'.length === 15
-        if (localStorage.getItem(_nk) === null) localStorage.setItem(_nk, localStorage.getItem(_ok));
-        localStorage.removeItem(_ok);
-      }
-    }
-  } catch(e){}
   var LEX;
   try { LEX = JSON.parse(document.getElementById('lexicon').textContent); }
   catch(e){ document.querySelector('.app').innerHTML =
